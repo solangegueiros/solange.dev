@@ -1,44 +1,32 @@
 import React from "react"
-import { useStaticQuery, Link, graphql } from "gatsby"
-import SEO from './SEO'
+import PropTypes from "prop-types"
+import { useStaticQuery, graphql } from "gatsby"
 
-const ListLink = props => (
-  <li style={{ display: `inline-block`, marginRight: `1rem` }}>
-    <Link to={props.to}>{props.children}</Link>
-  </li>
-)
+import Header from "./header"
 
-export default ({ children }) => {
-  const data = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-          }
-        }
-      }
-    `
-  )
-  return (    
-    <div style={{ margin: `3rem auto`, maxWidth: 650, padding: `0 1rem` }}>
-      <SEO title={data.site.siteMetadata.title} description={data.site.siteMetadata.description} />
-      <header style={{ marginBottom: `1.5rem` }}>
-        <Link to="/" style={{ textShadow: `none`, backgroundImage: `none` }}>
-          <h3 style={{ display: `inline` }}>{data.site.siteMetadata.title}</h3>
-        </Link>        
-        <ul style={{ listStyle: `none`, float: `right` }}>
-          <ListLink to="/">Home</ListLink>
-          <ListLink to="/about/">About</ListLink>
-          <ListLink to="/blog/">Blog</ListLink>
-          <ListLink to="/talks/">Talks</ListLink>
-        </ul>
-      </header>
-      {children}
-      <footer>
-        © {new Date().getFullYear()}, Solange Gueiros
-      </footer>      
-    </div>
+//<div style={{ margin: `3rem auto`, maxWidth: 1200, padding: `0 1rem` }}>
+
+const Layout = ({ children }) => {
+  return (
+    <>
+      <div style={{ margin: `0 auto`, maxWidth: 800, padding: `0 1rem` }}>
+        <Header />
+
+        {children}
+
+        <footer>
+          © {new Date().getFullYear()}, Solange Gueiros
+        </footer>      
+
+      </div>
+    </>
   )
 }
+
+Layout.propTypes = {
+  children: PropTypes.node.isRequired,
+}
+
+export default Layout
+
+

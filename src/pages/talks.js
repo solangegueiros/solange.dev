@@ -13,20 +13,15 @@ export default ({ data }) => {
         <h4>{data.allMarkdownRemark.totalCount} Talks</h4>
         {data.allMarkdownRemark.edges.map(({ node }) => (
           <div key={node.id}>
-            <Link
-              to={node.fields.slug}
-            >
-              <h3>
-                {node.frontmatter.title}{" "}
-              </h3>
+            <Link to={node.fields.slug}>
+              <h3> {node.frontmatter.title}{" "}</h3>
             </Link>
             <p>
               <span>
-                {node.frontmatter.date} - {node.timeToRead} min to read
+                {node.frontmatter.date} - {node.frontmatter.description}
               </span>
             </p>
-            <p>{node.frontmatter.description}</p>
-            <br/>            
+            <br/>
           </div>
         ))}
       </div>
@@ -46,7 +41,7 @@ export const query = graphql`
           id
           frontmatter {
             title
-            date(formatString: "DD MMMM, YYYY")
+            date(formatString: "DD/MMM/YYYY")
             description
           }
           fields {

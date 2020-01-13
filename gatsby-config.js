@@ -19,6 +19,16 @@ module.exports = {
         name: `talks`,
         path: `${__dirname}/content/talks/`,
       },
+    },
+    {
+      resolve: "gatsby-remark-embed-video",
+      options: {
+          width: 800,
+          ratio: 1.77, 
+          height: 400, 
+          related: false,
+          noIframeBorder: true
+      },
     },    
     {
       resolve: `gatsby-transformer-remark`,
@@ -30,9 +40,10 @@ module.exports = {
               maxWidth: 800,
             },
           },
+          `gatsby-remark-responsive-iframe`,
         ],
       },
-    },
+    },    
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-emotion`,

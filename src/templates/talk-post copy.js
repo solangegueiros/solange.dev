@@ -6,7 +6,6 @@ import SEO from "../components/seo"
 
 import Gallery from '@browniebroke/gatsby-image-gallery'
 import '@browniebroke/gatsby-image-gallery/dist/style.css'
-import { toUnicode } from "punycode";
 
 
 export default ({ data }) => {
@@ -20,13 +19,13 @@ export default ({ data }) => {
   //console.log ("\n fullSize \n" + JSON.stringify(fullSize))
   const thumbs = data.images.edges.map(edge => edge.node.thumb.fluid)
   
-  let slidesSN = false
+  var slidesSN = false
   var slides = {name: "", publicURL: ""}
-  let slidesIframe;
+  var slidesHeight = "1"
   if (post.frontmatter.slides) {
     slides = post.frontmatter.slides
+    slidesHeight = "440"
     slidesSN = true
-    slidesIframe = slides.publicURL + "#toolbar=0"
   } 
  
   var bannerSN = false
@@ -37,29 +36,8 @@ export default ({ data }) => {
   }
   //console.log ("\n bannerFluid \n" + JSON.stringify(bannerFluid))
 
-  var videoSN = false
-  var videoLink = ""
-  if (post.frontmatter.video) {
-    videoLink = post.frontmatter.video
-    videoSN = true
-  }
 
   /*
-      <h2>Slides</h2>        
-      <object data={slides.publicURL} type="application/pdf" title={slides.name} width="100%" />  
-
-      <iframe src={"http://docs.google.com/gview?url=" + slides.publicURL + "&embedded=true"} width="100%" height={slidesHeight} frameborder="0"></iframe>
-
-      <iframe src={slidesIframe} title={slides.name} width="800" height={slidesHeight}></iframe>      
-  */
-
-  /*
-  https://support.google.com/youtube/answer/6375112?co=GENIE.Platform%3DDesktop&hl=pt-BR
-   16:9 - 480p: 854 x 480
-
-  Video Labitconf 4:3 - width="100%" height="560vh"
-
-
           style={{ height: "40vh", width: "60vw" }}
 
   style={{ display: "block", height: "30vh", width: "50vw", left: "calc(-50vw + 50%);", position: "relative;", 'object-fit': "cover;" }}
@@ -76,6 +54,7 @@ export default ({ data }) => {
     <Layout>
       <SEO title={post.frontmatter.title} description={post.frontmatter.description} />
 
+ 
       {bannerSN === true ?
         <Img 
           fluid={bannerFluid}
@@ -92,45 +71,45 @@ export default ({ data }) => {
         </h1>
 
         <table>
-          <tbody>
-            <tr>
-              <td>When:</td>
-              <td>{post.frontmatter.date}</td>
-            </tr>
-            <tr>
-              <td>Where:</td>
-              <td>{post.frontmatter.where}</td>
-            </tr>
-          </tbody>
+          <tr>
+            <td>When:</td>
+            <td>{post.frontmatter.date}</td>
+          </tr>
+          <tr>
+            <td>Where:</td>
+            <td>{post.frontmatter.where}</td>
+          </tr>
         </table>
 
         <h3>
           <a href={post.frontmatter.site} target="_blank" rel="noopener noreferrer">{post.frontmatter.event}</a>
         </h3>
 
-        <p>
-          {post.frontmatter.description}
-        </p>
-
-        <h2>{videoSN === true ?  'Video': ''}</h2>        
-        {videoSN === true ?  
-          <iframe width="100%" height="440vh" src={videoLink} 
-          frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-          : ''}
-
         <h2>{slidesSN === true ?  'Slides': ''}</h2>        
         {slidesSN === true ?  
-          <iframe src={slidesIframe} title={slides.name} width="105%" height="440"></iframe>
+          <embed src={slides.publicURL} title={slides.name} name={slides.name} width="100%" height={slidesHeight}/> 
           : ''}
 
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
       </div>
-      <br/>
 
+      <div>
+        <h2>Gallery</h2>
+        <Gallery  thumbs={thumbs} images={fullSize} />
+      </div>      
+
+      <div>
+        <h2>Images</h2>
+        {images.map(({ node }, index) => (
+          <Img key={index} alt={node.name} fluid={node.childImageSharp.fluid} />
+        ))}
+      </div>      
     </Layout>
   )
 }
-
+/*
+        <embed src={post.frontmatter.slides.publicURL} title={post.frontmatter.slides.name} name={post.frontmatter.slides.name} width="100%" height="440"/>        
+*/
 
 
 export const query = graphql`
@@ -146,7 +125,6 @@ export const query = graphql`
         date(formatString: "DD-MMM-YYYY")
         where
         site
-        video
         slides {
           name
           publicURL
