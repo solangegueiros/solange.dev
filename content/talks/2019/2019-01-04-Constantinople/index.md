@@ -1,10 +1,10 @@
 ---
 title: Ethereum hard fork Constantinople
 date: "2019-01-25T10:10:00.000Z"
-description: "Ethereum hard fork Constantinople at CriptoFacil, Sao Paulo, Brazil"
+description: "Entrevista sobre o hard fork Constantinople no blockchain Ethereum para CriptoFacil, Sao Paulo, Brasil"
 type: talk
 event: CriptoFacil
-where: Sao Paulo, Brazil
+where: Sao Paulo, BrasSil
 site: "https://www.criptofacil.com/"
 
 ---

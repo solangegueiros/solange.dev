@@ -1,10 +1,10 @@
 ---
 title: Jurada Blockathon
 date: "2019-11-10T17:00:00.000Z"
-description: "Jurada at Blockathon Fecap, Sao Paulo, Brazil"
+description: "Jurada no Blockathon Fecap, Sao Paulo, Brasil"
 type: talk
 event: Blockathon Fecap
-where: Sao Paulo, Brazil
+where: Sao Paulo, Brasil
 site: "https://blockchainweekbrasil.com.br/blockathon"
 
 ---

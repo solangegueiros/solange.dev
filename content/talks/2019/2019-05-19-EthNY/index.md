@@ -1,7 +1,7 @@
 ---
 title: Caspian Tradex - AirSwap Bountie
 date: "2019-05-19T09:00:00.000Z"
-description: "Caspian Tradex won the AirSwap Bountie at Hackathon ETHNewYork  in New York, EUA"
+description: "Caspian Tradex won the AirSwap Bountie at Hackathon ETHNewYork in New York, EUA"
 type: talk
 event: ETHNewYork
 where: New York, EUA

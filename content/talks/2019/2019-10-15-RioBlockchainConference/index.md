@@ -1,10 +1,10 @@
 ---
 title: Principais Blockchains programaveis
 date: "2019-10-15T11:25:00.000Z"
-description: "Painel principais Blockchains programaveis at Rio Blockchain Conference at Tomorrow Museum in Rio de Janeiro, Brazil"
+description: "Painel principais Blockchains programaveis no evento Rio Blockchain Conference realizado no Museu do Amanha no Rio de Janeiro, Brasil"
 type: talk
 event: Rio Blockchain Conference
-where: Rio de Janeiro, Brazil
+where: Rio de Janeiro, Brasil
 video: "https://www.youtube.com/embed/c9ID4goKCMA"
 site: "https://rbc2019.io/"
 ---

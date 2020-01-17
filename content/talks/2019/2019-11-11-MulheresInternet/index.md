@@ -1,10 +1,10 @@
 ---
 title: Entrevista para revista Criptomoedas e Blockchain Descomplicadas para Advogados
 date: "2019-07-30T09:00:00.000Z"
-description: "Entrevista para revista Criptomoedas e Blockchain Descomplicadas para Advogados, Brazil"
+description: "Entrevista para revista Criptomoedas e Blockchain Descomplicadas para Advogados, Brasil"
 type: talk
 event: editora Enlaw
-where: Brazil
+where: Brasil
 
 ---
 

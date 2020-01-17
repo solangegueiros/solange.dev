@@ -1,10 +1,10 @@
 ---
 title: Smart contract para registro de informações no Blockchain Ethereum
 date: "2019-02-13T17:00:00.000Z"
-description: "Workshop Smart contract para registro de informações no Blockchain Ethereum at Campus Party Brasil in Sao Paulo, Brazil"
+description: "Workshop Smart contract para registro de informações no Blockchain Ethereum na Campus Party Brasil em Sao Paulo, Brasil"
 type: talk
 event: Campus Party Brasil
-where: Sao Paulo, Brazil
+where: Sao Paulo, Brasil
 site: "https://brasil.campus-party.org/"
 
 ---

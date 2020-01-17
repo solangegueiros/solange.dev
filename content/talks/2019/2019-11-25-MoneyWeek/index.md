@@ -1,10 +1,10 @@
 ---
 title: Money week - A revolução do Blockchain
 date: "2019-11-29T16:30:00.000Z"
-description: "Entrevista sobre a revolução do blockchain para Money Week, em Sao Paulo, Brazil"
+description: "Entrevista sobre a revolução do blockchain para o evento Money Week, em Sao Paulo, Brasil"
 type: talk
 event: Money Week
-where: Sao Paulo, Brazil
+where: Sao Paulo, Brasil
 site: "https://moneyweek.com.br/"
 
 ---

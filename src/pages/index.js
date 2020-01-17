@@ -10,7 +10,7 @@ export default ({ data }) => {
         <p>
           This is my Blockchain Developers Blog.  
           For now I put all talks and interviews from 2019.  
-          Some things are um Portuguese, others are in English.
+          Some things are in Portuguese, others are in English.
           <br/>
           Este é meu blog para desenvolvedores Blockchain. 
           Por enquanto eu coloquei apenas minhas palestras e entrevistas de 2019. 

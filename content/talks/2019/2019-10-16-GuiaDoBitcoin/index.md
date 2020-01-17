@@ -1,10 +1,10 @@
 ---
 title: Entrevista - Conheça algumas das mulheres do mercado brasileiro de Blockchain
 date: "2019-10-16T09:00:00.000Z"
-description: "Entrevista - Conheça algumas das mulheres do mercado brasileiro de Blockchain at Guia do Bitcoin, Sao Paulo, Brazil"
+description: "Entrevista - Conheça algumas das mulheres do mercado brasileiro de Blockchain publicado no Guia do Bitcoin, Sao Paulo, Brasil"
 type: talk
 event: Guia do Bitcoin
-where: Sao Paulo, Brazil
+where: Sao Paulo, Brasil
 site: "https://guiadobitcoin.com.br/"
 
 ---
