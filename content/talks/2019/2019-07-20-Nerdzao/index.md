@@ -6,7 +6,11 @@ type: talk
 event: Nerdzao
 where: Sao Paulo, Brasil
 site: "https://www.meetup.com/pt-BR/Nerdzao/events/262984006/"
+video: "https://www.youtube.com/embed/YN9aukHTRQg"
+
 ---
+
+Video: Tag88 news
 
 
 

@@ -27,4 +27,4 @@ B3 - Rua XV de Novembro, 275
 
 
 ## Na midia
-- <a href="https://www.criptofacil.com/bolsa-de-valores-do-brasil-destaca-blockchain-em-painel-sobre-financas-em-sao-paulo/" target="_blank">Bolsa de Valores do Brasil destaca blockchain em painel sobre finanças em São Paulo</a>
+- <a href="https://www.criptofacil.com/bolsa-de-valores-do-brasil-destaca-blockchain-em-painel-sobre-financas-em-sao-paulo/" target="_blank">Criptofacil - bolsa de valores do Brasil destaca Blockchain em painel sobre finanças em São Paulo</a>

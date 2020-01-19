@@ -1,6 +1,6 @@
 ---
 title: Janus Platform
-date: "2019-06-23T14:00:00.000Z"
+date: "2019-08-21T13:00:00.000Z"
 description: "Talk Janus Platform at Web3Summit in Belin, German"
 type: talk
 event: Web3Summit

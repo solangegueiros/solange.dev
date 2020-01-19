@@ -1,6 +1,6 @@
 ---
-title: Coordenação Trilha Blockchain
-date: "2019-07-20T09:30:00.000Z"
+title: TDC SP - Coordenação Trilha Blockchain
+date: "2019-07-16T09:00:00.000Z"
 description: "Coordenação Trilha Blockchain no TDC - The Developers Conference em Sao Paulo, Brasil"
 type: talk
 event: TDC - The Developers Conference

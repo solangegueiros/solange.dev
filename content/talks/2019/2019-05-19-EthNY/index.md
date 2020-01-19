@@ -1,9 +1,9 @@
 ---
-title: Caspian Tradex - AirSwap Bountie
+title: Caspian Tradex - EthNY AirSwap winner
 date: "2019-05-19T09:00:00.000Z"
-description: "Caspian Tradex won the AirSwap Bountie at Hackathon ETHNewYork in New York, EUA"
+description: "Caspian Tradex was AirSwap winner at Hackathon ETHNewYork in New York, EUA"
 type: talk
-event: ETHNewYork
+event: Hackathon ETHNewYork
 where: New York, EUA
 site: "https://ethnewyork.com/"
 ---
@@ -14,11 +14,14 @@ site: "https://ethnewyork.com/"
 <a href="https://devpost.com/software/trading-alert-bot-using-airswap-dexindex-io" target="_blank">DevPost - My project</a>
 
 ## Midia
-- <a href="https://br.cointelegraph.com/news/brazilian-developer-wins-ethereum-hackathon-in-new-york" target="_blank">Desenvolvedora brasileira Solange Gueiros vence hackathon da Ethereum em Nova York</a>
+- <a href="https://br.cointelegraph.com/news/brazilian-developer-wins-ethereum-hackathon-in-new-york" target="_blank">Cointelegraph - desenvolvedora brasileira Solange Gueiros vence hackathon da Ethereum em Nova York</a>
 
-- <a href="https://guiadobitcoin.com.br/noticias/desenvolvedora-brasileira-hackathon-nova-iorque/" target="_blank">Desenvolvedora brasileira vence hackathon em Nova Iorque</a>
+- <a href="https://guiadobitcoin.com.br/noticias/desenvolvedora-brasileira-hackathon-nova-iorque/" target="_blank">Guia do Bitcoin - desenvolvedora brasileira vence hackathon em Nova Iorque</a>
 
-- <a href="https://www.criptofacil.com/desenvolvedora-brasileira-solange-gueiros-vence-hackathon-de-ethereum-em-nova-york/" target="_blank">Desenvolvedora brasileira Solange Gueiros vence hackathon de Ethereum em Nova York</a>
+- <a href="https://www.criptofacil.com/desenvolvedora-brasileira-solange-gueiros-vence-hackathon-de-ethereum-em-nova-york/" target="_blank">Criptofacil - desenvolvedora brasileira Solange Gueiros vence hackathon de Ethereum em Nova York</a>
+
+- <a href="https://br.investing.com/news/cryptocurrency-news/solange-gueiros-vence-hackathon-da-ethereum-em-nova-york-658963" target="_blank">Investing.com - desenvolvedora brasileira Solange Gueiros vence hackathon de Ethereum em Nova York</a>
+
 
 
 

@@ -1,9 +1,9 @@
 ---
 title: Uso do blockchain em diferentes perspectivas
 date: "2019-03-18T17:00:00.000Z"
-description: "Entrevista sobre o Uso do blockchain em diferentes perspectivas para o programa Dinheiro ao Vivo da Isto é dinheiro, em Sao Paulo, Brasil"
+description: "Entrevista sobre o Uso do blockchain em diferentes perspectivas para o programa Dinheiro ao Vivo - revista Isto é, em Sao Paulo, Brasil"
 type: talk
-event: Programa Dinheiro ao Vivo, Isto é dinheiro
+event: Programa Dinheiro ao Vivo - revista Isto é
 where: Sao Paulo, Brasil
 video: "https://www.youtube.com/embed/bxiXXdf_Cpk?start=911"
 

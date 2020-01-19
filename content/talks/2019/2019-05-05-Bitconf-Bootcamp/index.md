@@ -1,9 +1,9 @@
 ---
 title: Bootcamp crie sua criptomoeda em poucas horas
 date: "2019-05-05T11:30:00.000Z"
-description: "Bootcamp crie sua criptomoeda em poucas horas realizado na Bitconf em Sao Paulo, Brasil"
+description: "Bootcamp crie sua criptomoeda em poucas horas realizado na VII BitConf em Sao Paulo, Brasil"
 type: talk
-event: Bitconf
+event: VII BitConf Brasil
 where: Sao Paulo, Brasil
 site: "https://www.bitconf.com.br/"
 

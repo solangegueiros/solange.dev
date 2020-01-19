@@ -1,16 +1,12 @@
 ---
-title: Entrevista para revista Criptomoedas e Blockchain Descomplicadas para Advogados
-date: "2019-07-30T09:00:00.000Z"
-description: "Entrevista para revista Criptomoedas e Blockchain Descomplicadas para Advogados, Brasil"
+title: Não é só em blockchain - 52% das mulheres do mundo não têm acesso a internet
+date: "2019-11-11T09:00:00.000Z"
+description: "Entrevista para o portal de notícias Cointelegraph sobre o tema não é só em blockchain - 52% das mulheres do mundo não têm acesso a internet  - São Paulo, Brasil"
 type: talk
-event: editora Enlaw
+event: Cointelegraph
 where: Brasil
 
 ---
 
-Para adquirir a revista,  
-<a href="https://www.enlaw.com.br/revista/620" target="_blank">clique aqui</a>
-
-## Midia
-- <a href="https://br.cointelegraph.com/news/bitcoin-and-blockchain-magazine-focused-on-lawyers-to-be-launched-in-brazil" target="_blank">Revista sobre Bitcoin e Blockchain focada em advogados será lançada no Brasil</a>
-
+Para acessar a entrevista 
+<a href="https://br.cointelegraph.com/news/nao-e-so-em-blockchain-52-das-mulheres-do-mundo-nao-tem-acesso-a-internet/" target="_blank">clique aqui</a>

@@ -11,3 +11,6 @@ slides: "./SolangeGueiros-Ethereum-Blockcrypto.pdf"
 
 
 
+## Na midia
+
+- <a href="https://startupi.com.br/2019/01/quer-saber-mais-sobre-as-tendencias-da-criptoeconomia-e-blockchain-participe-da-blockcrypto/" target="_blank">Startupi - Quer saber mais sobre as tendências da Criptoeconomia e Blockchain? Participe da BlockCrypto</a>

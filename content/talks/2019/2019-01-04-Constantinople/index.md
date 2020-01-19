@@ -1,6 +1,6 @@
 ---
 title: Ethereum hard fork Constantinople
-date: "2019-01-25T10:10:00.000Z"
+date: "2019-01-04T09:10:00.000Z"
 description: "Entrevista sobre o hard fork Constantinople no blockchain Ethereum para CriptoFacil, Sao Paulo, Brasil"
 type: talk
 event: CriptoFacil

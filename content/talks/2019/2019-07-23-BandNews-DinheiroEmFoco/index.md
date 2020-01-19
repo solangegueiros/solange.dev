@@ -16,7 +16,7 @@ Participantes:
 
 ## Na Midia
 
-- <a href="https://br.cointelegraph.com/news/brazilian-tv-channel-promotes-tv-show-about-security-for-cryptocurrency" target="_blank">Com nomes famosos do mundo cripto, TV Band exibe programa destacando vantagens das criptomoedas</a>
+- <a href="https://br.cointelegraph.com/news/brazilian-tv-channel-promotes-tv-show-about-security-for-cryptocurrency" target="_blank">Cointelegraph - Com nomes famosos do mundo cripto, TV Band exibe programa destacando vantagens das criptomoedas</a>
 
 
 ### Outros links

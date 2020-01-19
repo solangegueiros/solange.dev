@@ -18,8 +18,12 @@ site: "https://ethberlinzwei.com/"
 
 
 ## Midia
-- <a href="https://br.cointelegraph.com/news/brazilian-developer-solange-gueiros-wins-waves-award-in-berlin" target="_blank">Desenvolvedora brasileira, Solange Gueiros, ganha primeiro lugar no EthBerlin 2019 com projeto usando Waves</a>
-- <a href="https://blog.anubis.website/2019/08/26/a-desenvolvedora-solange-gueiros-ganha-primeiro-lugar-no-ethberlin-2019-com-projeto-usando-waves/" target="_blank">A Desenvolvedora, Solange Gueiros, ganha primeiro lugar no EthBerlin 2019 com projeto usando Waves</a>
+- <a href="https://br.cointelegraph.com/news/brazilian-developer-solange-gueiros-wins-waves-award-in-berlin" target="_blank">Cointelegraph - desenvolvedora brasileira, Solange Gueiros, ganha primeiro lugar no EthBerlin 2019 com projeto usando Waves</a>
+ 
+- <a href="https://blog.anubis.website/2019/08/26/a-desenvolvedora-solange-gueiros-ganha-primeiro-lugar-no-ethberlin-2019-com-projeto-usando-waves/" target="_blank">Anubis - a Desenvolvedora, Solange Gueiros, ganha primeiro lugar no EthBerlin 2019 com projeto usando Waves</a>
+
+- <a href="https://noticias.cryptomkt.com/br/desenvolvedora-brasileira-solange-gueiros-ganha-primeiro-lugar-no-ethberlin-2019-com-projeto-usando-waves/" target="_blank">Cryptomkt - desenvolvedora brasileira, Solange Gueiros, ganha primeiro lugar no EthBerlin 2019 com projeto usando Waves</a>
+
 
 ## Playtime at waves platform
 ethberlinzwei 2019
