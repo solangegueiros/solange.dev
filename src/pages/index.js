@@ -21,7 +21,7 @@ export default ({ data }) => {
         <h3>
           Palestras e entrevistas - Talks and interviews
         </h3>
-        <h4>{data.allMarkdownRemark.totalCount} Talks</h4>
+        <h4>{data.allMarkdownRemark.totalCount} events</h4>
         {data.allMarkdownRemark.edges.map(({ node }) => (
           <div key={node.id}>
             <Link to={node.fields.slug}>
