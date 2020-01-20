@@ -26,7 +26,7 @@ const Header = () => {
     <>
       <SEO title={data.site.siteMetadata.title} description={data.site.siteMetadata.description} />
 
-      <header style={{ marginBottom: `1.5rem` }}>
+      <header style={{ padding: `1rem`, margin: `0`,  background: `#FFD700` }}>
         <Link to="/" style={{ textShadow: `none`, backgroundImage: `none` }}>
           <h3 style={{ display: `inline` }}>{data.site.siteMetadata.title}</h3>
         </Link>        
@@ -42,6 +42,15 @@ const Header = () => {
           <ListLink to="/about/">About</ListLink>
           <ListLink to="/talks/">Talks</ListLink>
           <ListLink to="/blog/">Blog</ListLink>
+          
+<header style={{ marginBottom: `1.5rem` }}>
+//<div style={{ margin: `3rem auto`, maxWidth: 1200, padding: `0 3rem` }}>  
+margin: `0 auto 0 auto`,        
+#FFD700
+#DAA520
+#FF8C00
+#8B008B
+#9932CC
 */
 
 

@@ -3,7 +3,10 @@ module.exports = {
     siteUrl: `https://solange.dev`,
     title: `Blockchain Blog Sol`,
     description: `Blockchain developers blog`,
-    author: `solangegueiros`,    
+    author: {
+      name: `Solange Gueiros`,
+      twitter: `solangegueiros`,
+    }
   },  
   plugins: [
     {

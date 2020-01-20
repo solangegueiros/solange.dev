@@ -6,7 +6,7 @@ export default ({ data }) => {
   //console.log(data)
   return (
     <Layout>
-      <div>
+      <div style={{ margin: `1rem auto`, maxWidth: 800, padding: `0 1rem` }}>
         <p>
           This is my Blockchain Developers Blog.  
           For now I put all talks and interviews from 2019.  

@@ -52,19 +52,32 @@ export default ({ data }) => {
     thumbs = data.gallery.edges.map(edge => edge.node.thumb.fluid)
   }
 
+/*
+<div style={{ width: `1920 !important`, maxWidth: 1920 }}>
+          <Img 
+            fluid={bannerFluid}
+            style={{ height: "40vh", width: "60vw" }}
+            />
+width: `1920px`,             
+, maxWidth: "1920px"
+style={{ margin: `0 auto`, height: "30vh" }}
+
+*/
 
   return (
     <Layout>
       <SEO title={post.frontmatter.title} description={post.frontmatter.description} />
 
-      {bannerSN === true ?
-        <Img 
-          fluid={bannerFluid}
-          style={{ height: "40vh", width: "60vw" }}
-          />
-      : ''}      
+      <div style={{ margin: `0`, padding: `0` }}>
+        {bannerSN === true ?
+          <Img 
+            fluid={bannerFluid}
+            style={{ height: "30vh", width: "100%" }}
+            />
+        : ''} 
+      </div>
 
-      <div>
+      <div style={{ margin: `1rem auto`, padding: `0 1rem`, maxWidth: 800 }}>
 
         <h1>
           {post.frontmatter.event}
@@ -181,31 +194,13 @@ export const query = graphql`
       name: {eq: "banner"}
       ) {
       childImageSharp {
-        fluid(maxWidth: 1920, quality: 75) {
+        fluid(maxWidth: 3600, quality: 80
+          ) {
           ...GatsbyImageSharpFluid
         }
       }
     }
-
-    slideshow: allFile(
-      sort: { fields: name, order: DESC }
-      filter: {
-        extension: { regex: "/(jpg)|(png)|(tif)|(tiff)|(webp)|(jpeg)/" }
-        relativeDirectory: { regex: $slug }
-      }
-    ) {
-      edges {
-        node {
-          id
-          name
-          childImageSharp {
-            fluid(maxWidth: 600) {
-              ...GatsbyImageSharpFluid_withWebp_tracedSVG
-            }
-          }
-        }
-      }
-    }    
+   
 
   }
 `
