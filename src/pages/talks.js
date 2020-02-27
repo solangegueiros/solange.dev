@@ -6,11 +6,11 @@ export default ({ data }) => {
   //console.log(data)
   return (
     <Layout>
-      <div>
+      <div style={{ margin: `1rem auto`, maxWidth: 800, padding: `0 1rem` }}>
         <h1>
-          Talks
+          Talks 2019
         </h1>
-        <h4>{data.allMarkdownRemark.totalCount} events</h4>
+        <h4>{data.allMarkdownRemark.totalCount} events</h4>        
         {data.allMarkdownRemark.edges.map(({ node }) => (
           <div key={node.id}>
             <Link to={node.fields.slug}>

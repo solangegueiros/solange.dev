@@ -6,9 +6,9 @@ export default ({ data }) => {
   //console.log(data)
   return (
     <Layout>
-      <div>
+      <div style={{ margin: `1rem auto`, maxWidth: 800, padding: `0 1rem` }}>
         <h1>
-          Blog
+          Blog 2020
         </h1>
         <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
         {data.allMarkdownRemark.edges.map(({ node }) => (
