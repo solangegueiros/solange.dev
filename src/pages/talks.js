@@ -6,27 +6,22 @@ export default ({ data }) => {
   //console.log(data)
   return (
     <Layout>
-      <div>
+      <div style={{ margin: `1rem auto`, maxWidth: 800, padding: `0 1rem` }}>
         <h1>
-          Talks
+          Talks 2019
         </h1>
-        <h4>{data.allMarkdownRemark.totalCount} Talks</h4>
+        <h4>{data.allMarkdownRemark.totalCount} events</h4>        
         {data.allMarkdownRemark.edges.map(({ node }) => (
           <div key={node.id}>
-            <Link
-              to={node.fields.slug}
-            >
-              <h3>
-                {node.frontmatter.title}{" "}
-              </h3>
+            <Link to={node.fields.slug}>
+              <h3> {node.frontmatter.title}{" "}</h3>
             </Link>
             <p>
               <span>
-                {node.frontmatter.date} - {node.timeToRead} min to read
+                {node.frontmatter.date} - {node.frontmatter.description}
               </span>
             </p>
-            <p>{node.frontmatter.description}</p>
-            <br/>            
+            <br/>
           </div>
         ))}
       </div>
@@ -46,7 +41,7 @@ export const query = graphql`
           id
           frontmatter {
             title
-            date(formatString: "DD MMMM, YYYY")
+            date(formatString: "DD/MMM/YYYY")
             description
           }
           fields {
