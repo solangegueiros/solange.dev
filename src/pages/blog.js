@@ -25,7 +25,7 @@ export default ({ data }) => {
                 {node.frontmatter.date} - {node.timeToRead} min to read
               </span>
             </p>
-            <p>{node.frontmatter.description}</p>            
+            <p>{node.frontmatter.description}</p>
           </div>
         ))}
       </div>
