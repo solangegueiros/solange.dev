@@ -8,13 +8,15 @@ export default ({ data }) => {
     <Layout>
       <div style={{ margin: `1rem auto`, maxWidth: 800, padding: `0 1rem` }}>
         <p>
-          This is my Blockchain Developers Blog.  
-          For now I put all talks and interviews from 2019.  
-          Some things are in Portuguese, others are in English.
-          <br/>
-          Este é meu blog para desenvolvedores Blockchain. 
-          Por enquanto eu coloquei apenas minhas palestras e entrevistas de 2019. 
-          Algumas coisas estão em português, outras em inglês.
+          This is my Blockchain Developers Blog. <br/> 
+          I started to do some posts.
+          Also I published all talks, workshops and interviews from 2019. <br/>
+          Some things are in Portuguese, others are in English or Spanish.
+          <br/><br/>
+          Este é meu blog para desenvolvedores Blockchain. <br/>
+          Comecei a publicar os primeiros artigos.
+          Também coloquei todas as palestras, workshops e entrevistas minhas em 2019. <br/>
+          Algumas coisas estão em português, outras em inglês ou espanhol.
           <br/>
           Sol - Solange Gueiros
         </p>
