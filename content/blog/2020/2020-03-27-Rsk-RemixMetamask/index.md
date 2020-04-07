@@ -7,6 +7,8 @@ tags: tutorial, rsk, remix, metamask
 type: blog
 ---
 
+![Title](/images/image-00.png)
+
 A implementação da máquina virtual da RSK é compatível com o Ethereum EVM, então  podemos usar muitas das ferramentas para desenvolvedores Ethereum.
 
 Neste tutorial, mostrarei passo a passo como usar o Remix e o Metamask, ferramentas criadas originalmente para o Ethereum, para criar, compilar e publicar um smart contract simples na Testnet da RSK.
@@ -62,7 +64,7 @@ Vou colocar alguns termos em inglês também:
 - Vá em networks / redes
 - Custom RPC
 
-![networks - custom RPC](image-01.png)
+![networks - custom RPC](/images/image-01.png)
 
 - Network Name / nome da rede
 
@@ -85,7 +87,7 @@ Vou colocar alguns termos em inglês também:
     https://explorer.testnet.rsk.co/
 
 
-![RSK Testnet configuration](image-02.png)
+![RSK Testnet configuration](/images/image-02.png)
 
 Depois de configurar, feche a janela de configuração e selecione RSK Tesnet.
 
@@ -95,21 +97,21 @@ Você pode receber alguns Testnet R-BTC em [faucet.testnet.rsk.co](https://fauce
 
 Copie seu endereço da conta do Metamask
 
-![Copy address from Metamask](image-03.png)
+![Copy address from Metamask](/images/image-03.png)
 
 Cole seu endereço e faça a a verificação do CAPTCHA.
 
 Espere alguns segundos...
 
-![Wait a few seconds](image-04.png)
+![Wait a few seconds](/images/image-04.png)
 
-![Received some R-BTCs](image-05.png)
+![Received some R-BTCs](/images/image-05.png)
 
 Você pode ver o hash da transação, por examplo, eu fiz esta: [`0xf63c45dabd52e0b44f4cf15825985e9ddfe790b4323a88a3531f762a417f9011`](https://explorer.testnet.rsk.co/tx/0xf63c45dabd52e0b44f4cf15825985e9ddfe790b4323a88a3531f762a417f9011).
 
 Agora eu tenho 0.05 R-BTC!
 
-![R-BTCs at Metamask wallet](image-06.png)
+![R-BTCs at Metamask wallet](/images/image-06.png)
 
 ## Remix
 
@@ -119,7 +121,7 @@ Vá em
 
 Na página inicial - home / welcome page, escolha o ambiente / environment `Solidity`.
 
-![Remix environment Solidity](image-08.png)
+![Remix environment Solidity](/images/image-08.png)
 
 ## Conectando o Remix a RSK Testnet através do Metamask
 
@@ -128,15 +130,15 @@ Com a RSK network selecionada no Metamask...
 No Remix, do lado esquerdo, procure o botão `Deploy and run transactions`.
 Atualmente é o 4o botão
 
-![Deploy and run transactions](image-09.png)
+![Deploy and run transactions](/images/image-09.png)
 
 Em Environment, escolha `Injected Web3`
 
-![Injected Web3](image-10.png)
+![Injected Web3](/images/image-10.png)
 
 Injected Web3 conecta Remix com a conta ativa / selecionada no Metamask
 
-![Injected Web3 - ChainID 31](image-11.png)
+![Injected Web3 - ChainID 31](/images/image-11.png)
 
 ChainID 31 foi definida na configuração da RSK Testnet no Metamask.
 
@@ -144,15 +146,15 @@ ChainID 31 foi definida na configuração da RSK Testnet no Metamask.
 
 Clique no 2o botão do lado esquerdo - file explorer
 
-![file explorer](image-12.png)
+![file explorer](/images/image-12.png)
 
 Clique no símbolo `+` create a new file
 
-![create a new file](image-13.png)
+![create a new file](/images/image-13.png)
 
 Nome do arquivo / file name: `SimpleStorage.sol`
 
-![SimpleStorage.sol](image-14.png)
+![SimpleStorage.sol](/images/image-14.png)
 
 Copie esse exemplo:
 
@@ -173,7 +175,7 @@ contract SimpleStorage {
 ```
 
 E cole aqui:
-![SimpleStorage.sol](image-15.png)
+![SimpleStorage.sol](/images/image-15.png)
 
 ### SimpleStorage.sol
 
@@ -187,60 +189,60 @@ Este smart contract tem:
 
 Clique no 3o botão do lado esquerdo - Solidity compiler
 
-![Compile smart contract](image-16.png)
+![Compile smart contract](/images/image-16.png)
 
 Costumo deixar habilitado o auto-compile
 
-![enable auto-compile](image-17.png)
+![enable auto-compile](/images/image-17.png)
 
-![enable auto-compile](image-18.png)
+![enable auto-compile](/images/image-18.png)
 
 Clique no botão Compile SimpleStorage.sol
 
-![Compile SimpleStorage.sol](image-19.png)
+![Compile SimpleStorage.sol](/images/image-19.png)
 
 Verifique o sinal verde no 3o botão com a mensagem `compilation successful`
 
-![compilation successful](image-20.png)
+![compilation successful](/images/image-20.png)
 
 ## Publique o smart contract na RSK testnet
 
 No painel à esquerda, clique por botão `Deploy and run transactions`. Atualmente é o 4o botão.
 
-![Deploy and run transactions](image-21.png)
+![Deploy and run transactions](/images/image-21.png)
 
 Como nós só temos um smart contract, ele é automaticamente selecionado na lista.
 
-![SimpleStorage.sol](image-22.png)
+![SimpleStorage.sol](/images/image-22.png)
 
 Clique in the botão `Deploy`.
 
 Metamask abrirá uma janela do tipo "popup" para confirmar a transação configurada pelo Remix para fazer a publicação do smart contract SimpleStorage.sol
 
-![Deploy](image-23.png)
+![Deploy](/images/image-23.png)
 
 Clique em confirme - confirm.
 
 Na parte de baixo, à direita, aparecerá a mensagem: `creation of SimpleStorage pending...`
 
-![creation of SimpleStorage pending](image-24.png)
+![creation of SimpleStorage pending](/images/image-24.png)
 
 
-![transaction confirmed](image-25.png)
+![transaction confirmed](/images/image-25.png)
 
 Quando for confirmada, podemos verificá-la:
 
-![check the transaction](image-26.png)
+![check the transaction](/images/image-26.png)
 
 Na linha da transação, clique no símbolo ao lado do botão debug (do lado direito do botão), para ver os detalhes:
 
-![transaction details](image-27.png)
+![transaction details](/images/image-27.png)
 
 Copie o hash da transação para verificá-la no blockchain explorer
 
-![transaction hash](image-28.png)
+![transaction hash](/images/image-28.png)
 
-![transaction hash copied](image-29.png)
+![transaction hash copied](/images/image-29.png)
 
 Neste examplo, o hash da transação é:
 
@@ -252,17 +254,17 @@ O RSK explorer é o blockchain explorer para as transações da RSK. Estamos uti
 
 [explorer.testnet.rsk.co](https://explorer.testnet.rsk.co/)
 
-![explorer](image-30.png)
+![explorer](/images/image-30.png)
 
 Cole o hash da transação no campo de pesquisa, no alto da tela
 
-![search](image-31.png)
+![search](/images/image-31.png)
 
-![search transaction](image-32.png)
+![search transaction](/images/image-32.png)
 
 Este é o resultado:
 
-![transaction result](image-33.png)
+![transaction result](/images/image-33.png)
 
 Você pode verificar meu exemplo aqui: [`0x419c4b17ec0bf59568d9b5f5c7f0e4678039f52b9c644c2914ccd0bd2bb331da`](https://explorer.testnet.rsk.co/tx/0x419c4b17ec0bf59568d9b5f5c7f0e4678039f52b9c644c2914ccd0bd2bb331da)
 
@@ -270,11 +272,11 @@ Você pode verificar meu exemplo aqui: [`0x419c4b17ec0bf59568d9b5f5c7f0e4678039f
 
 Quando fazemos a publicação de um smart contract utilizando Remix, podemos encontrá-lo no painel a esquerda, no item deploy and run transactions:
 
-![deployed contracts](image-34.png)
+![deployed contracts](/images/image-34.png)
 
 Clique em `>` para enxergar os detalhes do SimpleStorage:
 
-![SimpleStorage](image-35.png)
+![SimpleStorage](/images/image-35.png)
 
 Aparecerão as mesmas funções que criamos em nosso smart contract!
 
@@ -288,41 +290,41 @@ Primeiro vamos verificar o valor armazenado logo após a publicação.
 
 Clique no botão get
 
-![get](image-36.png)
+![get](/images/image-36.png)
 
 Não temos nenhum valor armazenado porque não definimos nada quando fizemos a publicação.
 
 No área de mensagens à direita, podemos verificar que foi chamada a função `SimpleStorage.get()`:
 
-![transaction get](image-37.png)
+![transaction get](/images/image-37.png)
 
 ### Set
 
 Defina um valor no campo do lado direito do botão set, e depois clique no botão.
 
-![value to set](image-38.png)
+![value to set](/images/image-38.png)
 
 Abrirá uma janela popup do Metamask, para confirmar a transação para armazenar o valor no blockchain.
 
-![confirm transaction](image-39.png)
+![confirm transaction](/images/image-39.png)
 
 Clique em confirme - confirm
 
 No painel de mensagens embaixo, à direita, podemos verificar que a transação está pendente, esperando a confirmação no blockchain:
 
-![transaction status](image-40.png)
+![transaction status](/images/image-40.png)
 
 Depois de alguns segundos, Metamask mostrará quando a transação for confirmada!
 
-![transaction mined](image-41.png)
+![transaction mined](/images/image-41.png)
 
 No painel de mensagens embaixo, à direita, temos os detalhes da transação:
 
-![transaction details](image-42.png)
+![transaction details](/images/image-42.png)
 
 Você pode copiar o hash da transação e também verificar no RSK explorer: [`0xb9f4d73e7555d2b3cdf516f2d3044daa58669f7324cb957f2b83da21a6c89b4b`](https://explorer.testnet.rsk.co/tx/0xb9f4d73e7555d2b3cdf516f2d3044daa58669f7324cb957f2b83da21a6c89b4b)
 
-![explorer](image-43.png)
+![explorer](/images/image-43.png)
 
 ### Get (novamente)
 
@@ -330,7 +332,7 @@ Agora que temos o valor 2020 salvo, podemos consultar
 
 Clique no botão get
 
-![get](image-44.png)
+![get](/images/image-44.png)
 
 E o valor está correto!
 
@@ -338,9 +340,9 @@ E o valor está correto!
 
 É possível verificar todas as transações no Metamask
 
-![Metamask transactions](image-45.png)
+![Metamask transactions](/images/image-45.png)
 
-![Metamask transactions](image-46.png)
+![Metamask transactions](/images/image-46.png)
 
 ## Considerações finais
 
