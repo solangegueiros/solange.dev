@@ -25,6 +25,11 @@ Executaremos estas etapas:
 6. Publique o smart contract utilizando o console Geth;
 7. Interagir com o smart contract.
 
+## Video
+
+Caso prefira assistir um video, eu ministrei um workshop online sobre este tutorial:
+<a href="https://www.youtube.com/watch?v=TP6pxdwoHT0" target="_blank"> clique aqui</a>
+
 ## Requirements
 
 - Java JDK
