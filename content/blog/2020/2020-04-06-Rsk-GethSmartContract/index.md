@@ -37,7 +37,7 @@ Caso prefira assistir um video, eu ministrei um workshop online sobre este tutor
 - Geth
 - Remix - ferramenta online
 
-Importante fazer este tutorial antes de continuar: [Utilizando Geth para conectar em um nó local RSK](/2020-04-05-Rsk-GethAttachLocalNode/).
+Importante fazer este tutorial antes de continuar: [Utilizando Geth para conectar em um nó local RSK](/2020/2020-04-05-Rsk-GethAttachLocalNode/).
 
 ## Executando um nó local da RSK
 
