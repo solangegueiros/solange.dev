@@ -13,7 +13,7 @@ Neste tutorial mostrarei passo a passo como criar seu primeiro frontend para um 
 
 # Overview
 
-Aqui está um resumo das etapas que faremos para construir nossos frontend:
+Aqui está um resumo das etapas que faremos para construir nosso frontend:
 
 1. Configurar Metamask para se conectar a testnet RSK;
 2. Adquirir alguns testnet R-BTCs no faucet;
@@ -50,7 +50,7 @@ Como já mencionado, instalar Metamask e conectar a RSK testnet, além de conect
 
 ## Node.js e NPM
 
-Precisamo do Node.js e NPM, eles são instalados juntos.
+Precisamos do Node.js e NPM, eles são instalados juntos.
 
 Pra verificar se Node.js e NPM já estão instalados, verifique se os comandos abaixo funcionam no terminal:
 
@@ -412,7 +412,7 @@ app.listen('3300');
 console.log('Running at\nhttp://localhost:3300');
 ```
 
-Este arquivo configura o servidor HTML express HTML.
+Este arquivo configura o servidor HTML express.
 
 ## Executando
 
