@@ -1,5 +1,5 @@
 ---
-title: Crie seu primeiro token
+title: Crie seu primeiro token na rede RSK
 date: "2020-04-26T10:00:00.000Z"
 description: "Como criar um token ERC20 com menos de 10 linhas de código! Vamos utilizar Truffle e os smart contracts da Open Zeppelin, publicando na testnet da RSK.
 "
@@ -28,7 +28,7 @@ Aqui está um resumo das etapas que faremos para construir nosso token:
 ## Video
 
 Caso prefira assistir um video, eu ministrei um workshop online sobre este tutorial:
-<a href="https://www.youtube.com/watch?v=s1eynLMYfe8" target="_blank"> clique aqui</a>
+<a href="https://www.youtube.com/watch?v=9P0HtQ4s9wc" target="_blank"> clique aqui</a>
 
 ## Pré-requisitos
 
