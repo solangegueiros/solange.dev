@@ -1,5 +1,5 @@
 ---
-title: Crie seu primeiro token
+title: Crie seu primeiro token na rede RSK
 date: "2020-04-26T10:00:00.000Z"
 description: "Como criar um token ERC20 com menos de 10 linhas de código! Vamos utilizar Truffle e os smart contracts da Open Zeppelin, publicando na testnet da RSK.
 "
@@ -28,7 +28,7 @@ Aqui está um resumo das etapas que faremos para construir nosso token:
 ## Video
 
 Caso prefira assistir um video, eu ministrei um workshop online sobre este tutorial:
-<a href="https://www.youtube.com/watch?v=s1eynLMYfe8" target="_blank"> clique aqui</a>
+<a href="https://www.youtube.com/watch?v=9P0HtQ4s9wc" target="_blank"> clique aqui</a>
 
 ## Pré-requisitos
 
@@ -88,7 +88,7 @@ truffle version
 
 ![truffle version](/images/image-04.png)
 
-Mais informações:  
+Mais informações:
 
 [trufflesuite.com/truffle](https://www.trufflesuite.com/truffle)
 
@@ -149,10 +149,10 @@ Vale ressaltar que essas bibliotecas foram revisadas e auditadas visando altos p
 No terminal, na pasta `token`, instale as biblitecas OpenZeppelin com este comando:
 
 ```shell
-npm install --E @openzeppelin/contracts@2.5.0
+npm install -E @openzeppelin/contracts@2.5.0
 ```
 
-A opção `--E` é para salvar no arquivo de configuração npm as dependencias na versão definida na instalação, e não com a versão default.
+A opção `-E` é para salvar no arquivo de configuração npm as dependências na versão definida na instalação, e não com a versão default.
 Os smart contracts podem ser alterados de uma versão para outra, então é importante fixar a versão porque nosso tutorial foi escrito utilizando esta versão.
 
 ![openzeppelin install](/images/image-08.png)
@@ -165,14 +165,14 @@ Mais informações:
 
 Para conectar a rede RSK network, utilizaremos um pacote provedor que possibilida a conexão a qualquer rede desbloqueando uma conta localmente. 
 Utilizaremos `@truffle/hdwallet-provider`. 
-Pode ser utilizada para assinar transações de endereços gerados a partir de um mnemônico com 12 ou 24 palavras.
+Pode ser utilizado para assinar transações de endereços gerados a partir de um mnemônico com 12 ou 24 palavras.
 
-> Precisa ter instaldo o Node >= 7.6.
+> Precisa ter instalado o Node >= 7.6.
 
 No terminal, na pasta `token`, instale com este comando:
 
 ```shell
-npm install --E @truffle/hdwallet-provider@1.0.34
+npm install -E @truffle/hdwallet-provider@1.0.34
 ```
 
 ![hd wallet provider install](/images/image-09.png)
@@ -212,7 +212,7 @@ Você vai receber um retorno parecido com este:
 ![eth_blockNumber jsonrpc result](/images/image-42.png)
 
 O resultado é apresentado em hexadecimal. `0xc3f9b` é o bloco número `802.715`. 
-Pode pode consultar o site [explorer.testnet.rsk.co](https://explorer.testnet.rsk.co/) e verificar que é o mesmo número de bloco.
+Consultando o site [explorer.testnet.rsk.co](https://explorer.testnet.rsk.co/) e é possível verificar que é o mesmo número de bloco.
 
 ![explorer.testnet.rsk.co blockNumber](/images/image-43.png)
 
@@ -224,13 +224,15 @@ Vamos utilizar este site:
 
 [iancoleman.io/bip39](https://iancoleman.io/bip39/)
 
-> Isto não é recomendado para uma carteira com fundos de verdade, que valem dinheiro real, porque esta não é uma maneira segura de gerar um mnemônico e chaves privadas. Para fins educacionais podemos utilizar aqui, dado que vamos nos conectar à testnet.
+> Isto não é recomendado para uma carteira com fundos de verdade, que valem dinheiro real, porque não é tão seguro gerar um mnemônico e chaves privadas em um website.
+> Para fins educacionais podemos utilizar aqui, dado que vamos nos conectar à testnet.
 
 No campo `Generate a random mnemonic` , selecione `12 words` and clique no botão `generate`.
 
 ![Generate a random mnemonic](/images/image-12.png)
 
-O resultado estará no campo `BIP39 Mnemonic`. São 12 palavras aleatórias, como da figura abaixo:
+O resultado estará no campo `BIP39 Mnemonic`. 
+São 12 palavras aleatórias, como da figura abaixo:
 
 ![BIP39 Mnemonic](/images/image-13.png)
 
@@ -316,7 +318,7 @@ No meu exemplo, a conta é `0x9682725a85f85f097ab368555a286618dc982c99`. Copie e
 
 ## Verifique o saldo
 
-Agora, vamos verificar o saldo de nossa conta. Execute este comando no truffle console:
+Agora, vamos verificar o saldo de nossa conta. Execute este comando no Truffle console:
 
 ```javascript
 (await web3.eth.getBalance(account)).toString()
@@ -348,9 +350,9 @@ Você pode ver o hash da transação, por examplo, eu fiz esta:
 
 E agora eu tenho 0.05 tR-BTC!
 
-## Check balance (again)
+## Consulte o saldo (de novo)
 
-Vamos verificar o saldo de nossa conta novamente. Execute este comando no Truffle console:
+Verifique o saldo de nossa conta novamente. Execute este comando no Truffle console:
 
 ```javascript
 (await web3.eth.getBalance(account)).toString()
