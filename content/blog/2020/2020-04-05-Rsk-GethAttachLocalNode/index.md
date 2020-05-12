@@ -115,15 +115,16 @@ A resposta será algo parecido com:
 {"jsonrpc":"2.0","id":1,"result":"0xfc0"}
 ```
 
-A propriedade `result` está retornando o número do último bloco sincrinizado. No nosso caso, que é um nó local isolado, é o último bloco minerado. 
+A propriedade `result` está retornando o número do último bloco sincronizado. 
+No nosso caso, que é um nó local isolado, é o último bloco minerado. 
 Perceba que o valor está em hexadecimal. No exemplo acima, o número do bloco é 4032.
 
 Para saber mais:
-[Setup RSKj with Java](/rsk/node/install/java/)
+[Setup RSKj with Java](https://developers.rsk.co/rsk/node/install/java/)
 
-Se você tiver algum problema, verifique se o seu sistema atende os pré-requisitos [minimum requirements](/rsk/node/install/requirements/).
+Se você tiver algum problema, verifique se o seu sistema atende os pré-requisitos [minimum requirements](https://developers.rsk.co/rsk/node/install/requirements/).
 
-Existem outras formas de instalar um nó RSK, em outras plataformas: [Instalando RSKj](/rsk/node/install/)
+Existem outras formas de instalar um nó RSK, em outras plataformas: [installing RSKj](https://developers.rsk.co/rsk/node/install/)
 
 ### Instalando Geth
 
