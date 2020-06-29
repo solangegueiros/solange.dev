@@ -47,9 +47,9 @@ Vá em [metamask.io](https://metamask.io/) e faça a instalação.
 
 Crie uma conta / carteira.
 
-Salve seu mnemonico, ou frase de backup, ou seed (tudo isso siginifica a mesma coisa), com 12 palavras. Estas palavras serão a única forma de recuperar sua conta, se você esquecer ou perder sua senha.
+Salve seu mnemônico, ou frase de backup, ou seed (tudo isso significa a mesma coisa), com 12 palavras. Estas palavras serão a única forma de recuperar sua conta, se você esquecer ou perder sua senha.
 
-O mnemonic é a parte mais importante em uma conta / carteira!
+O mnemônico é a parte mais importante em uma conta / carteira!
 
 ### Remix
 
@@ -207,7 +207,7 @@ Verifique o sinal verde no 3o botão com a mensagem `compilation successful`
 
 ## Publique o smart contract na RSK testnet
 
-No painel à esquerda, clique por botão `Deploy and run transactions`. Atualmente é o 4o botão.
+No painel à esquerda, clique no botão `Deploy and run transactions`. Atualmente é o 4o botão.
 
 ![Deploy and run transactions](/images/image-21.png)
 
@@ -215,7 +215,7 @@ Como nós só temos um smart contract, ele é automaticamente selecionado na lis
 
 ![SimpleStorage.sol](/images/image-22.png)
 
-Clique in the botão `Deploy`.
+clique no botão `Deploy`.
 
 Metamask abrirá uma janela do tipo "popup" para confirmar a transação configurada pelo Remix para fazer a publicação do smart contract SimpleStorage.sol
 

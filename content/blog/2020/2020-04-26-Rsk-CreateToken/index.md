@@ -57,7 +57,7 @@ Neste tutorial estou utilizando VSCode para criar os arquivos do projeto.
 
 Para instalar, [faça o download aqui](https://code.visualstudio.com/download).
 
-Verique se a instalação do VS code está ok consultando sua versão no terminal:
+Verifique se a instalação do VS code está ok consultando sua versão no terminal:
 
 ```shell
 code -v
@@ -283,7 +283,7 @@ module.exports = {
 
 Truffle tem seu próprio console para executar comandos.
 
-## Verique a conexão à testnet RSK
+## Verifique a conexão à testnet RSK
 
 Vamos abrir o Truffle console conectando à testnet RSK.
 

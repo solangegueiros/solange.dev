@@ -69,7 +69,7 @@ Neste tutorial estou utilizando VSCode para criar os arquivos do projeto.
 
 Para instalar, [faça o download aqui](https://code.visualstudio.com/download).
 
-Verique se a instalação do VS code está ok consultando sua versão no terminal:
+Verifique se a instalação do VS code está ok consultando sua versão no terminal:
 
 ```shell
 code -v
