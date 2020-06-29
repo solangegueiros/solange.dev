@@ -1,21 +1,21 @@
 ---
 title: Blockopoly - parte 2
 date: "2020-06-29T13:00:00.000Z"
-description: "Criando o jogo Blockopoly - parte 2."
+description: "Na parte 2 do tutorial Blockopoly você vai criar mais um smart contract da arquitetura do jogo, o gerenciador de ativos 'AssetManager' e interagir com ele, entendendo sua lógica e funcionamento no Blockchain."
 tags: tutorial, ethereum, rsk, smart-contract, reactors
 type: blog
 ---
 
-Neste tutorial você vai aprender passo por passo como criar o jogo Blockopolio, uma divertida variação de um famoso jogo de tabuleiro. A ideia principal do jogo mapeia muito bem os sistemas Blockchain e vamos construir partes do jogo para demonstrar isto.
+Neste tutorial você vai aprender passo por passo como criar o jogo Blockopoly uma divertida variação de um famoso jogo de tabuleiro. A ideia principal do jogo mapeia muito bem os sistemas Blockchain e vamos construir partes do jogo para demonstrar isto.
 
 Nosso jogo é composto por 3 smart contracts: 
 - Bank
 - AssetManager
-- Blockopolio
+- Blockopoly
 
 Na [parte 1](/2020/blockopoly-01/) apresentamos a arquitetura do jogo e criamos o primeiro smart contract: `Bank`, que controla o dinheiro, os saldos de cada um, a emissão e transferências.  
 
-Nesta parte do tutorial continuaremos com o gerenciador de ativos, o smart contract `AssetManager`, que é o administrador das propriedades que serão negociadas. 
+Nesta segunda parte do tutorial continuaremos com o gerenciador de ativos, o smart contract `AssetManager`, que é o administrador das propriedades que serão negociadas. 
 
 # Asset Manager
 
@@ -39,7 +39,7 @@ As propriedades do nosso jogo serão os espaços [Microsoft Reactors](https://de
 * Shanghai Reactor
 * Bangalore Reactor
 
-Nestes espaços profissionais de tecnologia se encontram, aprendem e se conectam - tanto aos colegas locais quanto às idéias e tecnologias líderes da indústria na Microsoft, parceiros e comunidades de código aberto.
+Nestes espaços profissionais da área se encontram, aprendem e se conectam - tanto aos colegas locais quanto às idéias e tecnologias líderes da indústria na Microsoft, parceiros e comunidades de código aberto.
 
 ## Crie o smart contract
 
@@ -281,7 +281,7 @@ Não foi implementada uma função para listar as propriedades disponíveis. Voc
 
 # Próximos passos
 
-Nesta parte do tutorial do jogo `Blockopolio` foi ensinado como criar o smart contract `AssetManager`, nosso gerenciador de ativos que é o administrador das propriedades negociadas. 
+Nesta parte do tutorial do jogo `Blockopoly` foi ensinado como criar o smart contract `AssetManager`, nosso gerenciador de ativos que é o administrador das propriedades negociadas. 
 
 Na [parte 1](/2020/blockopoly-01/) você conheceu a arquitetura do projeto e o primeiro smart contract: `Bank`, que controla o dinheiro, os saldos de cada um, a emissão e transferências.
 
@@ -293,7 +293,7 @@ Lembre-se que nosso jogo é composto de 3 smart contracts:
 
 Na última parte do tutorial vamos continuar com o "coração" do projeto que é o smart contract `Blockopoly`, onde são definidos jogadores, propriedades negociadas, início, final do jogo e ganhador. Além disto demonstraremos o funcionamento de uma partida.
 
-Continue em [Blockopolio - parte 3](/2020/blockopoly-03/).
+Continue em [Blockopoly - parte 3](/2020/blockopoly-03/).
 
 Espero que esse tutorial tenha sido útil e agradeço caso tenha algum feedback para mim. Compartilhe o artigo caso tenha gostado :)
 

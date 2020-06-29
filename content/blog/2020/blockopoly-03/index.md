@@ -1,17 +1,17 @@
 ---
 title: Blockopoly - parte 3
 date: "2020-06-29T12:00:00.000Z"
-description: "Criando o jogo Blockopoly - parte 3."
+description: "Nesta terceira e última parte deste projeto Blockchain desenvolveremos o smart contract `Blockopoly` e demonstraremos o funcionamento de uma partida."
 tags: tutorial, ethereum, rsk, smart-contract, reactors
 type: blog
 ---
 
-Neste tutorial você vai aprender passo por passo como criar o jogo Blockopolio, uma divertida variação de um famoso jogo de tabuleiro. A ideia principal do jogo mapeia muito bem os sistemas Blockchain e vamos construir partes do jogo para demonstrar isto.
+Neste tutorial você vai aprender passo por passo como criar o jogo Blockopoly, uma divertida variação de um famoso jogo de tabuleiro. A ideia principal do jogo mapeia muito bem os sistemas Blockchain e vamos construir partes do jogo para demonstrar isto.
 
 Nosso jogo é composto por 3 smart contracts: 
 - Bank
 - AssetManager
-- Blockopolio
+- Blockopoly
 
 Na [parte 1](/2020/blockopoly-01/) apresentamos a arquitetura do jogo e criamos o primeiro smart contract: `Bank`, que controla o dinheiro, os saldos de cada um, a emissão e transferências.  
 

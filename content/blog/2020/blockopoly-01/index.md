@@ -1,18 +1,14 @@
 ---
 title: Blockopoly - parte 1
 date: "2020-06-29T14:00:00.000Z"
-description: "Criando o jogo Blockopoly - parte 1."
+description: "Neste tutorial Blockchain dividido em 3 partes você vai aprender passo por passo como criar o jogo Blockopoly, uma divertida variação do famoso jogo de tabuleiro 'Monopoly', ou 'Banco imobiliário', no Brasil. Este tutorial foi inspirado em uma excelente iniciativa da Microsoft Reactor. Esta é a parte 1."
 tags: tutorial, ethereum, rsk, smart-contract, reactors
 type: blog
 ---
 
-Neste tutorial você vai aprender passo por passo como criar o jogo Blockopoly, uma divertida variação de um famoso jogo de tabuleiro em que propriedades como bairros, casas, hotéis ou empresas são compradas e vendidas, em que uns jogadores ficam "ricos" e outros vão à falência. A ideia principal do jogo mapeia muito bem os sistemas Blockchain e vamos construir partes do jogo para demonstrar isto.
+Este é uma divertida variação de um famoso jogo de tabuleiro em que propriedades como bairros, casas, hotéis ou empresas são compradas e vendidas, em que uns jogadores ficam "ricos" e outros vão à falência. No Brasil é conhecido como 'Banco imobiliário', ou 'Monopoly' no mundo. A ideia principal do jogo mapeia muito bem os sistemas Blockchain e vamos construir partes do jogo para demonstrar isto.
 
-O jogo `Blockopoly` foi inspirado em uma excelente iniciativa da Microsoft Reactor
-
-[https://developer.microsoft.com/en-us/reactor/](https://developer.microsoft.com/en-us/reactor/)
-
-Nossas propriedades são os espaços `Reactors` espalhados pelo mundo:
+O jogo `Blockopoly` foi inspirado em uma excelente iniciativa da [Microsoft Reactor](https://developer.microsoft.com/en-us/reactor/). Nossas propriedades são os espaços `Reactors` espalhados pelo mundo:
 
 ![reactors map](/images/image-01.png)
 
@@ -85,7 +81,7 @@ code -v
 
 ## Remix
 
-Remix é uma ferramenta online. É um IDE (Integrated Development Environment - ambiente de desenvolvimento integrado) usado para escrever, compilar, publicar e depurar código fonte em Solidity. Pode ser conectado ao Metamask e, com essa conexão, utilizado para publicar contratos inteligentes em diversas redes.
+Remix é uma ferramenta Ethereum online. É um IDE (Integrated Development Environment - ambiente de desenvolvimento integrado) usado para escrever, compilar, publicar e depurar código fonte em Solidity. Pode ser conectado ao Metamask e, com essa conexão, utilizado para publicar contratos inteligentes em diversas redes.
 
 Vá em [remix.ethereum.org](http://remix.ethereum.org/)
 
@@ -139,7 +135,7 @@ Veja um exemplo de lista de contas:
 
 ![account](/images/image-12.png)
 
-A cada vez que você inicia o Remix ou faz uma atualização na página a lista de contas é alterada.
+A cada vez que você inicia o Remix ou faz uma atualização na página, a lista de contas é alterada.
 
 # O jogo
 
@@ -159,7 +155,7 @@ O banco é a entidade que controla o dinheiro, tanto a emissão dele quanto as t
 
 ## Blockopoly
 
-Este é o smart contract principal do jogo. Através dele são definidos jogadores, propriedades negociadas, início, final do jogo e ganhador.
+Este é o smart contract principal do jogo. Através dele são definidos jogadores, propriedades negociadas, início, final do jogo e o ganhador.
 
 Então vamos lá! 
 
@@ -383,7 +379,7 @@ Recomendo clicar na seta para baixo ao lado direito do botão `sendMoney` para e
 
 ![sendMoney](/images/image-35.png)
 
-### Evento `Sent`
+### Evento *Sent*
 
 Expanda os detalhes da transação `sendMoney` e procure a parte logs. Você encontrará o evento `Sent`, com os detalhes da transferência de moedas:
 
@@ -405,7 +401,7 @@ E o valor foi subtraído no saldo da conta 1, que agora tem 700 moedas.
 
 # Próximos passos
 
-Nesta parte do tutorial do jogo `Blockopolio` foi ensinado como criar o smart contract `Bank`, que controla o dinheiro, os saldos de cada um, a emissão e transferências.  
+Nesta parte do tutorial do jogo `Blockopoly` foi ensinado como criar o smart contract `Bank`, utilizando a linguagem Solidity. Ele controla o dinheiro, os saldos de cada um, a emissão e transferências.  
 
 Lembre-se que nosso jogo é composto de 3 smart contracts: 
 
@@ -413,10 +409,10 @@ Lembre-se que nosso jogo é composto de 3 smart contracts:
 * AssetManager
 * Blockopoly
 
-Na próxima parte do tutorial vamos continuar com o gerenciador de ativos, o smart contract `AssetManager`, que é o administrador das propriedades que serão negociadas. 
+Na próxima parte do tutorial continuaremos com o gerenciador de ativos, o smart contract `AssetManager`, que é o administrador das propriedades que serão negociadas. 
 
-Continue em [Blockopolio - parte 2](/2020/blockopoly-02/).
+Continue em [Blockopoly - parte 2](/2020/blockopoly-02/).
 
-Espero que esse tutorial tenha sido útil e agradeço caso tenha algum feedback para mim. Compartilhe o artigo caso tenha gostado :)
+Espero que esse tutorial tenha sido útil e agradeço caso tenha algum feedback. Compartilhe o artigo caso tenha gostado :)
 
-Aguarde um vídeo sobre o assunto em meu canal: <a href="https://www.youtube.com/user/solangegueiros" target="_blank"> youtube Solange Gueiros</a>. Se quiser ser avisado quando a publicação acontecer é só assinar o canal.
+> Aguarde um vídeo sobre o assunto em meu canal: <a href="https://www.youtube.com/user/solangegueiros" target="_blank"> youtube Solange Gueiros</a>. Se quiser ser avisado quando a publicação acontecer, é só assinar o canal.
