@@ -15,9 +15,9 @@ Nosso jogo é composto por 3 smart contracts:
 
 Na [parte 1](/2020/blockopoly-01/) apresentamos a arquitetura do jogo e criamos o primeiro smart contract: `Bank`, que controla o dinheiro, os saldos de cada um, a emissão e transferências.  
 
-Na [parte 2](/2020/blockopoly-02/) foi ensinado como criar o smart contract `AssetManager`, nosso gerenciador de ativos que é o administrador das propriedades negociadas. 
+Na [parte 2](/2020/blockopoly-02/) foi ensinado como criar o smart contract `AssetManager`, nosso gerenciador de ativos, que é o administrador das propriedades negociadas. 
 
-Nesta terceira e última parte desenvolveremos o smart contract `Blockopoly` e demonstraremos o funcionamento de uma partida.
+Nesta terceira e última parte construiremos o smart contract `Blockopoly` e demonstraremos o funcionamento de uma partida.
 
 # Blockopoly
 
@@ -244,7 +244,7 @@ O smart contract `Blockopoly` é maior e mais complexo do que os anteriores, e p
 
 Se você fez a parte 1 e 2 deste tutorial, utilizando uma das contas da lista do Remix, já publicamos os smart contracts `Bank` e `AssetManager`. 
 Porém eles serão publicados novamente pelo smart contract `Blockopoly`.
-Para evitar confusão, é melhor limpar a lista `Deployed Contracts`, que apresenta os smart contracts já publicados.
+Para evitar confusão, é melhor limpar a lista `Deployed Contracts`, que apresenta os smart contracts já publicados anteriormente.
 
 Clique no ícone da lixeira, localizado ao lado direito de `Deployed Contracts`.
 
@@ -341,7 +341,7 @@ Para chamar a função `joinGame`, vou informar o parâmetro `Ana` e clicar no b
 
 A conta 2 é registrada como jogador, com o nome associado.
 
-### Evento `PlayerJoined`
+### Evento *PlayerJoined*
 
 Veja os detalhes da transação:
 
@@ -351,7 +351,7 @@ Expanda a transação e procure a parte logs. Você encontrará o evento `Player
 
 ![imageAltText](/images/image-77.png)
 
-### Variável `addrPlayerMapping`
+### Variável *addrPlayerMapping*
 
 Outra forma de conferir os dados da jogadora `Ana`, é fazendo uma chamada para o visualizador da variável `addrPlayerMapping`, passando a conta 2 como parâmetro.  
 
@@ -385,7 +385,7 @@ Quando todos os participantes já tiverem entrado, o banqueiro inicia o jogo cha
 
 Em nosso jogo, as pessoas jogarão alternadamente, começando na ordem em que se inscreveram através da função `joinGame`. 
 
-> Isto é um acordo verbal, mas pode ser implementado no smart contract futuramente.
+Isto é um acordo verbal, mas pode ser implementado no smart contract futuramente.
 
 Então vamos lá! Vá para a conta 1, que é o banqueiro, e clique no botão `startGame`. 
 
@@ -395,13 +395,13 @@ Você enviou uma transação para o smart contract:
 
  ![transact startGame](/images/image-84.png)
 
-### Evento `GameStarted`
+### Evento *GameStarted*
 
 Expanda a transação e procure a parte logs. Você encontrará o evento `GameStarted`, que avisa ao mundo que o jogo começou!
 
 ![GameStarted](/images/image-85.png)
 
-### Variável `Started`
+### Variável *Started*
 
 Consulte se o jogo foi iniciado, chamando o visualizador da variável started:
 
@@ -415,7 +415,7 @@ Ele retorna `True`, ou seja, jogo inciado.
 
 O smart contract `Bank` é quem controla os saldos dos jogadores.
 
-### Instância do `Bank`
+### Instância do *Bank*
 
 Para verificar um saldo, é preciso instanciar o smart contract `Bank` que foi publicado pelo smart contract `Blockopoly`.
 
@@ -456,19 +456,19 @@ Clique em `>` para ver as funções do `Bank`.
 
 No caso, quero saber o saldo das contas 2 e 3, que são os jogadores Ana e Ben.
 
-Saldo da conta 1, da Ana:
+Saldo da conta 2, da Ana:
 
 ![Ana account](/images/image-91.png)
 
 ![Ana balance](/images/image-92.png)
 
-Saldo do Ben, final  `021d5`
+Saldo da conta 3, do Ben:
 
 ![Ben account](/images/image-93.png)
 
 ![Ben balance](/images/image-94.png)
 
-> Isto foi detalhado no smart contract `Bank`, da [parte 1](/2020/blockopoly-01/) deste tutorial. Se tiver duvidas, pode revisar lá.
+> Isto foi detalhado no smart contract `Bank`, criado na [parte 1](/2020/blockopoly-01/) deste tutorial.
 
 ## Propriedades disponíveis
 
@@ -476,7 +476,7 @@ O smart contract `AssetManager` é quem gerencia as propriedades disponíveis.
 
 Não foi implementada uma função para listar as propriedades disponíveis. Este controle será realizado fora do Blockchain, faz parte da estratégia do jogo, por enquanto.
 
-### Instância do `AssetManager`
+### Instância do *AssetManager*
 
 É preciso instanciar o smart contract `AssetManager` que foi publicado pelo smart contract `Blockopoly`, da mesma forma que fizemos com o contrato `Bank`.
 
@@ -514,8 +514,7 @@ No início do jogo, ele é o proprietário de todas as propriedades. Veja mais u
 
 ![getOwner Redmond Reactor](/images/image-100.png)
 
-> Isto foi explicado no smart contract `AssetManager`, da [parte 2](/2020/blockopoly-02/) deste tutorial. 
-> Se tiver duvidas, pode revisar lá.
+> Isto foi explicado no smart contract `AssetManager`, criado na [parte 2](/2020/blockopoly-02/) deste tutorial. 
 
 # Comprando uma propriedade
 
@@ -541,16 +540,16 @@ Esta transação emite 2 eventos:
 
 ![buyProperty events](/images/image-103.png)
 
-### Continuando a comprar 
+### Continuando as compras 
 
 Ben comprará "Redmond Reactor".
 
-Ana escolherá outra propriedade para comprar, e assim sucessivamente, até acabar o tempo.
+Depois Ana escolherá outra propriedade para comprar, e assim sucessivamente, até acabar o tempo.
 
 ### Algumas dicas
 
 * Faz parte do jogo cada um ter seu controle de propriedades ainda disponíveis.
-* Caso um jogador tentar comprar uma propriedade que já é sua, ele terá desperdiçado a sua vez.
+* Se um jogador tentar comprar uma propriedade que já é sua, ele terá desperdiçado a sua vez.
 * Melhor comprar as propriedades do banco primeiro!
 * Quando um jogador compra uma propriedade de outro jogador ao invés de comprar do banco, ele está pagando para outro jogador, ou seja, está aumentando o saldo do outro, então esta não é a melhor estratégia.
 * A qualquer momento você pode consultar uma propriedade para saber quem é o seu dono.
@@ -558,7 +557,7 @@ Ana escolherá outra propriedade para comprar, e assim sucessivamente, até acab
 
 # Término do jogo
 
-Foi definido no smart contract `Blockopoly`que o jogo encerra 15 minutos após seu início.
+Foi definido no smart contract `Blockopoly` que o jogo encerra 15 minutos após seu início.
 E quem tiver mais dinheiro no final do jogo ganha.
 
 Os jogadores vão alternando a sua vez. Em algum momento, quando o jogador tentar comprar uma propriedade, não vai conseguir e receberá a mensagem `Game over`.
@@ -571,7 +570,7 @@ Isto pode ser acompanhado na tentativa de execução da transação:
 
 Após receber a mensagem `Game over`, chame a função `getWinner` para descobrir o ganhador da partida.
 
-Ana ganhou!
+**Ana ganhou!**
 
 ![getWinner](/images/image-105.png)
 
@@ -593,9 +592,7 @@ Não foi implementada uma função para listar as propriedades disponíveis, que
 
 ## Ordem dos jogadores
 
-Em nosso jogo, os jogadores jogarão alternadamente, começando na ordem em que se inscreveram através da função `joinGame`. 
-
-> Isto é um acordo verbal, mas pode ser implementado no smart contract futuramente.
+Em nosso jogo, os participantes jogarão alternadamente, começando na ordem em que se inscreveram através da função `joinGame`. Isto é um acordo verbal, mas pode ser implementado no smart contract futuramente.
 
 Ou... pode ser feito um sorteio do próximo jogador.
 
@@ -618,9 +615,7 @@ Caso queira publicar na Testnet da RSK, o tutorial [crie seu primeiro smart cont
 
 # Considerações finais
 
-O projeto `Blockopoly` foi inspirado em uma excelente iniciativa da Microsoft: [Reactor](https://developer.microsoft.com/en-us/reactor/).
-
-São espaços espalhados pelo mundo onde os profissionais experimentam tecnologias líderes da indústria na Microsoft, parceiros e comunidades de código aberto, enquanto se encontram, aprendem e criam conexões.
+O projeto `Blockopoly` foi inspirado em uma excelente iniciativa da Microsoft: [Reactor](https://developer.microsoft.com/en-us/reactor/). São espaços espalhados pelo mundo onde os profissionais experimentam tecnologias líderes da indústria na Microsoft, parceiros e comunidades de código aberto, enquanto se encontram, aprendem e criam conexões.
 
 Na [parte 1](/2020/blockopoly-01/) você conheceu a arquitetura do projeto e o primeiro smart contract: `Bank`, que controla o dinheiro, os saldos de cada um, a emissão e transferências.
 
@@ -630,4 +625,4 @@ Nesta terceira e última parte do tutorial criamos o "coração" do projeto que 
 
 Espero que esse tutorial tenha sido útil e agradeço caso tenha algum feedback para mim. Compartilhe o artigo caso tenha gostado :)
 
-Aguarde um vídeo sobre o assunto em meu canal: <a href="https://www.youtube.com/user/solangegueiros" target="_blank"> youtube Solange Gueiros</a>. Se quiser ser avisado quando a publicação acontecer é só assinar o canal.
+> Aguarde um vídeo sobre o assunto em meu canal: <a href="https://www.youtube.com/user/solangegueiros" target="_blank"> youtube Solange Gueiros</a>. Se quiser ser avisado quando a publicação acontecer é só assinar o canal.
