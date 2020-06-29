@@ -23,7 +23,7 @@ Nesta segunda parte do tutorial continuaremos com o gerenciador de ativos, o sma
 
 As propriedades do nosso jogo serão os espaços [Microsoft Reactors](https://developer.microsoft.com/en-us/reactor/) espalhados pelo mundo:
 
-![Microsoft Reactors](image_39.png)
+![Microsoft Reactors](/images/image-39.png)
 
 * Redmond Reactor
 * Seattle Reactor
@@ -49,7 +49,7 @@ Clique no símbolo `+` create a new file.
 
 Nome do arquivo / file name: `AssetManager.sol`
 
-![filename assetManager.sol](image_40.png)
+![filename assetManager.sol](/images/image-40.png)
 
 Copie o códido fonte:
 
@@ -118,7 +118,7 @@ contract AssetManager {
 
 E cole aqui:
 
-![Remix AssetManager.sol](image_41.png)
+![Remix AssetManager.sol](/images/image-41.png)
 
 ## AssetManager.sol
 
@@ -154,11 +154,11 @@ Caso isto não aconteça, compile manualmente:
 * Clique no 3o botão do lado esquerdo - Solidity compiler
 * Clique no botão `Compile AssetManager.sol`
 
-![Compile AssetManager.sol](image_42.png)
+![Compile AssetManager.sol](/images/image-42.png)
 
 Verifique o sinal verde no 3o botão com a mensagem `compilation successful`
 
-![compilation successful](image_43.png)
+![compilation successful](/images/image-43.png)
 
 ## Publique o smart contract localmente
 
@@ -166,15 +166,15 @@ No painel à esquerda, clique no botão `Deploy and run transactions`. Atualment
 
 Confira se o smart contract `AssetManager` está selecionado na lista.
 
-![select contract](image_44.png)
+![select contract](/images/image-44.png)
 
 Clique no botão `Deploy`.
 
-![deploy](image_45.png)
+![deploy](/images/image-45.png)
 
 Confira na parte de baixo, à direita, a mensagem: `creation of  AssetManager pending …` e, em seguida, a transação de criação do smart contract.
 
-![transaction](image_46.png)
+![transaction](/images/image-46.png)
 
 Se quiser ver os detalhes da transação, clique na seta à direita do botão Debug. 
 
@@ -184,25 +184,25 @@ Quando fazemos a publicação de um smart contract utilizando Remix, podemos enc
 
 Veja na parte debaixo da tela se o smart contract foi publicado:
 
-![Deployed Contracts](image_47.png)
+![Deployed Contracts](/images/image-47.png)
 
 Clique em `>`:
 
-![AssetManager expand](image_48.png)
+![AssetManager expand](/images/image-48.png)
 
 Aparecerão as mesmas funções que criamos em nosso smart contract!
 
-![AssetManager ABI](image_49.png)
+![AssetManager ABI](/images/image-49.png)
 
 ### Manager
 
 Clique no botão `manager` e veja quem é o gerente no smart contract. É a conta que fez a publicação do smart contract. Em nosso caso, a primeira conta da lista `ACCOUNT`, final  `0C8B1`.
 
-![manager](image_50.png)
+![manager](/images/image-50.png)
 
 Veja a chamada da função no terminal, embaixo, à direita: 
 
-![manager transaction](image_51.png)
+![manager transaction](/images/image-51.png)
 
 Você pode acompanhar detalhes como custo de gás e conta para todas as chamadas de funções pelo terminal.
 
@@ -216,15 +216,15 @@ Vamos chamar a função `addAsset` com os seguintes parâmetros:
 
 > Clique na seta para baixo, no lado direito do botão `addAsset`, para expandir os parâmetros.
 
-![addAsset parameters](image_52.png)
+![addAsset parameters](/images/image-52.png)
 
 Após preencher os parâmetros, clique no botão `transact`.
 
 Veja os detalhes da transação no terminal:
 
-![addAsset transact](image_53.png)
+![addAsset transact](/images/image-53.png)
 
-### Evento `AssetAdded`
+### Evento *AssetAdded*
 
 Expanda os detalhes da transação `addAsset` e procure a parte logs. Você encontrará o evento `AssetAdded`, com os detalhes da inclusão da propriedade:
 
@@ -232,7 +232,7 @@ Expanda os detalhes da transação `addAsset` e procure a parte logs. Você enco
 
 * Name - nome da propriedade
 
-![event AssetAdded](image_54.png)
+![event AssetAdded](/images/image-54.png)
 
 ### Dono de uma propriedade
 
@@ -240,7 +240,7 @@ Para saber quem é o dono de uma propriedade, utilize a função `getOwner`.
 
 Por exemplo, vamos verificar a propriedade cadastrada anteriormente.  Preencha o parâmetro: `Redmond Reactor` e clique no botão `getOwner`:
 
-![getOwner](image_55.png)
+![getOwner](/images/image-55.png)
 
 O resultado é o endereço da conta cadastrada anteriormente.
 
@@ -260,9 +260,9 @@ Por exemplo, vamos transferir a propriedade cadastrada anteriormente para a cont
 
 Clique no botão `transact`
 
-![transact transferAsset](image_56.png)
+![transact transferAsset](/images/image-56.png)
 
-### Evento `AssetTransfered`
+### Evento *AssetTransfered*
 
 Expanda os detalhes da transação `transferAsset` e procure a parte `logs`. Você encontrará o evento `AssetTransfered`, com os detalhes da transferência da propriedade:
 
@@ -273,7 +273,7 @@ Expanda os detalhes da transação `transferAsset` e procure a parte `logs`. Voc
 
 Veja nosso exemplo:
 
-![event AssetTransfered](image_57.png)
+![event AssetTransfered](/images/image-57.png)
 
 ## Propriedades disponíveis
 
@@ -281,7 +281,7 @@ Não foi implementada uma função para listar as propriedades disponíveis. Voc
 
 # Próximos passos
 
-Nesta parte do tutorial do jogo `Blockopoly` foi ensinado como criar o smart contract `AssetManager`, nosso gerenciador de ativos que é o administrador das propriedades negociadas. 
+Nesta parte do tutorial do jogo `Blockopoly` foi ensinado como criar o smart contract `AssetManager` utilizando a linguagem Solidity. Ele é nosso gerenciador de ativos, ou seja, o administrador das propriedades negociadas. 
 
 Na [parte 1](/2020/blockopoly-01/) você conheceu a arquitetura do projeto e o primeiro smart contract: `Bank`, que controla o dinheiro, os saldos de cada um, a emissão e transferências.
 
@@ -291,10 +291,10 @@ Lembre-se que nosso jogo é composto de 3 smart contracts:
 * AssetManager
 * Blockopoly
 
-Na última parte do tutorial vamos continuar com o "coração" do projeto que é o smart contract `Blockopoly`, onde são definidos jogadores, propriedades negociadas, início, final do jogo e ganhador. Além disto demonstraremos o funcionamento de uma partida.
+Na última parte do tutorial construiremos o "coração" do projeto, que é o smart contract `Blockopoly`. Nele são definidos jogadores, propriedades negociadas, início, final do jogo e o ganhador. Além disto, demonstraremos o funcionamento de uma partida.
 
 Continue em [Blockopoly - parte 3](/2020/blockopoly-03/).
 
 Espero que esse tutorial tenha sido útil e agradeço caso tenha algum feedback para mim. Compartilhe o artigo caso tenha gostado :)
 
-Aguarde um vídeo sobre o assunto em meu canal: <a href="https://www.youtube.com/user/solangegueiros" target="_blank"> youtube Solange Gueiros</a>. Se quiser ser avisado quando a publicação acontecer é só assinar o canal.
+> Aguarde um vídeo sobre o assunto em meu canal: <a href="https://www.youtube.com/user/solangegueiros" target="_blank"> youtube Solange Gueiros</a>. Se quiser ser avisado quando a publicação acontecer é só assinar o canal.

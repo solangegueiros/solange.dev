@@ -23,7 +23,7 @@ Nesta terceira e última parte desenvolveremos o smart contract `Blockopoly` e d
 
 O `Blockopoly` é smart contract principal do jogo. Através dele são definidos os jogadores, as propriedades negociadas, o início e final do jogo.
 
-![Monopoly - Ylanite Koppens - Pexels](image_58.png)
+![Monopoly - Ylanite Koppens - Pexels](/images/image-58.png)
 
 Imagem: [Ylanite Koppens - Pexels](https://www.pexels.com/pt-br/foto/abstrato-banco-imobiliario-borrao-brincadeiras-776654/)
 
@@ -39,7 +39,7 @@ Clique no símbolo `+` create a new file.
 
 Nome do arquivo / file name: `Blockopoly.sol`
 
-![filename Blockopoly.sol](image_59.png)
+![filename Blockopoly.sol](/images/image-59.png)
 
 Copie o códido fonte:
 
@@ -162,7 +162,7 @@ contract Blockopoly {
 
 E cole no arquivo `Blockopoly.sol`.
 
-![Remix Blockopoly.sol](image_60.png)
+![Remix Blockopoly.sol](/images/image-60.png)
 
 ## Blockopoly.sol
 
@@ -220,11 +220,11 @@ Caso isto não aconteça, compile manualmente:
 
 > Nosso projeto precisa do compilador na versão 0.5.5 ou acima.
 
-![Compile Blockopoly.sol](image_61.png)
+![Compile Blockopoly.sol](/images/image-61.png)
 
 Verifique o sinal verde no 3o botão com a mensagem `compilation successful`.
 
-![compilation successful](image_62.png)
+![compilation successful](/images/image-62.png)
 
 ## Publique o smart contract localmente
 
@@ -238,7 +238,7 @@ O smart contract `Blockopoly` é maior e mais complexo do que os anteriores, e p
 
 * Aumente o `Gas Limit` para `6000000` (seis milhões).
 
-![Gas Limit](image_63.png)
+![Gas Limit](/images/image-63.png)
 
 ### Limpe a lista de contratos
 
@@ -248,11 +248,11 @@ Para evitar confusão, é melhor limpar a lista `Deployed Contracts`, que aprese
 
 Clique no ícone da lixeira, localizado ao lado direito de `Deployed Contracts`.
 
-![Clean Deployed Contracts](image_64.png)
+![Clean Deployed Contracts](/images/image-64.png)
 
 E a lista aparecerá vazia novamente:
 
-![Deployed Contracts list empty](image_65.png)
+![Deployed Contracts list empty](/images/image-65.png)
 
 ### Selecione o contrato
 
@@ -260,17 +260,17 @@ O arquivo `Blockopoly.sol` importa outros dois smart contracts (`Bank` e `AssetM
 
 > É fundamental selecionar o smart contract `Blockopoly`!
 
-![select contract](image_66.png)
+![select contract](/images/image-66.png)
 
 ### Deploy
 
 Clique no botão `Deploy`.
 
-![deploy](image_67.png)
+![deploy](/images/image-67.png)
 
 No terminal, abaixo e à direita, aparecerá a mensagem: `creation of  Blockopoly pending …` e, em seguida, a transação da criação do smart contract.
 
-![transaction](image_68.png)
+![transaction](/images/image-68.png)
 
 Se quiser ver os detalhes da transação, clique na seta à direita do botão Debug. 
 
@@ -278,15 +278,15 @@ Se quiser ver os detalhes da transação, clique na seta à direita do botão De
 
 Veja o smart contract publicado no painel à esquerda, no item deploy and run transactions, `Deployed Contracts`:
 
-![Deployed Contracts](image_69.png)
+![Deployed Contracts](/images/image-69.png)
 
 Clique em `>`:
 
-![Blockopoly expand](image_70.png)
+![Blockopoly expand](/images/image-70.png)
 
 Aparecerão as mesmas funções que criamos em nosso smart contract!
 
-![Blockopoly ABI](image_71.png)
+![Blockopoly ABI](/images/image-71.png)
 
 # Vamos jogar!
 
@@ -314,11 +314,11 @@ Por exemplo, eu fiz a publicação a partir da conta 1, final `5ED40`.
 Esta conta é o banqueiro.
 Você pode conferir quem é o banqueiro chamando a função `banker`, clicando no botão equivalente:
 
-![banker](image_72.png)
+![banker](/images/image-72.png)
 
 Veja a chamada da função: 
 
-![transaction](image_73.png)
+![transaction](/images/image-73.png)
 
 > O banqueiro não pode ser um jogador "normal", quem for o banqueiro fará exclusivamente este papel.
 
@@ -332,12 +332,12 @@ Na lista Account, selecione a segunda conta. Na minha lista é a conta final  `B
 
 Então a conta 2 será o primeiro jogador e seu nome será `Ana`.
 
-![select account](image_74.png)
+![select account](/images/image-74.png)
 
 
 Para chamar a função `joinGame`, vou informar o parâmetro `Ana` e clicar no botão `joinGame`. 
 
-![joinGame](image_75.png)
+![joinGame](/images/image-75.png)
 
 A conta 2 é registrada como jogador, com o nome associado.
 
@@ -345,11 +345,11 @@ A conta 2 é registrada como jogador, com o nome associado.
 
 Veja os detalhes da transação:
 
-![event PlayerJoined](image_76.png)
+![event PlayerJoined](/images/image-76.png)
 
 Expanda a transação e procure a parte logs. Você encontrará o evento `PlayerJoined`, com os detalhes do jogador.
 
-![imageAltText](image_77.png)
+![imageAltText](/images/image-77.png)
 
 ### Variável `addrPlayerMapping`
 
@@ -357,25 +357,25 @@ Outra forma de conferir os dados da jogadora `Ana`, é fazendo uma chamada para 
 
 Veja o resultado:
 
-![addrPlayerMapping](image_78.png)
+![addrPlayerMapping](/images/image-78.png)
 
 ### Segundo Jogador: Ben
 
 Na lista Account, selecione a terceira conta. Na minha lista é a conta final  `0EE5c`.
 
-![select account](image_79.png)
+![select account](/images/image-79.png)
 
 Execute novamente a função `joinGame`, agora com o parâmetro `Ben`.
 
-![joinGame](image_80.png)
+![joinGame](/images/image-80.png)
 
 Veja o log da transação:
 
-![event PlayerJoined](image_81.png)
+![event PlayerJoined](/images/image-81.png)
 
 Ou consulte o mapping:
 
-![addrPlayerMapping](image_82.png)
+![addrPlayerMapping](/images/image-82.png)
 
 ## Início do jogo
 
@@ -389,23 +389,23 @@ Em nosso jogo, as pessoas jogarão alternadamente, começando na ordem em que se
 
 Então vamos lá! Vá para a conta 1, que é o banqueiro, e clique no botão `startGame`. 
 
-![startGame](image_83.png)
+![startGame](/images/image-83.png)
 
 Você enviou uma transação para o smart contract:
 
- ![transact startGame](image_84.png)
+ ![transact startGame](/images/image-84.png)
 
 ### Evento `GameStarted`
 
 Expanda a transação e procure a parte logs. Você encontrará o evento `GameStarted`, que avisa ao mundo que o jogo começou!
 
-![GameStarted](image_85.png)
+![GameStarted](/images/image-85.png)
 
 ### Variável `Started`
 
 Consulte se o jogo foi iniciado, chamando o visualizador da variável started:
 
-![Started](image_86.png)
+![Started](/images/image-86.png)
 
 Ele retorna `True`, ou seja, jogo inciado.
 
@@ -429,7 +429,7 @@ Vamos detalhar cada passo:
 
 1. Para descobrir o endereço do smart contract `Bank`, clique no botão `Bank`:
 
-![Bank address](image_87.png)
+![Bank address](/images/image-87.png)
 
 O retorno será o endereço do smart contract `Bank` publicado pelo smart contract `Blockopoly`.
 
@@ -437,15 +437,15 @@ No meu exemplo: `0x5f15a500767Fdb21aDF61d98099799Eb4DCd95fA`
 
 2. Vá na lista `CONTRACT` e selecione o smart contract `Bank`:
 
-![Bank select](image_88.png)
+![Bank select](/images/image-88.png)
 
 3. Preencha o endereço no campo ao lado do botão  `At Address` e clique no botão:
 
-![Bank address](image_89.png)
+![Bank address](/images/image-89.png)
 
 Veja na lista de contratos a instância do `Bank`:
 
-![Bank instance](image_90.png)
+![Bank instance](/images/image-90.png)
 
 Clique em `>` para ver as funções do `Bank`.
 
@@ -458,15 +458,15 @@ No caso, quero saber o saldo das contas 2 e 3, que são os jogadores Ana e Ben.
 
 Saldo da conta 1, da Ana:
 
-![Ana account](image_91.png)
+![Ana account](/images/image-91.png)
 
-![Ana balance](image_92.png)
+![Ana balance](/images/image-92.png)
 
 Saldo do Ben, final  `021d5`
 
-![Ben account](image_93.png)
+![Ben account](/images/image-93.png)
 
-![Ben balance](image_94.png)
+![Ben balance](/images/image-94.png)
 
 > Isto foi detalhado no smart contract `Bank`, da [parte 1](/2020/blockopoly-01/) deste tutorial. Se tiver duvidas, pode revisar lá.
 
@@ -482,21 +482,21 @@ Não foi implementada uma função para listar as propriedades disponíveis. Est
 
 1. Para descobrir o endereço do smart contract `AssetManager`, clique no botão `AssetManager` do contrato `Blockopoly` :
 
-![AssetManager address](image_95.png)
+![AssetManager address](/images/image-95.png)
 
 No meu exemplo: `0x66CaD295B47aD7dbe091Fd18f334b6D7871d9794`
 
 2. Vá na lista `CONTRACT` e selecione o smart contract `AssetManager`:
 
-![AssetManager select](image_96.png)
+![AssetManager select](/images/image-96.png)
 
 3. Preencha o endereço no campo ao lado do botão  `At Address` e clique no botão:
 
-![AssetManager address](image_97.png)
+![AssetManager address](/images/image-97.png)
 
 Veja na lista de contratos a instância do `AssetManager`:
 
-![AssetManager instance](image_98.png)
+![AssetManager instance](/images/image-98.png)
 
 Clique em `>` para ver as funções do `AssetManager`.
 
@@ -506,13 +506,13 @@ Para saber quem é o dono de uma propriedade, utilize a função `getOwner`. Pre
 
 Por exemplo, veremos o proprietário de `Sao Paulo Reactor`:
 
-![getOwner Sao Paulo Reactor](image_99.png)
+![getOwner Sao Paulo Reactor](/images/image-99.png)
 
 É a conta 1, do banqueiro.
 
 No início do jogo, ele é o proprietário de todas as propriedades. Veja mais um, `Redmond Reactor`:
 
-![getOwner Redmond Reactor](image_100.png)
+![getOwner Redmond Reactor](/images/image-100.png)
 
 > Isto foi explicado no smart contract `AssetManager`, da [parte 2](/2020/blockopoly-02/) deste tutorial. 
 > Se tiver duvidas, pode revisar lá.
@@ -526,11 +526,11 @@ Utilize a função `buyProperty` para comprar uma propriedade.
 
 ### Ana comprará "Sao Paulo Reactor"
 
-![buyProperty Sao Paulo Reactor](image_101.png)
+![buyProperty Sao Paulo Reactor](/images/image-101.png)
 
 Veja o log da transação: 
 
-![transaction buyProperty](image_102.png)
+![transaction buyProperty](/images/image-102.png)
 
 ### Eventos
 
@@ -539,7 +539,7 @@ Esta transação emite 2 eventos:
 * `Sent` - o envio de moedas para a compra
 * `AssetTransfered` - a transferência da propriedade de um endereço para outro
 
-![buyProperty events](image_103.png)
+![buyProperty events](/images/image-103.png)
 
 ### Continuando a comprar 
 
@@ -565,7 +565,7 @@ Os jogadores vão alternando a sua vez. Em algum momento, quando o jogador tenta
 
 Isto pode ser acompanhado na tentativa de execução da transação:
 
-![Revert Game over](image_104.png)
+![Revert Game over](/images/image-104.png)
 
 # Ganhador
 
@@ -573,7 +573,7 @@ Após receber a mensagem `Game over`, chame a função `getWinner` para descobri
 
 Ana ganhou!
 
-![getWinner](image_105.png)
+![getWinner](/images/image-105.png)
 
 > Se dois jogadores possuírem o mesmo saldo, o critério de desempate é quem se cadastrou primeiro na partida.
 
