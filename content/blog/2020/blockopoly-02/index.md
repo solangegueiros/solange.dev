@@ -113,7 +113,6 @@ contract AssetManager {
         emit AssetTransfered(msg.sender, from, to, _name);
     }
 }
-
 ```
 
 E cole aqui:

@@ -42,43 +42,6 @@ Aqui está um resumo das etapas que faremos neste tutorial (nas 3 partes):
 
 # Pré-requisitos
 
-1. Node.js e NPM (Node Package Manager)
-2. Visual Studio Code (VSCode) ou outro editor à sua escolha
-3. Remix
-
-## Node.js e NPM
-
-Uma das dependências é NPM, que é instalado com Node.js.
-
-Pra verificar se Node.js e NPM já estão instalados, verifique se os comandos abaixo funcionam no terminal:
-
-```shell
-node --version
-npm --version
-```
-
-![node and npm version](/images/image-02.png)
-
-Vá em [Node.js](https://nodejs.org/en/) caso precise instalá-los.
-
-Se desejar ter mais de uma versão do node instalada, utilize o gerenciador de versões para o node, [nvm](https://github.com/nvm-sh/nvm).
-
-## Visual Studio Code (VS Code)
-
-Precisamos de algum editor de código, de preferência um que destaque as linguagens Solidity e Javascript.
-
-[VS Code](https://code.visualstudio.com/) é uma boa escolha.
-
-Para instalar, [faça o download aqui](https://code.visualstudio.com/download).
-
-Verique se a instalação do VS code está ok consultando sua versão no terminal:
-
-```shell
-code -v
-```
-
-![vscode version](/images/image-03.png)
-
 ## Remix
 
 Remix é uma ferramenta Ethereum online. É um IDE (Integrated Development Environment - ambiente de desenvolvimento integrado) usado para escrever, compilar, publicar e depurar código fonte em Solidity. Pode ser conectado ao Metamask e, com essa conexão, utilizado para publicar contratos inteligentes em diversas redes.

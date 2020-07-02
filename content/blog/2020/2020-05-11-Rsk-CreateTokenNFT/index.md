@@ -74,7 +74,7 @@ Caso prefira assistir um video, eu ministrei um workshop online sobre este tutor
 
 Os passos 1 a 4 são explicados detalhadamente no tutorial: 
 
-* [Setup a project with Truffle and OpenZeppelin](https://solange.dev/2020/2020-05-10-Rsk-SetupTruffleOZ/)
+* [Como criar um projeto utilizando Truffle e OpenZeppelin conectado à rede RSK](https://solange.dev/2020/2020-05-10-Rsk-SetupTruffleOZ/)
 
 # Pré-requisitos
 
@@ -85,13 +85,13 @@ Os passos 1 a 4 são explicados detalhadamente no tutorial:
 
 Os pré-requisitos 1 a 3 também são explicados detalhadamente no tutorial:
 
-* [Setup a project with Truffle and OpenZeppelin](https://solange.dev/2020/2020-05-10-Rsk-SetupTruffleOZ/)
+* [Como criar um projeto utilizando Truffle e OpenZeppelin conectado à rede RSK](https://solange.dev/2020/2020-05-10-Rsk-SetupTruffleOZ/)
 
 O pré-requisito 4, instalar Metamask, conectar a testnet RSK e ganhar alguns tR-BTCs, está explicado passo a passo no tutorial: 
 
 * [Remix and Metamask with RSK testnet](https://solange.dev/2020/2020-03-27-Rsk-RemixMetamask/)
 
-# Setup the project
+# Configure o projeto
 
 Crie uma nova pasta chamada `colors`:
 
@@ -101,7 +101,7 @@ cd colors
 ```
 
 Na pasta `colors`, execute as etapas abaixo, seguindo as instruções do tutorial já citado anteriormente:
-[Setup a project with Truffle and OpenZeppelin](https://solange.dev/2020/2020-05-10-Rsk-SetupTruffleOZ/)
+[Como criar um projeto utilizando Truffle e OpenZeppelin conectado à rede RSK](https://solange.dev/2020/2020-05-10-Rsk-SetupTruffleOZ/)
 
 1. Inicialize um novo projeto Truffle;
 2. Inicialize um projeto npm;
@@ -251,7 +251,7 @@ No diretório `Contracts`, crie um arquivo chamado `Color.sol`.
 
 ![Create Color.sol](/images/image-09.png)
 
-## File Color.sol
+## arquivo Color.sol
 
 Copie e cole o smart contract deste link, ou do código abaixo:
 
@@ -368,7 +368,7 @@ Em seguida, é publicado nosso smart contract `Color.sol`:
 
 ![truffle migrate Color.sol](/images/image-16.png)
 
-Aqui está a trasanção na RSK testnet:
+Aqui está a transação na RSK testnet:
 
 [0x2c2d2932a7d637fbba100b5c482c1fa1899c4fe24bd1a458976a93cee6c5ba85](https://explorer.testnet.rsk.co/tx/0x2c2d2932a7d637fbba100b5c482c1fa1899c4fe24bd1a458976a93cee6c5ba85)
 

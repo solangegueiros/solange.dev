@@ -2,7 +2,7 @@
 title: Como criar um projeto utilizando Truffle e OpenZeppelin conectado à rede RSK
 date: "2020-05-10T20:00:00.000Z"
 description: "Como criar um projeto utilizando Truffle framework e a biblioteca de smart contracts da Open Zeppelin conectado tanto a um nó local quanto a testnet da RSK."
-tags: tutorial, rsk, openzeppelin, truffle
+tags: tutorial, rsk, openzeppelin, smart-contracts, truffle
 type: blog
 ---
 
@@ -17,7 +17,7 @@ Não faz diferença se você está começando do zero ou já é um desenvolvedor
 Aqui está um resumo das etapas que faremos para criar nosso projeto:
 
 1. Instalar pré requisitos;
-2. Executar um nó local da RSK (regtest;
+2. Executar um nó local da RSK (regtest);
 3. Inicializar um projeto utilizando Truffle;
 4. Instalar os smart contracts da Open Zeppelin smart contracts no projeto;
 5. Instalar HD wallet provider;

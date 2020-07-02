@@ -161,9 +161,9 @@ Crie o arquivo `Register.sol`
 
 Copie e cole o smart contract deste link ou abaixo:
 
-[https://raw.githubusercontent.com/solangegueiros/dapp-register-rsk/master/register-rsk-web3-injected/register.sol](https://raw.githubusercontent.com/solangegueiros/dapp-register-rsk/master/register-rsk-web3-injected/register.sol)
+[register.sol](https://raw.githubusercontent.com/solangegueiros/dapp-register-rsk/master/register-rsk-web3-injected/register.sol)
 
-```
+```javascript
 pragma solidity 0.5.4;
 
 contract Register {
@@ -183,7 +183,7 @@ contract Register {
 
 Este smart contract tem:
 
-* A variable `info` para armazenar uma string
+* A variable `info`, privada, para armazenar uma string
 * A function `getInfo()` para retornar a string armazenada na variável `info`
 * A function `setInfo()` para alterar a string armazenada na variável `info`
 
