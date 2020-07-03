@@ -12,13 +12,12 @@ Neste tutorial eu mostrarei passo-a-passo como realizar testes em smart contract
 
 # Overview
 
-Aqui está um resumo das etapas que faremos para criar nosso projeto:
+Aqui está um resumo das etapas que faremos:
 
 1. Instalar pré requisitos;
 2. Executar um nó local da RSK (regtest);
 3. Criar o projeto Register;
 4. Configurar o Truffle;
-5. Criar o projeto Register;
 6. Criar um smart contract;
 7. Compilar;
 8. Fazer testes sem deploy;
@@ -29,9 +28,8 @@ Aqui está um resumo das etapas que faremos para criar nosso projeto:
 
 1. POSIX compliant shell
 2. Java
-3. Node.js e NPM (Node Package Manager)
-4. Editor: Visual Studio Code (VSCode) ou outro editor de sua escolha
-5. Truffle
+3. Editor: Visual Studio Code (VSCode) ou outro editor de sua escolha
+4. Truffle
 
 Todos os pré-requisitos são explicados detalhadamente no tutorial:
 
@@ -59,7 +57,7 @@ java -cp <PATH-TO-THE-RSKJ-JAR> -Drpc.providers.web.cors=* co.rsk.Start --regtes
 
 Eu estou utilizando o sistema operacional (SO) Windows e salvei o arquivo JAR em  `C:\RSK\node`,
 portanto o caminho completo do meu arquivo é 
-`C:\RSK\node\rskj-core-1.3.0-WASABI-all.jar`.
+`C:\RSK\node\rskj-core-2.0.1-PAPYRUS-all.jar`.
 
 Então, para executar o nó RSK: 
 
@@ -90,7 +88,7 @@ Se não apareceu nada depois que você executou o comando, normalmente isso quer
 
 # Crie o projeto Register
 
-1. Crie uma nova pasta chamada `Register`
+1. Crie uma nova pasta chamada `Register` e vá para ela.
 2. Inicialize um novo projeto Truffle;
 3. Inicialize um projeto npm;
 
@@ -146,7 +144,7 @@ module.exports = {
 
 Confira na imagem do VS Code:
 
-![truffle-config](/images//images/image-04.png)
+![truffle-config](/images/image-04.png)
 
 # Smart contract
 
@@ -227,7 +225,7 @@ Veja no VS Code:
 
 ![VSCode register_new](/images/image-08.png)
 
-> Para fazer testes em um smart contract ainda não publicado, utilize o `.new()`. Isto vai criar uma nova instância para os testes.
+> Para fazer testes em um smart contract ainda não publicado, utilize o `.new()`. Isto vai criar uma nova instância do smart contract para executar os testes.
 
 ## Execute os testes
 
@@ -286,7 +284,7 @@ Primeiro é publicado o smart contract `Migrations.sol`, arquivo gerado pelo Tru
 
 ![truffle migrate Migrations.sol](/images/image-12.png)
 
-Em seguida, é publicado nosso smart contract `register.sol`:
+Em seguida, é publicado nosso smart contract `Register.sol`:
 
 ![truffle migrate Register.sol](/images/image-13.png)
 
@@ -300,7 +298,7 @@ No terminal, no diretório do projeto, execute o comando:
 truffle create test Register
 ```
 
-Este comando criará um arquivo de testes, com um teste que verifica se o smart contract publicado pode ser instanciado.
+Este comando criará, no diretório `test`, um arquivo de testes, com um teste que verifica se o smart contract publicado pode ser instanciado.
 
 Veja no VS Code:
 
