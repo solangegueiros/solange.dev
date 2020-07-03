@@ -24,6 +24,10 @@ Aqui está um resumo das etapas que faremos:
 9. Publicar na rede;
 10. Fazer testes após deploy;
 
+# Video
+
+Caso prefira assistir um video, eu ministrei um <a href="https://www.youtube.com/watch?v=n6ql0yV0IRM" target="_blank">webinar</a> sobre este tutorial.
+
 # Pré-requisitos
 
 1. POSIX compliant shell
