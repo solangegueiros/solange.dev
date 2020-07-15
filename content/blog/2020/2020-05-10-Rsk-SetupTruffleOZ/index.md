@@ -129,8 +129,8 @@ code -v
 
 ## Truffle
 
-Truffle é um conhecido framework para desenvolvimento de smart contract, que facilita a vida do desenvolvedor.
-Entre suas características, podemos citar o gerenciamento da "vida" de um smart contract (voce pode fazer várias publicações e saber qual foi a última), desenvolvimento de scripts para deploy, testes automatizados e gerenciamento de rede simplificado.
+[Truffle](https://www.trufflesuite.com/truffle) é um conhecido framework para desenvolvimento de smart contracts, que facilita a vida do desenvolvedor.
+Entre suas características, podemos citar o gerenciamento da "vida" de um smart contract (você pode fazer várias publicações e saber qual foi a última), desenvolvimento de scripts para deploy, testes automatizados e gerenciamento de rede simplificado.
 
 Da mesma forma também facilita o desenvolvedor RSK porque podemos configurar as redes RSK no Truffle.
 
@@ -149,10 +149,6 @@ truffle version
 ```
 
 ![truffle version](/images/image-06.png)
-
-Mais informações:
-
-[trufflesuite.com/truffle](https://www.trufflesuite.com/truffle)
 
 # Nó local RSK - regtest
 
@@ -400,8 +396,8 @@ Mais informações:
 # Instale o HD wallet provider
 
 Para conectar a rede RSK network, utilizaremos um pacote provedor que possibilida a conexão a qualquer rede desbloqueando uma conta localmente. 
-Utilizaremos `@truffle/hdwallet-provider`. 
-Pode ser utilizada para assinar transações de endereços gerados a partir de um mnemônico com 12 ou 24 palavras.
+Utilizaremos [@truffle/hdwallet-provider](https://www.npmjs.com/package/@truffle/hdwallet-provider). 
+Este provedor possibilita assinar transações de endereços gerados a partir de um mnemônico com 12 ou 24 palavras.
 
 > Precisa ter instalado o Node >= 7.6.
 

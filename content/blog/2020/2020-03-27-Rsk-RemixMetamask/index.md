@@ -84,7 +84,7 @@ Vou colocar alguns termos em inglês também:
 
 - Block Explorer URL (opcional)
 
-    https://explorer.testnet.rsk.co/
+    https://explorer.testnet.rsk.co
 
 
 ![RSK Testnet configuration](/images/image-02.png)
