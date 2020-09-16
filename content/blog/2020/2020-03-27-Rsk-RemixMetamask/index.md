@@ -154,7 +154,7 @@ Clique no símbolo `+` create a new file
 
 Nome do arquivo / file name: `SimpleStorage.sol`
 
-![SimpleStorage.sol](/images/image-14.png)
+![filename SimpleStorage.sol](/images/image-14.png)
 
 Copie esse exemplo:
 
@@ -264,7 +264,7 @@ Cole o hash da transação no campo de pesquisa, no alto da tela
 
 Este é o resultado:
 
-![transaction result](/images/image-33.png)
+![explorer transaction result](/images/image-33.png)
 
 Você pode verificar meu exemplo aqui: [`0x419c4b17ec0bf59568d9b5f5c7f0e4678039f52b9c644c2914ccd0bd2bb331da`](https://explorer.testnet.rsk.co/tx/0x419c4b17ec0bf59568d9b5f5c7f0e4678039f52b9c644c2914ccd0bd2bb331da)
 
@@ -276,7 +276,7 @@ Quando fazemos a publicação de um smart contract utilizando Remix, podemos enc
 
 Clique em `>` para enxergar os detalhes do SimpleStorage:
 
-![SimpleStorage](/images/image-35.png)
+![Deployed SimpleStorage](/images/image-35.png)
 
 Aparecerão as mesmas funções que criamos em nosso smart contract!
 
