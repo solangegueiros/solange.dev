@@ -28,22 +28,31 @@ Aqui está um resumo das etapas que faremos para criar nosso projeto:
 
 # Pré-requisitos
 
+* Git
 * POSIX compliant shell
 * Curl
 * Java
 * Node.js e NPM (Node Package Manager)
 * Editor: Visual Studio Code (VSCode) ou outro editor de sua escolha
+* Extensão VSCode para a linguagem Solidity
 * Truffle
+
+## Git
+
+Git é um sistema open-source de controle de versão. Alguns pacotes que serão instalados posteriormente utilizam o Git internamente para fazer download de suas versões corretas.
+Além disto, no sistema operacional (SO) Windows, é instalado com ele um terminal POSIX, chamado `Git Bash`, que é o próximo pré-requisito. 
+
+Instale o [Git para Windows](https://gitforwindows.org/), que inclui o terminal Git Bash. 
+
+Este [tutorial on installing and using Git Bash](https://www.atlassian.com/git/tutorials/git-bash) (em inglês) também pode ajudar.
 
 ## Shell compatível POSIX
 
 **Portable Operating System Interface (POSIX)** é uma família de padrões especificados pela IEEE Computer Society para manter a compatibilidade entre sistemas operacionais. POSIX define a interface de programação para a aplicação (Application Programming Interface - API) para terminais de comandos e interfaces de utilitários, de modo que exista compatibilidade entre diversas variantes de Unix e outros sistemas operacionais. Fonte: [Wikipidia](https://en.wikipedia.org/wiki/POSIX)
 
 * Mac OSX e distribuições Linux: use o terminal standard
-* Windows: Se você utilizar o terminal padrão (cmd) ou PowerShell, os comandos podem não funcionar.
-  Considere instalar [Git para Windows](https://gitforwindows.org/), que inclui o terminal Git Bash. 
-  Aqui está um [tutorial on installing and using Git Bash](https://www.atlassian.com/git/tutorials/git-bash) (em inglês).
-
+* Windows: Utilize o terminal `Git Bash`, instalado juntamente com o `Git` no passo anterior. Se você utilizar o terminal padrão (cmd) ou PowerShell, os comandos podem não funcionar. 
+  
 ## cURL
 
 Este é um sistema de comandos geralmente instalado no seu sistema operacional.
@@ -126,6 +135,14 @@ code -v
 ```
 
 ![vscode version](/images/image-04.png)
+
+## Extensão VSCode para a linguagem Solidity
+
+Se utilizar o VSCode, vá em Extensions (Menu View -> Extensions).
+
+1. Digite `solidity` no campo de pesquisa.
+2. Selecione a extensão `solidity` do Juan Blanco.
+3. Clique em `install`.
 
 ## Truffle
 
@@ -395,7 +412,7 @@ Mais informações:
 
 # Instale o HD wallet provider
 
-Para conectar a rede RSK network, utilizaremos um pacote provedor que possibilida a conexão a qualquer rede desbloqueando uma conta localmente. 
+Para conectar a rede RSK network, utilizaremos um pacote provedor que possibilita a conexão a qualquer rede desbloqueando uma conta localmente. 
 Utilizaremos [@truffle/hdwallet-provider](https://www.npmjs.com/package/@truffle/hdwallet-provider). 
 Este provedor possibilita assinar transações de endereços gerados a partir de um mnemônico com 12 ou 24 palavras.
 

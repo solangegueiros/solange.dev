@@ -163,7 +163,7 @@ Mais informações:
 
 ## Instale o HD wallet provider
 
-Para conectar a rede RSK network, utilizaremos um pacote provedor que possibilida a conexão a qualquer rede desbloqueando uma conta localmente. 
+Para conectar a rede RSK network, utilizaremos um pacote provedor que possibilita a conexão a qualquer rede desbloqueando uma conta localmente. 
 Utilizaremos `@truffle/hdwallet-provider`. 
 Pode ser utilizado para assinar transações de endereços gerados a partir de um mnemônico com 12 ou 24 palavras.
 

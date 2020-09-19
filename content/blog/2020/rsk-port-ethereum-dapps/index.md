@@ -67,7 +67,7 @@ O tutorial [Crie seu primeiro smart contract utilizando Remix e Metamask com a R
 
 [Truffle](https://www.trufflesuite.com/truffle) é um conhecido framework para desenvolvimento de smart contracts, que facilita a vida do desenvolvedor.
 
-Para conectá-lo à rede RSK network, utilizaremos um pacote provedor que possibilida a conexão a qualquer rede desbloqueando uma conta localmente:  
+Para conectá-lo à rede RSK network, utilizaremos um pacote provedor que possibilita a conexão a qualquer rede desbloqueando uma conta localmente:  
 [@truffle/hdwallet-provider](https://www.npmjs.com/package/@truffle/hdwallet-provider). 
 Desta forma é possível desbloquear uma conta localmente, a partir de um mnemônico. Isto inclui as redes da RSK. 
 
