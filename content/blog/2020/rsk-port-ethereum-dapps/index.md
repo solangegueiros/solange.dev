@@ -73,13 +73,13 @@ Desta forma é possível desbloquear uma conta localmente, a partir de um mnemô
 
 Na parte de redes do Truffle config, é definido um provider utilizando o mnemônico gerador da carteira e apontando para o nó público da testnet RSK, através do `HD wallet provider`.
 
-`HD wallet provider` também é utilizado nas redes Ethereum, geralmente em conjunto com [Infura](https://infura.io/)para fazer a conexão à rede. `Infura` disponibiliza uma estrutura de nós para a rede Ethereum, seja a MainNet ou as diversas TestNets.
+`HD wallet provider` também é utilizado nas redes Ethereum, geralmente em conjunto com [Infura](https://infura.io/) para fazer a conexão à rede. `Infura` disponibiliza uma estrutura de nós para a rede Ethereum, seja a MainNet ou as diversas TestNets.
 
 Um ponto a destacar na configuração de uma rede é verificar o `gas price`. Sem esta verificação, a publicação de um smart contract pode ser demorada ou até mesmo apresentar erros e não acontecer. A rede Ethereum, por exemplo, neste momento (julho/2020), está com um gas price elevado nestes últimos meses devido ao grande número de transações relacionadas a DeFi - Decentralized Finance. Também é importante verificar o `gas price` na rede RSK.
 
 O tutorial [Como criar um projeto utilizando Truffle e OpenZeppelin conectado à rede RSK](https://solange.dev/2020/2020-05-10-Rsk-SetupTruffleOZ/) explica detalhadamente como:
 
-1. Instalar o Truffle;
+1. Instalar Truffle framework;
 2. Inicializar um projeto utilizando Truffle;
 3. Instalar HD wallet provider;
 4. Criar um mnemônico para uma carteira;

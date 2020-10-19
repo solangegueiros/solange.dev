@@ -151,7 +151,7 @@ Entre suas características, podemos citar o gerenciamento da "vida" de um smart
 
 Da mesma forma também facilita o desenvolvedor RSK porque podemos configurar as redes RSK no Truffle.
 
-Para instalar Truffle, no terminal, digite o comando abaixo no terminal e pressione a tecla `enter`:
+Para instalar Truffle, no terminal, digite o comando abaixo e pressione a tecla `enter`:
 
 ```shell
 npm install -g truffle
@@ -324,7 +324,7 @@ Há duas opções para inicializar um projeto:
 
 ## 1 - Inicialize um novo projeto Truffle 
 
-Crie um nodo diretório, `myproject`, por exemplo, e vá para a pasta no terminal.
+Crie um novo diretório, `myproject`, por exemplo, e vá para a pasta no terminal.
 
 ```shell
 mkdir myproject
@@ -380,19 +380,16 @@ Truffle Boxes são modelos.
 Além dos arquivos do Truffle, 
 Truffle Boxes podem conter outros módulos úteis, como smart contracts Solidity, bibliotecas, páginas front-end e mais.
 
-Na opção 1, quando usamos `truffle init`, estamos utilizando um tipo especial de truffle box. 
+Na opção 1, quando usamos `truffle init`, estamos utilizando um tipo especial de Truffle box. 
 Conheça outros [boxes] (https://www.trufflesuite.com/boxes).
 
 Também temos alguns configurados para a RSK: [RSK truffle boxes](https://developers.rsk.co/tutorials/truffle-boxes/) (em inglês).
 
 ## Instale Open Zeppelin
 
-OpenZeppelin Contracts é um conjunto de bibliotecas para smart contracts desenvolvidos em Solidity. Eles também funcionam em outros blockchains, como a **RSK**. 
-
-Serão instaladas não apenas as bibliotecas com padrões do token ERC721, mas também outras para propriedade e controle de perfis, matemática e outros utilitários.
+[OpenZeppelin Contracts](https://openzeppelin.com/contracts/) é um conjunto de bibliotecas para smart contracts desenvolvidos em Solidity. Eles também funcionam em outros blockchains, como a **RSK**. 
 
 Vale ressaltar que essas bibliotecas foram revisadas e auditadas visando altos padrões de segurança, para que os contratos que dependam delas sejam menos suscetíveis a hackers quando usados corretamente.
-
 
 No terminal, no diretório `myproject`, instale as biblitecas OpenZeppelin com este comando:
 
@@ -406,17 +403,13 @@ A opção `-E` é para salvar no arquivo de configuração npm as dependencias n
 
 > Os smart contracts podem ser alterados de uma versão para outra, então é importante fixar a versão porque nosso tutorial foi escrito utilizando esta versão.
 
-Mais informações:
-
-[openzeppelin.com/contracts](https://openzeppelin.com/contracts/)
-
 # Instale o HD wallet provider
 
 Para conectar a rede RSK network, utilizaremos um pacote provedor que possibilita a conexão a qualquer rede desbloqueando uma conta localmente. 
 Utilizaremos [@truffle/hdwallet-provider](https://www.npmjs.com/package/@truffle/hdwallet-provider). 
 Este provedor possibilita assinar transações de endereços gerados a partir de um mnemônico com 12 ou 24 palavras.
 
-> Precisa ter instalado o Node >= 7.6.
+> Precisa ter instalado Node >= 7.6.
 
 No terminal, na pasta `myproject`, instale com este comando:
 
@@ -461,7 +454,7 @@ Outra maneira é com este web app:
 > Neste tutorial, o método utilizado para guardar o mnemônico não é recomendado para uma carteira com fundos de verdade, que valem dinheiro real, porque não é tão seguro gerar um mnemônico e chaves privadas em um website.
 > Para fins educacionais podemos utilizar aqui, dado que vamos nos conectar à testnet.
 
-No campo `Generate a random mnemonic` , selecione `12 words` and clique no botão `generate`.
+No campo `Generate a random mnemonic` , selecione `12 words` e clique no botão `generate`.
 
 ![Generate a random mnemonic](/images/image-21.png)
 
@@ -478,7 +471,7 @@ energy knife ice mouse merge track cram brown decorate atom rule virus
 
 Copie estas 12 palavras para utilizá-las daqui há pouco.
 
-## ferramenta mnemonics
+## Ferramenta mnemonics
 
 Outra alternativa é utilizar o pacote [mnemonics](https://github.com/itinance/mnemonics), 
 que é um simples utilitário para gerar [BIP39](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki) mnemônicos.
@@ -553,7 +546,7 @@ Este é o resultado:
 
 Consulte o valor atual do gas price para a testnet network, e salve no arquivo `.gas-price-testnet.json`. 
 
-No diretório do projeto, execute este cmando cURL:
+No diretório do projeto, execute este comando cURL:
 
 ```shell
 curl https://public-node.testnet.rsk.co/2.0.1/ -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_gasPrice","params":[],"id":1}' > .gas-price-testnet.json
@@ -788,13 +781,13 @@ Espere alguns segundos...
 
 ![Received some R-BTCs](/images/image-40.png)
 
-Você pode ver o hash da transação, por examplo, eu fiz esta:
+Você pode ver o hash da transação, por exemplo, eu fiz esta:
 
 [0x4a2bf1f65c525219020c3a1215a29453c20f4ced90575d9a7d13f8fe666d05b4](https://explorer.testnet.rsk.co/tx/0x4a2bf1f65c525219020c3a1215a29453c20f4ced90575d9a7d13f8fe666d05b4)
 
 E agora eu tenho 0.05 tR-BTC!
 
-## Recheck balance
+## Consulte o saldo de novo
 
 Verifique o saldo de nossa conta novamente. Execute este comando no Truffle console:
 

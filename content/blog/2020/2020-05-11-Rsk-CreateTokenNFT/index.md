@@ -214,7 +214,7 @@ const path = require("path");
 module.exports = {
   networks: { 
     testnet: {
-      provider: () => new HDWalletProvider(mnemonic, 'https://public-node.testnet.rsk.co/1.3.0/'),
+      provider: () => new HDWalletProvider(mnemonic, 'https://public-node.testnet.rsk.co/'),
       network_id: 31,
       gasPrice: Math.floor(gasPriceTestnet * 1.1),
       networkCheckTimeout: 1e9
@@ -244,6 +244,8 @@ Em nosso projeto, estará localizada em uma pasta diferente: `app/src/contracts`
 # Arquitetura dos smart contracts
 
 Criaremos o smart contract `Color.sol` que vai herdar as definições do ERC721 que estão na biblioteca OZ.
+
+Além das bibliotecas com padrões do token ERC721, Open Zeppellin importa outras para propriedade e controle de perfis, matemática e outros utilitários.
 
 ## Crie o smart contract Color.sol
 

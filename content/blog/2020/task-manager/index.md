@@ -9,6 +9,8 @@ type: blog
 ![title](./images/image-01.png)
 Imagem [Pixabay](https://pixabay.com): [https://pixabay.com/illustrations/sticky-notes-post-it-notes-sticky-938602/](https://pixabay.com/illustrations/sticky-notes-post-it-notes-sticky-938602/) 
 
+Contratos inteligentes (smart contracts) são programas de computador auto-executáveis e publicados em Blockchain que validam regras de negócio, seja para a transferência de ativos digitais, tokens ou criptomoedas ou ainda registro de informações em Blockchain.
+
 Este tutorial é um guia para iniciar como desenvolvedor Blockchain, construindo smart contracts Ethereum usando a linguagem de programação Solidity. Apresentamos os principais conceitos desta linguagem de programação enquanto construimos um gerenciador de tarefas utilizando VSCode and Truffle.
 
 # Overview
