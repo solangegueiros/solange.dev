@@ -24,4 +24,5 @@ jobs:
         server: ftp.solange.dev
         username: solange_publish@solange.dev
         password: ${{ secrets.ftp_password }}
+        local-dir: /public/
         server-dir: /
