@@ -22,13 +22,5 @@
     "localName": "Português",
     "langDir": "ltr",
     "dateFormat": "DD/MM/YYYY"
-  },
-  {
-    "code": "de",
-    "hrefLang": "de-DE",
-    "name": "German",
-    "localName": "Deutsch",
-    "langDir": "ltr",
-    "dateFormat": "DD.MM.YYYY"
   }
 ]
