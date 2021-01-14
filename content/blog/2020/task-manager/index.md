@@ -208,7 +208,7 @@ truffle develop
 
 ![truffle develop](./images/image-13.png)
 
-> Os comando Truffle podem ser executados dentro ou fora do console de desenvolvimento.
+> Os comandos Truffle podem ser executados dentro ou fora do console de desenvolvimento.
 > 
 > Se estamos no console de desenvolvimento Truffle, não precisamos iniciar os comandos com `truffle`. 
 > 

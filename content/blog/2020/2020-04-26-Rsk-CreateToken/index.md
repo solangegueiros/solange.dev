@@ -400,7 +400,7 @@ Para herdar os atributos e funções da biblioteca, apenas definimos nosso contr
 
 # Compilando o smart contract
 
-No console Truffle console, execute este comando:
+No Truffle console, execute este comando:
 
 ```
 compile
@@ -558,7 +558,7 @@ Está sendo enviada uma transação para a emissão de 100,00 tokens para a cont
 
 [0x2162617b34ffcd55cf719cb998e69a33cf115c5d4d58b7ee639c1060fae81355](https://explorer.testnet.rsk.co/tx/0x2162617b34ffcd55cf719cb998e69a33cf115c5d4d58b7ee639c1060fae81355)
 
-Você pode emitir para outras contas, for example, account 1:
+Você pode emitir para outras contas, por exemplo, account 1:
 
 ```javascript
 token.mint(accounts[1], 10000)
