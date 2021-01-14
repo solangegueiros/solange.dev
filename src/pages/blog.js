@@ -1,58 +1,67 @@
-import React from "react"
-import { Link, graphql } from "gatsby"
+import * as React from "react"
+import { graphql } from "gatsby"
+import { LocalizedLink } from "gatsby-theme-i18n"
+import { useIntl } from "react-intl"
 import Layout from "../components/layout"
+import SEO from "../components/seo"
 
-export default ({ data }) => {
-  //console.log(data)
+const Blog = ({ data, pageContext }) => {
+  const intl = useIntl()
+  const locale = pageContext.locale
+
   return (
-    <Layout>
-      <div style={{ margin: `1rem auto`, maxWidth: 800, padding: `0 1rem` }}>
-        <h1>
-          Blog 2020
-        </h1>
-        <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
-        {data.allMarkdownRemark.edges.map(({ node }) => (
-          <div key={node.id}>
-            <Link
-              to={node.fields.slug}
-            >
-              <h3>
-                {node.frontmatter.title}{" "}
-              </h3>
-            </Link>
-            <p>
-              <span>
-                {node.frontmatter.date} - {node.timeToRead} min to read
-              </span>
-            </p>
-            <p>{node.frontmatter.description}</p>
-          </div>
+    <Layout pageContext={pageContext}>
+      <SEO title="Blog" />
+
+      <h1>
+        {intl.formatMessage({ id: "blog" })} {" "}
+        {intl.formatMessage({ id: "in" })} {" "} 
+        {intl.formatMessage({ id: locale })}
+      </h1>
+
+      <br/>
+      <p> {intl.formatMessage({ id: "blog introduction" })} </p>
+      <ul>
+        {data.allFile.nodes.map(({ childMdx: node }) => (
+          <li key={node.fields.slug}>            
+            <LocalizedLink to={node.fields.slug}>
+              <h4>{node.frontmatter.title}</h4>
+            </LocalizedLink>            
+            <small>
+              {node.frontmatter.date}
+              <br/>
+              {node.frontmatter.description}
+            </small>
+          </li>
         ))}
-      </div>
-    </Layout>
+      </ul>
+      </Layout>
   )
 }
 
+export default Blog
+
+
 export const query = graphql`
-  query {
-    allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
-      filter: {frontmatter: {type: {eq: "blog"}}}
-      ) {
+  query($locale: String!) {
+    allFile(
+      filter: {
+        sourceInstanceName: { eq: "blog" }
+        childMdx: { fields: { locale: { eq: $locale } } }
+      },
+      sort: {fields: childrenMdx___frontmatter___date, order: DESC}
+    ) {
       totalCount
-      edges {
-        node {
-          id
-          frontmatter {
-            title
-            date(formatString: "DD MMMM, YYYY")
-            description
-          }
+      nodes {        
+        childMdx {
           fields {
             slug
-          }          
-          timeToRead
-          excerpt
+          }           
+          frontmatter {
+            title
+            description
+            date(formatString: "DD MMMM, YYYY")
+          }
         }
       }
     }

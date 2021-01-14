@@ -1,31 +1,53 @@
-import React from "react"
+import * as React from "react"
 import { graphql } from "gatsby"
+import { MDXRenderer } from "gatsby-plugin-mdx"
+//import { LocalizedLink } from "gatsby-theme-i18n"
+import { useIntl } from "react-intl"
+
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-export default ({ data }) => {
-  const post = data.markdownRemark
+const BlogPost = ({ data, pageContext }) => {
+  const intl = useIntl()
+  const post = data.mdx
+
   return (
-    <Layout>
-      <SEO title={post.frontmatter.title} description={post.frontmatter.description} />
-      <div style={{ margin: `1rem auto`, maxWidth: 800, padding: `0 1rem` }}>
-        <h1>{post.frontmatter.title}</h1>        
-        {post.frontmatter.description}
-        <br/><br/>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+    <Layout pageContext={pageContext}>
+
+      <div>
+        {post ? (
+          <>
+            <SEO title={post.frontmatter.title  || `Title`} />
+
+            <h1>{post.frontmatter.title}</h1>
+            <small>{post.frontmatter.date}</small>
+            <MDXRenderer>{post.body}</MDXRenderer>
+          </>
+        ) : (
+          <div>{intl.formatMessage({ id: "not translated" })}</div>
+        )}
       </div>
+
     </Layout>
   )
 }
 
+export default BlogPost
+
+// frontmatter: { slug: { eq: $slug } }
 export const query = graphql`
-  query($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      html
-      frontmatter {
-        title
-        description
+  query($locale: String!, $slug: String!) {
+    mdx(
+      fields: { 
+        locale: { eq: $locale } 
+        slug: { eq: $slug }
       }
+    ) {      
+      frontmatter {
+        date(formatString: "DD MMMM, YYYY")
+        title
+      }
+      body      
     }
   }
 `

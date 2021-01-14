@@ -1,117 +1,199 @@
-import React from "react"
-import { Link, graphql } from "gatsby"
+import * as React from "react"
+import { graphql } from "gatsby"
+import { LocalizedLink } from "gatsby-theme-i18n"
+import { useIntl } from "react-intl"
 import Layout from "../components/layout"
+import SEO from "../components/seo"
+//import Language from "../components/language"
 
-export default ({ data }) => {
-  //console.log(data)
+const Index = ({ data, pageContext }) => {
+  const intl = useIntl()
+  const { title, description } = data.site.siteMetadata
+  const posts = data.posts.nodes
+  const events = data.events.nodes
+
+
   return (
-    <Layout>
-      <div style={{ margin: `1rem auto`, maxWidth: 800, padding: `0 1rem` }}>
-        <p>
-          This is my Blockchain Developers Blog. <br/> 
-          I started to do some posts.
-          Also I published all talks, workshops and interviews from 2019. <br/>
-          Some things are in Portuguese, others are in English or Spanish.
-          <br/><br/>
-          Este é meu blog para desenvolvedores Blockchain. <br/>
-          Comecei a publicar os primeiros artigos.
-          Também coloquei todas as palestras, workshops e entrevistas minhas em 2019. <br/>
-          Algumas coisas estão em português, outras em inglês ou espanhol.
-          <br/>
-          Sol - Solange Gueiros
-        </p>
+    <Layout pageContext={pageContext}>
+      <SEO title={title} />      
+      
+      <p>Sol (Solange Gueiros) {description}</p>
 
-        <h2>
-          Artigos - Posts
-        </h2>
-        <h4>{data.allPosts.totalCount} Posts</h4>
-        {data.allPosts.edges.map(({ node }) => (
-          <div key={node.id}>
-            <Link
-              to={node.fields.slug}
-            >
-              <h3>
-                {node.frontmatter.title}{" "}
-              </h3>
-            </Link>
-            <p>
-              <span>
-                {node.frontmatter.date} - {node.timeToRead} min to read
-              </span>
-            </p>
-            <p>{node.frontmatter.description}</p>            
-          </div>
+      <h2>{intl.formatMessage({ id: "events" })}</h2>
+      <table>
+        <thead>
+          <tr>
+            <th className="TableTextCenter" >{intl.formatMessage({ id: "in" })} {intl.formatMessage({ id: "en" })}</th>
+            <th className="TableTextCenter" >{intl.formatMessage({ id: "in" })} {intl.formatMessage({ id: "es" })}</th>
+            <th className="TableTextCenter" >{intl.formatMessage({ id: "in" })} {intl.formatMessage({ id: "pt" })}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td className="TableTextCenter" >{data.eventsEN.totalCount}</td>
+            <td className="TableTextCenter" >{data.eventsES.totalCount}</td>
+            <td className="TableTextCenter" >{data.eventsPT.totalCount}</td>
+          </tr>
+        </tbody>
+      </table>
+      <h4>{intl.formatMessage({ id: "last events" })}</h4>
+
+      <ul>        
+        {events.map((item) => (
+          <li key={item.id}>
+            <LocalizedLink to={item.fields.slug}>
+              <h4>{item.title}</h4>
+            </LocalizedLink>
+            <small> {item.type}, {item.date} - {item.local}</small>
+          </li>
         ))}
+      </ul>
+      <LocalizedLink to="/events/">
+        {intl.formatMessage({ id: "all events" })}
+      </LocalizedLink>      
+      
+      <br/>
+      <br/>
+      <h2>{intl.formatMessage({ id: "blog" })}</h2>
 
-        <br/>
-        
-      </div>
+      <h4>{intl.formatMessage({ id: "last posts" })}</h4>
+      <ul>        
+        {posts.map(({ childMdx: node }) => (
+          <li key={node.fields.slug}>
+            <LocalizedLink to={node.fields.slug}>
+              <h4>{node.frontmatter.title}</h4>
+            </LocalizedLink>
+          </li>
+        ))}
+      </ul>
+      <LocalizedLink to="/blog/">
+        {intl.formatMessage({ id: "all posts" })}
+      </LocalizedLink>
+      
+      <br/>
+      <br/>
+
     </Layout>
   )
 }
 
-        {/* <h3>
-          Palestras e entrevistas - Talks and interviews
-        </h3>
-        <h4>{data.allTalks.totalCount} events</h4>
-        {data.allTalks.edges.map(({ node }) => (
-          <div key={node.id}>
-            <Link to={node.fields.slug}>
-              <h3> {node.frontmatter.title}{" "}</h3>
-            </Link>
-            <p>
-              <span>
-                {node.frontmatter.date} - {node.frontmatter.description}
-              </span>
-            </p>
-            <br/>
-          </div>
-        ))} */}
+export default Index
 
+
+  /*
+  <Language pageContext={pageContext} />
+  <h1>{intl.formatMessage({ id: "home" })} {intl.formatMessage({ id: "helloWorld" })}</h1>
+
+  //Count posts
+      <table>
+        <thead>
+          <tr>
+            <th className="TableTextCenter" >{intl.formatMessage({ id: "in" })} {intl.formatMessage({ id: "en" })}</th>
+            <th className="TableTextCenter" >{intl.formatMessage({ id: "in" })} {intl.formatMessage({ id: "es" })}</th>
+            <th className="TableTextCenter" >{intl.formatMessage({ id: "in" })} {intl.formatMessage({ id: "pt" })}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td className="TableTextCenter" >{data.postsEN.totalCount}</td>
+            <td className="TableTextCenter" >{data.postsES.totalCount}</td>
+            <td className="TableTextCenter" >{data.postsPT.totalCount}</td>
+          </tr>
+        </tbody>
+      </table>
+  */
 
 export const query = graphql`
-  query {
-    allTalks: allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
-      filter: {frontmatter: {type: {eq: "talk"}}}
-      ) {
+  query($locale: String!) {
+
+    posts: allFile(
+      filter: {
+        sourceInstanceName: { eq: "blog" }
+        childMdx: { fields: { locale: { eq: $locale } } }
+      }, 
+      limit: 3, 
+      sort: {fields: childrenMdx___frontmatter___date, order: DESC}
+    ) {
       totalCount
-      edges {
-        node {
-          id
+      nodes {
+        childMdx {
+          fields {
+            slug
+          }
           frontmatter {
             title
             date(formatString: "DD/MMM/YYYY")
-            description
           }
-          fields {
-            slug
-          }          
-          timeToRead
-          excerpt
         }
       }
     }
-    allPosts: allMarkdownRemark (
-      sort: { fields: [frontmatter___date], order: DESC }
-      filter: {frontmatter: {type: {eq: "blog"}}}
-      ) {
+
+    postsEN: allFile(
+      filter: {
+        sourceInstanceName: { eq: "blog" }
+        childMdx: { fields: { locale: { eq: "en" } } }
+      } ) { 
       totalCount
-      edges {
-        node {
-          id
-          frontmatter {
-            title
-            date(formatString: "DD/MMM/YYYY")
-            description
-          }
-          fields {
-            slug
-          }          
-          timeToRead
-          excerpt
+    }
+
+    postsES: allFile(
+      filter: {
+        sourceInstanceName: { eq: "blog" }
+        childMdx: { fields: { locale: { eq: "es" } } }
+      } ) { 
+      totalCount
+    }
+
+    postsPT: allFile(
+      filter: {
+        sourceInstanceName: { eq: "blog" }
+        childMdx: { fields: { locale: { eq: "pt" } } }
+      } ) { 
+      totalCount
+    }    
+
+    eventsEN: allItem (filter: {
+      layout: {eq: "event"}
+      fields: {locale: {eq: "en"} }
+    }) {
+      totalCount
+    }  
+
+    eventsES: allItem (filter: {
+      layout: {eq: "event"}
+      fields: {locale: {eq: "es"} }
+    }) {
+      totalCount
+    }
+  
+    eventsPT: allItem (filter: {
+      layout: {eq: "event"}
+      fields: {locale: {eq: "pt"} }
+    }) {
+      totalCount
+    }
+
+    events: allItem(filter: {layout: {eq: "event"}, fields: {locale: {eq: $locale}}},
+    limit: 3, sort: {fields: date, order: DESC}
+    ) {
+      totalCount
+      nodes {
+        id
+        date(formatString: "DD/MMM/YYYY")
+        local
+        title
+        type
+        fields {
+          slug
         }
       }
     }
+
+    site {
+      siteMetadata {
+        title
+        description
+      }
+    }    
   }
 `

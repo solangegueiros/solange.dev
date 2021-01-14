@@ -1,35 +1,31 @@
-import React from "react"
-import PropTypes from "prop-types"
+import * as React from "react"
+import { MDXProvider } from "@mdx-js/react"
+import { MdxLink} from "gatsby-theme-i18n"
+//import { useIntl } from "react-intl"
+import Header from "../components/header"
+import Footer from "../components/footer"
 
-import Header from "./header"
-import Footer from "./footer"
+import "../styles/layout.css"
 
-/*
-<div style={{ margin: `3rem auto`, maxWidth: 1200, padding: `0 1rem` }}>
-<div style={{ margin: `0 auto`, maxWidth: 800, padding: `0 1rem` }}>
-<div style={{ margin: `0 auto`, padding: `0 ` }}>
-*/
+const components = {
+  a: MdxLink,
+}
+
+const Layout = ({ children, pageContext }) => {
+  //const intl = useIntl()
 
 
-const Layout = ({ children }) => {
   return (
-    <>
-      <Header />
+    <React.Fragment>
+      <Header pageContext={pageContext}/>
+      
+      <main style={{ margin: `1rem auto`, maxWidth: 800, padding: `0 1rem` }}>
+        <MDXProvider components={components}>{children}</MDXProvider>
+      </main>
 
-      <div  >
-        {children}
-
-        <Footer />
-      </div>
-
-    </>
+      <Footer pageContext={pageContext}/>
+    </React.Fragment>
   )
 }
 
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-}
-
 export default Layout
-
-

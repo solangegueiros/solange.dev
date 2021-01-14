@@ -1,61 +1,99 @@
+require(`dotenv`).config({
+  path: `.env`,
+})
+
 module.exports = {
   siteMetadata: {
     siteUrl: `https://solange.dev`,
     title: `Blockchain Blog Sol`,
     description: `Blockchain developers blog`,
-    author: {
-      name: `Solange Gueiros`,
-      twitter: `solangegueiros`,
-    }
-  },  
+    author: `Solange Gueiros`,
+    // author: {
+    //   name: `Solange Gueiros`,
+    //   twitter: `solangegueiros`,
+    // }
+    social: [
+      {
+        name: `Twitter`,
+        url: `https://twitter.com/solangegueiros`,
+      },
+      {
+        name: `GitHub`,
+        url: `https://github.com/solangegueiros`,
+      },
+    ],    
+  },
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `blog`,
-        path: `${__dirname}/content/blog/`,
+        name: `pages`,
+        path: `${__dirname}/src/pages`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `talks`,
-        path: `${__dirname}/content/talks/`,
+        name: `blog`,
+        path: `${__dirname}/content/blog`,
       },
     },
     {
-      resolve: "gatsby-remark-embed-video",
+      resolve: `gatsby-source-filesystem`,
       options: {
-          width: 800,
-          ratio: 1.77, 
-          height: 400, 
-          related: false,
-          noIframeBorder: true
+        name: `event`,
+        path: `${__dirname}/content/event`,
       },
     },    
     {
-      resolve: `gatsby-transformer-remark`,
+      resolve: `gatsby-source-filesystem`,
       options: {
-        plugins: [
+        name: `presentations`,
+        path: `${__dirname}/content/presentations`,
+      },
+    },
+    {
+      resolve: `gatsby-theme-i18n`,
+      options: {
+        defaultLang: `en`,
+        locales: process.env.LOCALES,
+        configPath: require.resolve(`./data/i18n-config.json`),
+      },
+    },
+    {
+      resolve: `gatsby-theme-i18n-react-intl`,
+      options: {
+        defaultLocale: `./data/react-intl/en.json`,
+      },
+    },
+    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        extensions: [`.md`, `.mdx`],
+        defaultLayouts: {
+          default: require.resolve(`./src/components/layout.js`),
+        },
+        gatsbyRemarkPlugins: [
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 800,
+              maxWidth: 1024
             },
           },
-          `gatsby-remark-responsive-iframe`,
-        ],
+        ],        
       },
-    },    
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
-    `gatsby-plugin-emotion`,
+    },
     {
-      resolve: `gatsby-plugin-typography`,
+      resolve: "gatsby-plugin-react-svg",
       options: {
-        pathToConfigModule: `src/utils/typography`,
-      },
+        rule: {
+          include: /flags/
+        }
+      }
     },    
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sass`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -72,9 +110,9 @@ module.exports = {
       },
     },
     //The offline plugin should be listed after the manifest plugin so that the offline plugin can cache the created manifest.webmanifest.
-    `gatsby-plugin-offline`,
-    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-offline`,    
     `gatsby-plugin-sitemap`,
+    
+    
   ],
 }
-
