@@ -108,9 +108,9 @@ El comando `truffle unbox` configura un proyecto basado en una plantilla conocid
 
 En este tutorial, usaremos el Truffle box **rsk-token-box**, que incluye configuraciones de red RSK y el smart contract Token con menos de 10 líneas de código que usa los smart contract de Open Zeppelin como base.
 
-## Crees una nueva carpeta
+## Crea una nueva carpeta
 
-Por ejemplo, cree la carpeta `rsk-token`.
+Por ejemplo, crea la carpeta `rsk-token`.
 
 Navega a la carpeta en la terminal.
 
@@ -391,7 +391,8 @@ En cualquiera de las redes, ejecute este comando en una terminal (no en Truffle 
 truffle migrate --network testnet
 ```
 
-> A veces, Testnet está congestionada y el proceso lleva tiempo. Puede detener el proceso con `CTRL + C` e iniciarlo de nuevo. La migración de trufas continuará donde la dejó.
+> A veces, Testnet está congestionada y el proceso lleva tiempo. Puede detener el proceso con `CTRL + C` e iniciarlo de nuevo. 
+> La migración de Truffle continuará donde la dejó.
 
 # Interactuar con el token en Truffle Console
 
@@ -431,7 +432,7 @@ Esto mostrará la dirección publicada del contrato inteligente y el hash de la 
 
 ![token instance](/images/image-26.png)
 
-## Verifique el total Supply
+## Verificar el total supply
 
 Para comprobar si ya tenemos tokens acuñados, llame a la función `totalSupply`:
 
@@ -443,9 +444,10 @@ El valor devuelto es 0, lo que se esperaba, ya que no realizamos ninguna acuñac
 
 ![totalSupply](/images/image-27.png)
 
-## Consulte el saldo del token
+## Consulta el saldo del token
 
-Para ver el saldo de una cuenta, llame a la función "saldo de". Por ejemplo, para mirar el saldo de la cuenta 0:
+Para ver el saldo de una cuenta, llame a la función `balanceOf`. 
+Por ejemplo, para mirar el saldo de la cuenta 0:
 
 ```javascript
 (await token.balanceOf(accounts[0])).toString()
@@ -495,7 +497,7 @@ Mira los resultados:
 
 ![token balances](/images/image-31.png)
 
-## Verifique el total Supply de nuevo
+## Verifica el total supply de nuevo
 
 Verifique el suministro total nuevamente:
 
@@ -519,7 +521,9 @@ token.transfer(accounts[2], 4000, {from: accounts[0]})
 
 ![token transfer](/images/image-33.png)
 
-La cuenta 2 no tenía tokens antes de la transferencia y ahora debería tener 40. La cuenta 1 debe tener 60 tokens. Además, el suministro total será el mismo.
+La cuenta 2 no tenía tokens antes de la transferencia y ahora debería tener 40. 
+La cuenta 1 debe tener 60 tokens. 
+Además, el suministro total será el mismo.
 
 Revisemos el saldo de cada cuenta y el suministro total:
 

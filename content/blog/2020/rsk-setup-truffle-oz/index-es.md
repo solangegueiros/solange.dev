@@ -1,85 +1,87 @@
 ---
 title: Cómo crear un proyecto usando Truffle y OpenZeppelin conectado a la red RSK
 date: "2020-10-19T20:00:00.000Z"
-description: "Cómo crear un proyecto utilizando el Truffle framework y la biblioteca de contratos inteligentes Open Zeppelin conectada tanto a un nodo local como a la red de prueba RSK."
+description: "Cómo crear un proyecto utilizando el framework Truffle y la biblioteca de contratos inteligentes Open Zeppelin conectados tanto a un nodo local como a la red de prueba RSK."
 tags: tutorial, rsk, openzeppelin, smart-contracts, truffle
 type: blog
 ---
 
-![Title](/images/image-00.png)
+![Title](/images/image-es-00.png)
 
-En este tutorial, le mostraré paso a paso cómo crear un nuevo proyecto de Blockchain, utilizando el Truffle framework y la biblioteca de contratos inteligentes Open Zeppelin, conectados tanto a un nodo local como a la red de prueba RSK.
+En este tutorial, te mostraré paso a paso cómo crear un nuevo proyecto de Blockchain, utilizando el framework Truffle y la biblioteca de contratos inteligentes Open Zeppelin, conectados tanto a un nodo local como a la red de prueba RSK.
 
-No importa si está comenzando desde cero o si ya es un desarrollador, no necesita ser un experto para hacer este tutorial. 
+No importa si estás comenzando desde cero o si ya eres un desarrollador, no necesitas ser un experto para hacer este tutorial. 
 
 # Overview
 
 A continuación se muestra un resumen de los pasos que daremos para crear nuestro proyecto:
 
-1. Instalar los requisitos previos;
+1. Instalar los requerimientos previos;
 2. Ejecutar un nodo RSK local (regtest);
-3. Inicializar un proyecto usando Truffle;
-4. Instalar contratos inteligentes de Open Zeppelin contratos inteligentes en el proyecto;
+3. Iniciar un proyecto usando Truffle;
+4. Instalar los contratos inteligentes de Open Zeppelin en el proyecto;
 5. Instalar el HD wallet provider;
-6. Cree un mnemónico para una billetera;
-7. Configure Truffle para conectarse a redes RSK;
-10. Utilice la consola Truffle;
+6. Crear un mnemónico para una billetera;
+7. Configurar Truffle para conectarse a la red RSK;
+10. Utilizar la consola Truffle;
 11. Adquirir algunos tR-BTC en el faucet;
 
-# Prerrequisitos
+# Requerimientos previos
 
 * Git
 * POSIX compliant shell
 * Curl
 * Java
 * Node.js e NPM (Node Package Manager)
-* Editor: Visual Studio Code (VSCode) u otro editor de su elección
+* Editor: Visual Studio Code (VSCode) u otro editor de tu elección
 * Extensión VSCode para el language Solidity
 * Truffle framework
 
 ## Git
 
-Git es un sistema de control de versiones de código abierto. Algunos paquetes que se instalarán posteriormente utilizan Git internamente para descargar las versiones correctas.
-Además, en el sistema operativo (SO) Windows, se instala un terminal POSIX con él, llamado `Git Bash`, que es el siguiente requisito previo.
+Git es un sistema de control de versiones de código abierto. Algunos paquetes que instalaremos utilizan Git internamente para descargar las versiones correctas.
 
-Instales [Git para Windows](https://gitforwindows.org/), que incluye la terminal Git Bash. 
+Además, en el sistema operativo (SO) Windows, Git instala un terminal POSIX, llamado `Git Bash`, que es el siguiente requisito previo.
+Instala [Git para Windows](https://gitforwindows.org/), que incluye la terminal Git Bash. 
 
-Este [tutorial on installing and using Git Bash](https://www.atlassian.com/git/tutorials/git-bash) (en ingles) también puede ayudar.
+Este [tutorial on installing and using Git Bash](https://www.atlassian.com/git/tutorials/git-bash) (en inglés) también te puede ayudar.
 
-## Shell compatível POSIX
+## Terminal POSIX compatible
 
-**Portable Operating System Interface (POSIX)** es una familia de estándares especificados por la IEEE Computer Society para mantener la compatibilidad entre sistemas operativos. POSIX define la interfaz de programación para la aplicación (Application Programming Interface - API) para terminales de comando e interfaces de utilidades, de modo que haya compatibilidad entre diferentes variantes de Unix y otros sistemas operativos. Fuente: [Wikipidia](https://en.wikipedia.org/wiki/POSIX)
+**Portable Operating System Interface (POSIX)** es una familia de estándares especificados por la IEEE Computer Society para mantener la compatibilidad entre sistemas operativos. 
+POSIX define la interfaz de programación de aplicación (Application Programming Interface - API) para terminales de comando e interfaces de utilidades, para garantizar que haya compatibilidad entre diferentes variantes de Unix y otros sistemas operativos. 
+Fuente: [Wikipedia](https://en.wikipedia.org/wiki/POSIX)
 
-* Mac OSX y distribuciones de Linux: uses el terminal estándar
-* Windows: utilice el terminal `Git Bash`, instalado junto con` Git` en el paso anterior. Si usa el terminal estándar (cmd) o PowerShell, es posible que los comandos no funcionen.
+* Mac OSX y distribuciones de Linux: usa el terminal estándar
+* Windows: utiliza el terminal `Git Bash`, instalado junto con `Git` en el paso anterior. Si usas el terminal estándar (cmd) o PowerShell, es posible que los comandos no funcionen correctamente
   
 ## cURL
 
-Este es un sistema de comando generalmente instalado en su sistema operativo.
+Este es un sistema de comando generalmente instalado en tu sistema operativo.
 
-Si el comando `curl --version` tiene un error, [download curl](https://curl.haxx.se/download.html).
+Ejecuta el comando `curl --version` y si devuleve un error, [descarga curl](https://curl.haxx.se/download.html).
 
 ## Java
 
-Se requiere Java para ejecutar RSKj.
+Se requiere Java para ejecutar el nodo RSKj.
 
-Asegúrese de que ya tiene instalado el Java runtime:
+Asegúrate de que ya tienes instalado el Java runtime:
 
 ```shell
 java -version
 ```
 
-Si devuelve una versión, significa que la ha instalado antes.
+Si devuelve una versión, significa que ya lo has instalado antes.
 
 ![java -version](/images/image-01.png)
 
-Si necesita instalar, vaya a [Java Download](https://www.java.com/en/download/)
+Si necesitas instalarlo, ve a [Java Download](https://www.java.com/en/download/)
 
 ![Java Download](/images/image-02.png)
 
 ### Para Mac OSX y Linux 
 
-Hay varias formas de hacer esto. SDKman es uno de ellos, y permite la instalación y selección de diferentes versiones:
+Hay varias formas de hacer esto. SDKman es una de ellas, y permite la instalación y selección de diferentes versiones:
 
 ```shell
 curl -s "https://get.sdkman.io/" | bash
@@ -98,11 +100,11 @@ sdk use java 8.0.242.j9-adpt
 java -version
 ```
 
-## Node.js e NPM
+## Node.js y NPM
 
 Otra dependencia es NPM, que se instala con Node.js.
 
-Para comprobar si Node.js y NPM ya están instalados, compruebe si los siguientes comandos funcionan en la terminal:
+Para comprobar si Node.js y NPM ya están instalados, comprueba si los siguientes comandos funcionan en la terminal:
 
 ```shell
 node --version
@@ -111,9 +113,9 @@ npm --version
 
 ![node and npm version](/images/image-03.png)
 
-Ve a [Node.js](https://nodejs.org/en/) si necesita instalarlos.
+Ve a [Node.js](https://nodejs.org/en/) si necesitas instalarlos.
 
-Si desea tener más de una versión del nodo instalada, use el administrador de versiones del node, llamado [nvm](https://github.com/nvm-sh/nvm).
+Si deseas tener más de una versión del Node.js instalada, usa el administrador de versiones del Node.js, llamado [nvm](https://github.com/nvm-sh/nvm).
 
 ## Editor de código fuente
 
@@ -124,9 +126,9 @@ En este tutorial estoy usando VSCode para crear los archivos del proyecto.
 
 ### Visual Studio Code (VS Code)
 
-Para instalar, [descargar aquí](https://code.visualstudio.com/download).
+Para instalarlo, [descárgalo aquí](https://code.visualstudio.com/download).
 
-Compruebe si la instalación del código VS está bien consultando su versión en el terminal:
+Comprueba si la instalación del VS Code está bien consultando su versión en el terminal:
 
 ```shell
 code -v
@@ -136,20 +138,22 @@ code -v
 
 ## Extensión VSCode para el lenguaje Solidity
 
-Si usa VSCode, vaya a Extensions (Menu View -> Extensions).
+Si usas VSCode, ve a Extensions (Menu View -> Extensions).
 
-1. Escriba `solidity` en el campo de búsqueda.
-2. Seleccione la extensión "solidity" de Juan Blanco.
-3. Haga clic en `install`.
+1. Escribe `solidity` en el campo de búsqueda.
+2. Selecciona la extensión "solidity" de Juan Blanco.
+3. Haz clic en `install`.
+
+![vscode version](/images/image-42.png)
 
 ## Truffle framework
 
-[Truffle](https://www.trufflesuite.com/truffle) es un framework bien conocido para el desarrollo de contratos inteligentes, lo que facilita la vida del desarrollador.
-Entre sus características, podemos mencionar la gestión de la "vida" de un contrato inteligente (se pueden realizar varias publicaciones y averiguar cuál fue la última), desarrollo de scripts para despliegue, pruebas automatizadas y gestión de red simplificada.
+[Truffle](https://www.trufflesuite.com/truffle) es un framework bien conocido para el desarrollo de contratos inteligentes, que facilita la vida del desarrollador.
+Entre sus características, podemos mencionar: la gestión de la "vida" de un contrato inteligente (se pueden realizar varias publicaciones y averiguar cuál fue la última), el desarrollo de scripts para despliegue, pruebas automatizadas y una gestión simplificada de red.
 
-De la misma forma también facilita al desarrollador RSK porque podemos configurar redes RSK en Truffle.
+De la misma forma, también le facilita el trabajo al desarrollador RSK porque podemos configurar redes RSK en Truffle.
 
-Para instalar Truffle, en la terminal, escriba el comando a continuación y presione la tecla `enter`:
+Para instalar Truffle en la terminal, escribe el siguiente comando y presiona la tecla `enter`:
 
 ```shell
 npm install -g truffle
@@ -157,7 +161,7 @@ npm install -g truffle
 
 ![truffle install](/images/image-05.png)
 
-Cuando se complete la instalación, cierre la ventana del terminal y ábrala nuevamente para verificar la versión de Truffle:
+Cuando se complete la instalación, cierra la ventana de la terminal y ábrela nuevamente para verificar la versión de Truffle:
 
 ```shell
 truffle version
@@ -173,9 +177,9 @@ Hay varias formas de instalar / configurar un nodo RSK. Aquí descargaremos un a
 
 ### Download 
 
-Vaya a página de [releases](https://github.com/rsksmart/rskj/releases) y haga clic en la última versión para descargar.
+Ve a la página de [releases](https://github.com/rsksmart/rskj/releases) y haz clic en la última versión para descargar.
 
-Debe seleccionar el archivo JAR, que se encuentra al final de la publicación de la última versión.
+Debes seleccionar el archivo JAR, que se encuentra al final de la publicación de la última versión.
 Su nombre es algo así como `rskj-core-*.jar`:
 
 ![Download last RSK release](/images/image-07.png)
@@ -184,7 +188,7 @@ Su nombre es algo así como `rskj-core-*.jar`:
 
 Al instalar y ejecutar un nodo RSKj, se recomienda verificar que su copia sea legítima.
 
-En el directorio donde se guardó el archivo JAR, vaya a una terminal POSIX y ejecute este comando:
+En el directorio donde se guardó el archivo JAR, ve a una terminal POSIX y ejecuta este comando:
 
 ```shell
 sha256sum rskj-core-2.0.1-PAPYRUS-all.jar
@@ -198,13 +202,13 @@ Para esta versión, por ejemplo, el resultado será este:
 
 ![Verify authenticity](/images/image-08.png)
 
-> Si está utilizando el sistema operativo Windows, necesita un terminal POSIX.
-> Vea las instrucciones sobre [Git Bash](#shell-compatível-posix) arriba. 
+> Si estás utilizando SO Windows, necesitas una terminal POSIX.
+> Chequea las instrucciones sobre [Git Bash](#shell-compatível-posix) arriba. 
 
 Para obtener más información sobre cómo verificar que su copia sea original,
-incluida la verificación de firmas, vea las [instrucciones en inglés](https://developers.rsk.co/rsk/node/security-chain/ "Verify authenticity of RskJ source code and its binary dependencies").
+incluyendo la verificación de firmas, mira las [instrucciones en inglés](https://developers.rsk.co/rsk/node/security-chain/ "Verify authenticity of RskJ source code and its binary dependencies").
 
-### Execução
+### Ejecución
 
 Para ejecutar el nodo:
 
@@ -212,7 +216,7 @@ Para ejecutar el nodo:
 java -cp <PATH-TO-THE-RSKJ-JAR> -Drpc.providers.web.cors=* co.rsk.Start --regtest
 ```
 
-(Cambie <PATH-TO-THE-RSKJ-JAR> para la ubicación de su archivo JAR).
+(Cambia `<PATH-TO-THE-RSKJ-JAR>` por la ubicación de tu archivo JAR).
 
 Estoy usando el sistema operativo (SO) Windows y guardé el archivo JAR en `C:\RSK\node`,
 entonces la ruta completa a mi archivo es
@@ -238,13 +242,11 @@ java -cp C:/RSK/node/rskj-core-2.0.1-PAPYRUS-all.jar -Drpc.providers.web.cors=* 
 java -cp ~/RSK/node/rskj-core-2.0.1-PAPYRUS-all.jar -Drpc.providers.web.cors=* co.rsk.Start --regtest
 ```
 
-Si no surgió nada después de ejecutar el comando, generalmente significa que el nodo está funcionando perfectamente. El resultado se guarda en el archivo de log.
+Si no surgió nada después de ejecutar el comando, en general significa que el nodo está funcionando perfectamente. El resultado se guarda en el archivo de log.
 
-> Vea el parámetro usado arriba: `-Drpc.providers.web.cors=*`
-> El deshabilita la protección para compartir para diferentes fuentes,
-> haciendo que cualquier página pueda acceder al nodo.
-> Usaremos las consultas JSON-RPC desde un navegador
-> desde una DApp, entonces necesitamos activar esta opción.
+> Realizaremos las consultas JSON-RPC desde una DApp en un navegador, entonces necesitamos activar una opción que deshabilita la protección para compartir a diferentes fuentes, haciendo que cualquier página pueda acceder al nodo.
+> 
+> Para eso usamos el parámetro: `-Drpc.providers.web.cors=*` 
 
 Este es el resultado en la terminal de Windows:
 
@@ -252,12 +254,12 @@ Este es el resultado en la terminal de Windows:
 
 **Importante:**
 
-> No cierre la ventana del terminal / consola.
-> El nodo se está ejecutando en esta ventana y, si cierra, finalizará la ejecución.
+> No cierres la ventana de la terminal / consola.
+> El nodo se está ejecutando en esta ventana y, si la cierras, finalizará la ejecución.
 
-### Verifique que el nodo esté funcionando usando cURL
+### Verifica que el nodo esté funcionando usando cURL
 
-Abra una nueva ventana de terminal.
+Abre una nueva ventana de la terminal.
 
 Consulta el servidor HTTP RPC del nodo. Este es un ejemplo usando cURL:
 
@@ -275,12 +277,12 @@ La respuesta será algo como:
 
 La propiedad `result` devuelve el número del último bloque sincronizado.
 En nuestro caso, que es un nodo local aislado, es el último bloque minado.
-Tenga en cuenta que el valor `0x2991b` está en hexadecimal (base 16). En el ejemplo anterior, el número de bloque es "170267" en decimal (base 10).
+Ten en cuenta que el valor `0x2991b` está en hexadecimal (base 16). En el ejemplo anterior, el número de bloque es "170267" en decimal (base 10).
 
-Para saber mas:
+Para saber más:
 [Setup RSKj with Java](https://developers.rsk.co/rsk/node/install/java/)
 
-Si tiene algún problema, verifique si su sistema cumple con los requisitos previos [minimum requirements](https://developers.rsk.co/rsk/node/install/requirements/).
+Si tienes algún problema, verifica si tu sistema cumple con los requisitos previos [minimum requirements](https://developers.rsk.co/rsk/node/install/requirements/).
 
 Hay otras formas de instalar un nodo RSK, en otras plataformas: [installing RSKj](https://developers.rsk.co/rsk/node/install/)
 
@@ -801,6 +803,6 @@ Ahora tengo 50000000000000000, lo que significa 0,05 con 18 decimales de precisi
 
 # Próximos pasos
 
-En este punto, hemos instalado todos los requisitos previos y hemos creado una plantilla de proyecto vacía, utilizando el marco Truffle y la biblioteca de contratos inteligentes Open Zeppelin, conectado tanto a un nodo local (Regtest) como a la red de prueba RSK.
+En este punto, hemos instalado todos los requisitos previos y hemos creado una plantilla de proyecto vacía, utilizando el Truffle framework y la biblioteca de contratos inteligentes Open Zeppelin, conectado tanto a un nodo local (Regtest) como a la red de prueba RSK.
 
 Aún no hemos creado nada, pero estás listo para pasar a los próximos tutoriales, ¡donde haremos algunos proyectos realmente interesantes!

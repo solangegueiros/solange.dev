@@ -4,7 +4,7 @@ date: "2019-01-04T09:10:00.000Z"
 description: "Entrevista sobre o hard fork Constantinople no blockchain Ethereum para CriptoFacil, Sao Paulo, Brasil"
 type: talk
 event: CriptoFacil
-where: Sao Paulo, BrasSil
+where: Sao Paulo, Brasil
 site: "https://www.criptofacil.com/"
 
 ---

@@ -144,6 +144,8 @@ Se utilizar o VSCode, vá em Extensions (Menu View -> Extensions).
 2. Selecione a extensão `solidity` do Juan Blanco.
 3. Clique em `install`.
 
+![vscode version](/images/image-42.png)
+
 ## Truffle
 
 [Truffle](https://www.trufflesuite.com/truffle) é um conhecido framework para desenvolvimento de smart contracts, que facilita a vida do desenvolvedor.
