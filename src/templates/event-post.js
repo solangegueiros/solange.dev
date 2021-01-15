@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
+import { OutboundLink } from "gatsby-plugin-google-analytics"
 
 //import { LocalizedLink } from "gatsby-theme-i18n"
 import { useIntl } from "react-intl"
@@ -61,7 +62,7 @@ const EventPost = ({ data, pageContext }) => {
             <ul>
               {article.map((url, index) => (
                 <li key={index}>
-                  <a href={url} target="_blank" rel="noopener noreferrer">{url}</a>
+                  <OutboundLink href={url} target="_blank" rel="noopener noreferrer">{url}</OutboundLink>
                 </li>
               ))}
             </ul>           
@@ -74,7 +75,7 @@ const EventPost = ({ data, pageContext }) => {
             <ul>
               {links.map((url, index) => (
                 <li key={index}>
-                  <a href={url} target="_blank" rel="noopener noreferrer">{url}</a>
+                  <OutboundLink href={url} target="_blank" rel="noopener noreferrer">{url}</OutboundLink>
                 </li>
               ))}
             </ul>           
