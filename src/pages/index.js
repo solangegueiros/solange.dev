@@ -44,7 +44,7 @@ const Index = ({ data, pageContext }) => {
             <LocalizedLink to={item.fields.slug}>
               <h4>{item.title}</h4>
             </LocalizedLink>
-            <small> {item.type}, {item.date} - {item.local}</small>
+            <small> {item.type} by {item.organizer}, {item.date} - {item.local}</small>
           </li>
         ))}
       </ul>
@@ -181,6 +181,7 @@ export const query = graphql`
         id
         date(formatString: "DD/MMM/YYYY")
         local
+        organizer
         title
         type
         fields {
