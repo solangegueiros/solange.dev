@@ -50,8 +50,22 @@ const Index = ({ data, pageContext }) => {
       </ul>
       <LocalizedLink to="/events/">
         {intl.formatMessage({ id: "all events" })}
-      </LocalizedLink>      
+      </LocalizedLink> 
+
       
+      <br/>
+      <br/>
+
+    </Layout>
+  )
+}
+
+export default Index
+
+
+  /*
+  //Blog part
+
       <br/>
       <br/>
       <h2>{intl.formatMessage({ id: "blog" })}</h2>
@@ -69,38 +83,7 @@ const Index = ({ data, pageContext }) => {
       <LocalizedLink to="/blog/">
         {intl.formatMessage({ id: "all posts" })}
       </LocalizedLink>
-      
-      <br/>
-      <br/>
 
-    </Layout>
-  )
-}
-
-export default Index
-
-
-  /*
-  <Language pageContext={pageContext} />
-  <h1>{intl.formatMessage({ id: "home" })} {intl.formatMessage({ id: "helloWorld" })}</h1>
-
-  //Count posts
-      <table>
-        <thead>
-          <tr>
-            <th className="TableTextCenter" >{intl.formatMessage({ id: "in" })} {intl.formatMessage({ id: "en" })}</th>
-            <th className="TableTextCenter" >{intl.formatMessage({ id: "in" })} {intl.formatMessage({ id: "es" })}</th>
-            <th className="TableTextCenter" >{intl.formatMessage({ id: "in" })} {intl.formatMessage({ id: "pt" })}</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td className="TableTextCenter" >{data.postsEN.totalCount}</td>
-            <td className="TableTextCenter" >{data.postsES.totalCount}</td>
-            <td className="TableTextCenter" >{data.postsPT.totalCount}</td>
-          </tr>
-        </tbody>
-      </table>
   */
 
 export const query = graphql`
@@ -174,7 +157,7 @@ export const query = graphql`
     }
 
     events: allItem(filter: {layout: {eq: "event"}, fields: {locale: {eq: $locale}}},
-    limit: 3, sort: {fields: date, order: DESC}
+    limit: 5, sort: {fields: date, order: DESC}
     ) {
       totalCount
       nodes {
