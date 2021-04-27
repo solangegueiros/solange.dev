@@ -11,96 +11,119 @@ slug: /blockchain-teaching-adventures/
 
 ![workshop title](./images/blockchain-adventures-01.png)
 
-Na semana passada, (dias 19 e 20/abril/2021) eu fui convidada pela Blockchain Academy Mexico para dar um workshop para o Instituto Tecnológico de Monterrey.
-O tema era "Cómo crear tu propio token en Ethereum".
+Last week - 19th and 20th of April/2021, I was invited by Blockchain Academy Mexico to give a workshop in Spanish to the Instituto Tecnológico de Monterrey.
+The theme was "How to create your own token in Ethereum".
 
-Gosto muito de usar o Framework [Truffle](https://www.trufflesuite.com/truffle) com alunos iniciantes, porque ele facilita algumas tarefas.
-E, para criar tokens, uso muito a biblioteca de smart contracts da [Open Zeppelin](https://openzeppelin.com/contracts/), porque os smart contracts são auditados por esta empresa de auditoria e segurança.
+I really like using the framework [Truffle](https://www.trufflesuite.com/truffle) with beginning students, because it facilitates some tasks.
+In addition, to create tokens, I use the [Open Zeppelin](https://openzeppelin.com/contracts/) library, 
+because smart contracts were created by this auditing and security company.
 
-No primeiro dia instalamos todos os pré requisitos e fizemos uma experiência básica com remix, outra IDE online fantástica. Criamos um smart contract básico, para registrar e apresentar uma informação gravada no Blockchain
-No dia seguinte, com tudo preparado, a programação era criar o token. Teriamos tempo de sobra para interagir com os tokens dos outros alunos.
+On the first day of class we installed all the prerequisites and taught how to create the first smart contract using [Remix](https://remix.ethereum.org/), another fantastic online IDE.
+We created a basic smart contract, to register and present information recorded on the Blockchain.
+The next day, with everything ready, the schedule was to create the token.
+Students would have plenty of time to interact with the tokens they created.
 
-Mas… não foi bem assim :(
+But it was not like that :(
 
-### Passando vergonha no ensino de Blockchain ao vivo
+### Embarrassing Live Blockchain Teaching
 
-<div style="width:100%;height:0;padding-bottom:106%;position:relative;"><iframe src="https://giphy.com/embed/10ECejNtM1GyRy" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/dog-angry-doge-10ECejNtM1GyRy">via GIPHY</a></p>
+I often say that giving hands on lessons about smart contracts is to live dangerously!
 
-Costumo dizer que dar aulas práticas de Smart contracts, é viver perigosamente!
+This Blockchain world evolves very quickly:
 
-Este mundo Blockchain evolui muito rapidamente:
+- The tools release new versions, which are not always compatible with the previous ones.
+- The Solidity compiler is constantly updated.
+- Smart contracts created in one version cannot always be compiled in another.
 
-- As ferramentas lançam novas versões, que nem sempre são compatíveis com as anteriores. 
-- O compilador Solidity evolui muito rapidamente.
-- Os smart contracts criados em uma versão nem sempre podem ser compilados em outra.
-
-E… eu passo vergonha tentando ensinar coisas que já fiz antes, mas que não funcionam mais :(
+And… I feel ashamed trying to teach things that I've done before, but that don't work anymore :(
 
 <div style="width:100%;height:0;padding-bottom:79%;position:relative;"><iframe src="https://giphy.com/embed/eP1fobjusSbu" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/shame-for-box-of-eP1fobjusSbu">via GIPHY</a></p>
 
-Uma das vezes mais marcantes para mim foi em dezembro de 2018, quando o Truffle alterou a versão 4 para a versão 5.
-Eu estava dando um curso pela Blockchain Academy Brasil em Brasília, para o Dataprev, um orgão público que desenvolve diversos sistemas para o governo brasileiro, fundamental na identificação dos cidadãos e empresas.
+One of the most striking times for me was in December 2018, when Truffle changed the version from 4 to version 5.
+I was teaching a course at the Blockchain Academy Brasil in Brasília, for Dataprev, 
+a public agency that develops several systems for the Brazilian government, which is fundamental in identifying citizens and companies.
 
-Uma semana antes eu havia revisado o plano de aula e testado todos os exercícios, estava segura que tudo estava funcionando.
-Mas eu estava dando aula exatamente no dia do lançamento da versão 5 do Truffle! E o comando mais simples para criar um projeto não funcionava mais.
-Eu ainda não tinha experiência com este tipo de problema, onde alguma coisa é alterada no ambiente, fora do seu controle, e nada mais funciona…
-Estendi minha noite até a madrugada tentando descobrir o que estava acontecendo, e arrumei uma solução para as aulas. 
+A week before I had reviewed the lesson plan and tested all the exercises, I was sure everything was working.
+But I was teaching right on the day Truffle version 5 was released!
+And the simplest command to create a project no longer worked.
+I still had no experience with this type of problem, where something is changed in the environment, out of your control, and nothing else works...
+I spent the night and until dawn trying to find out what was going on, until I got a solution for the class on the next dis.
 
-Isto já aconteceu outras vezes pelo caminho. Para tentar evitar, muitas vezes faço uma revisão da aula no mesmo dia, mas isto não é falta de planejamento, é exatamente o contrário. Desta forma existe uma chance menor de algo ser atualizado no caminho.
+This has happened on the way before.
+To try to avoid it, I often review the class on the same day, "at the last minute".
+This is not a lack of planning, it is just the opposite.
+This way there is less chance of something being updated on the way :)
 
-### Dicas para evitar problemas de versões em seus projetos:
+### Tips to avoid version problems in your projects:
 
-Algumas dicas para evitar estes problemas:
+Some tips to avoid these problems:
 
-- Ao instalar pacotes npm, sempre salve a versão instalada.
-- Ao criar smart contracts, defina uma versão exata do compilador solidity
-- Anote também as versões globais das ferramentas utilizadas.
+- When installing npm packages, always save the installed version.
+- When creating smart contracts, define an exact version of the solidity compiler
+- Also note the global versions of the tools used.
 
-Para criar tokens, já alterei a maneira de ensinar algumas vezes. Agora estava utilizando um projeto do ano passado, mas com as versões salvas para todos os pacotes. Estava tranquila, ensinei este workshop no início do mês. Não achei que precisava fazer uma revisão de última hora. 
-Mas… no workshop do Instituto Tecnológico de Monterrey eu passei novamente por este problema. Não fiz uma revisão no próprio dia. 
+### Returning to the tokens workshop
 
-Então o que mudou desta vez? O nó configurado no projeto, por onde é realizada a publicação no Blockchain  Ethereum.
+To create tokens, I have already changed the way I teach a few times.
+Now I was using a project from last year, but with the versions saved for all packages.
+I was calm, I taught this workshop at the beginning of the month.
+I didn't think I would need to do a last-minute check.
+But… at the Instituto Tecnológico de Monterrey workshop I went through this problem again :(
+I didn't do a review on the same day.
 
-Resolvi no final da aula, usando um workshop que dei em janeiro de 2018 na Campus Party Brasil. Fizemos a publicação no Remix.
-Alunos criaram seus tokens, trocaram tokens entre si e acho que ficaram felizes :)
+So ... what has changed this time?
+The node configured in the project, where the publication is made on the Ethereum Blockchain.
 
-Mas confesso que fiquei frustrada. Revisei diversos pontos do projeto, e não conseguia encontrar o erro. A publicação em outras redes funcionava.
-Não imaginava que teria problema com o nó utilizado no projeto. Fiz algumas pesquisas para descobrir quem era o responsável pelo nó, e descobri que era Mudit Gupta. Mais algumas pesquisas e chego ao twitter dele, onde encontro este post:
+We managed to create the token at the end of the class, using a workshop I gave in January 2018 at Campus Party Brasil.
+We made the publication using Remix.
+Students created their tokens, exchanged tokens with each other and I believe they were happy :)
+
+But I confess that I was frustrated.
+I reviewed several points of the project, and I couldn't find the error.
+Publishing on other networks worked.
+I did not imagine that I would have a problem with the knot used in the project.
+I did some research to find out who was responsible for the knot, and found out it was Mudit Gupta.
+Some more research and I get to his twitter, where I find this post:
 
 ![mudit twitter](./images/blockchain-adventures-02.png)
 
 [https://twitter.com/Mudit__Gupta/status/1378979226590670852](https://twitter.com/Mudit__Gupta/status/1378979226590670852)
 
-Infelizmente alguém abusou do nó que ele gentilemente disponibilizava sem nenhum custo para ser utilizado livremente.
-Por este motivo, ele alterou a quantidade de requisições por segundo, e isto causou o problema com o Truffle, que faz muitas consultas durante o processo de publicação de um smart contract.
+Unfortunately, someone abused the node that he kindly provided at no cost to be used freely.
+For this reason, he changed the number of requests per second, and this caused the problem with Truffle,
+which makes many queries to the node during the process of publishing a smart contract.
 
-Enviei uma mensagem para ele, e recebi uma resposta muito rápida e super amável :) 
-Ele me disponibilizou outro link onde eu posso continuar usando seu nó nas aulas.
+I sent a message to him, and received a very quick and very kind reply!
+He provided me with another link where I can continue using his node in class :)
 
-Alterei a URL e muito animada tentei fazer o Deploy.
-Mas... sem sucesso novamente!
+I changed the URL and I was very happy to try the deploy process again.
+But ... no sucess again!
 
-Com o novo nó, as versões mais antigas que eu usava não funcionam mais.
-Isto tem a ver com uma atualização de segurança realizada pelo Blockchain Ethereum, e este nó está atualizado.
+<div style="width:100%;height:0;padding-bottom:106%;position:relative;"><iframe src="https://giphy.com/embed/10ECejNtM1GyRy" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/dog-angry-doge-10ECejNtM1GyRy">via GIPHY</a></p>
 
-E aqui estão as novas ações:
+With the new node, the older versions which I used before do not work anymore.
+This was related to a security update on the Ethereum Blockchain, [EIP-155](https://eips.ethereum.org/EIPS/eip-155).
 
-- Troquei a versão do hdwallet-provider
-- Aproveitei para atualizar os smart contracts também.
-- Acrescentei novos parâmetros na configuração do Truffle
+And here are the new actions:
 
-### Considerações finais 
+- I changed the version of hdwallet-provider.
+- I took the opportunity to update the smart contracts as well.
+- I added new parameters in the Truffle configuration.
 
-Veja aqui o tutorial atualizado:
+I finally managed to publish the **Sol token box** on the testnet [Goerli](https://goerli.net/) of Ethereum!
 
-[Truffle box token by Solange Gueiros](https://ethereum.solange.dev/#/en/truffle/box-token)
+### Final considerations
 
-E a apresentação do workshop:
+Here is the updated tutorial:
+
+[Truffle box token - Solange Gueiros](https://ethereum.solange.dev/#/en/truffle/box-token)
+
+And the workshop's presentation:
 
 [Slides - Cómo crear tu propio token en Ethereum](https://docs.google.com/presentation/d/e/2PACX-1vRaqIvcCV5BuF3qB8JfC5EEUgkYApmZVii7urnxTchF2KPJVQvQetFVhPIQJgrMrTCrPXM2hKVBVNaj/pub?start=false&loop=false&delayms=3000) 
 
-Tudo isto não foi um processo simples, gastei horas fazendo pesquisas e testes.
+All of this wasn't a simple process, I spent hours doing research and testing.
 
-Agora tudo está funcionando novamente, espero que por um tempo maior :)
+Now everything is working again, I hope for a longer time :)
 
-Obrigada Mudit Gupta por me ajudar no aumento do número de desenvolvedores Blockchain no mundo :)
+Thank you Mudit Gupta for helping me to increase the number of Blockchain Ethereum developers in the world :)
