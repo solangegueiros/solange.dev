@@ -9,21 +9,29 @@ import Video from "../components/video"
 
 const EventTemplate = ({ data, pageContext }) => {
   const { t } = useTranslation()
-  const event = data.item
-  console.log(event)
 
-  //const language = event.fields.locale 
-  //const language = event.language
-  const video = event.video ? event.video.split('\n') : null;
-  //console.log ("video:", video, "\n", video.length)
-  const slides = event.slides ? event.slides.split('\n') : null;
-  //console.log ("slides:", slides, "\n", slides.length)
-  const article = event.article ? event.article.split('\n') : null;
-  const links = event.links ? event.links.split('\n') : null;
-
+  var event
   var title = t("notTranslated")
-  if (event) {
-    title = event.title
+  if (data) {
+    title = data.item.title
+    console.log("TITLE:", title)
+
+    event = data.item
+    //console.log("EVENT:", event)
+  
+    //const language = event.fields.locale 
+    //const language = event.language
+    console.log("VIDEO:", event.video)
+    const video = event.video ? event.video.split('\n') : null;
+    //console.log ("video:", video, "\n", video.length)
+    const slides = event.slides ? event.slides.split('\n') : null;
+    //console.log ("slides:", slides, "\n", slides.length)
+    
+    console.log("ARTICLE:", event.article)
+    const article = event.article ? event.article.split('\n') : null;
+    const links = event.links ? event.links.split('\n') : null;
+  
+    console.log("\n")
   }
 
 /*
