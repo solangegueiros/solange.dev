@@ -3,7 +3,10 @@ import React from "react"
 const Video = ({ videoURL, videoTitle }) => {
 
   //https://developers.google.com/youtube/player_parameters
-  if ( videoURL.includes("www.youtube.com/", 0) ) {    
+  if ( videoURL.includes("youtu.be/", 0) ) {
+    videoURL = videoURL.replace ("youtu.be/", "www.youtube.com/watch?v=")
+  }
+  if ( videoURL.includes("www.youtube.com/watch?v=", 0) ) {
     videoURL = videoURL.replace ("watch?v=", "embed/")
   }
   //console.log ("videoURL:", videoURL, "\n")
@@ -13,8 +16,6 @@ const Video = ({ videoURL, videoTitle }) => {
       <iframe
         src={videoURL}
         title={videoTitle}
-        //width="100%"
-        //height="440vh"
         frameBorder="0"
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"      
         webkitallowfullscreen="true"

@@ -1,31 +1,30 @@
-import * as React from "react"
+import * as React from 'react'
 import { graphql } from "gatsby"
-import { LocalizedLink } from "gatsby-theme-i18n"
-import { useIntl } from "react-intl"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-//import Language from "../components/language"
+import { useTranslation} from "react-i18next"
+import { LocalizedLink as Link } from "gatsby-theme-i18n"
+//import { StaticImage } from 'gatsby-plugin-image'
+import Layout from '../components/layout'
+import Seo from "../components/seo"
 
 const Index = ({ data, pageContext }) => {
-  const intl = useIntl()
+  const { t } = useTranslation()
   const { title, description } = data.site.siteMetadata
-  const posts = data.posts.nodes
-  const events = data.events.nodes
-
-
+  const posts = data.blogList
+  const events = data.eventList
+ 
   return (
     <Layout pageContext={pageContext}>
-      <SEO title={title} />      
-      
+      <Seo title={title} />
+
       <p>Sol (Solange Gueiros) {description}</p>
 
-      <h2>{intl.formatMessage({ id: "events" })}</h2>
+      <h2>{t("events")}</h2>
       <table>
         <thead>
           <tr>
-            <th className="TableTextCenter" >{intl.formatMessage({ id: "in" })} {intl.formatMessage({ id: "en" })}</th>
-            <th className="TableTextCenter" >{intl.formatMessage({ id: "in" })} {intl.formatMessage({ id: "es" })}</th>
-            <th className="TableTextCenter" >{intl.formatMessage({ id: "in" })} {intl.formatMessage({ id: "pt" })}</th>
+            <th className="TableTextCenter" >{t("in")} {t("en")}</th>
+            <th className="TableTextCenter" >{t("in")} {t("es")}</th>
+            <th className="TableTextCenter" >{t("in")} {t("pt")}</th>
           </tr>
         </thead>
         <tbody>
@@ -36,80 +35,98 @@ const Index = ({ data, pageContext }) => {
           </tr>
         </tbody>
       </table>
-      <h4>{intl.formatMessage({ id: "last events" })}</h4>
 
-      <ul>        
-        {events.map((item) => (
-          <li key={item.id}>
-            <LocalizedLink to={item.fields.slug}>
+      <h4>{t("lastEvents")}</h4>
+      <ul>
+        {events.nodes.map((item) => (
+          <article key={item.id}>
+            <Link to={`/events${item.slug}`}>
               <h4>{item.title}</h4>
-            </LocalizedLink>
+            </Link>
             <small> {item.type} by {item.organizer}, {item.date} - {item.local}</small>
-          </li>
+          </article>
         ))}
       </ul>
-      <LocalizedLink to="/events/">
-        {intl.formatMessage({ id: "all events" })}
-      </LocalizedLink> 
 
-      
-      <br/>
-      <br/>
+      <p>Total: {events.totalCount}</p>
+      <Link to="/events/">
+        {t("allEvents")}
+      </Link>
 
+
+      <br/>
+      <h2>{t("blog")}</h2>
+
+      <h4>{t("lastPosts")}</h4>
+      <ul>
+        {
+          posts.nodes.map(({ childMdx: node }) => (
+            <article key={node.frontmatter.slug}>
+              <Link to={`/blog${node.frontmatter.slug}`}>
+                <h4>{node.frontmatter.title}</h4>
+              </Link>
+              <small>Posted: {node.frontmatter.date}</small>
+            </article>
+          ))
+        }
+      </ul>
+      <p>Total: {posts.totalCount}</p>
+      <Link to="/blog/">
+        {t("allPosts")}
+      </Link>
+      <br/>
     </Layout>
   )
 }
 
 export default Index
 
-
-  /*
-  //Blog part
-
-      <br/>
-      <br/>
-      <h2>{intl.formatMessage({ id: "blog" })}</h2>
-
-      <h4>{intl.formatMessage({ id: "last posts" })}</h4>
-      <ul>        
-        {posts.map(({ childMdx: node }) => (
-          <li key={node.fields.slug}>
-            <LocalizedLink to={node.fields.slug}>
-              <h4>{node.frontmatter.title}</h4>
-            </LocalizedLink>
-          </li>
-        ))}
-      </ul>
-      <LocalizedLink to="/blog/">
-        {intl.formatMessage({ id: "all posts" })}
-      </LocalizedLink>
-
-  */
-
 export const query = graphql`
   query($locale: String!) {
+    site {
+      siteMetadata {
+        title
+        description
+      }
+    }
 
-    posts: allFile(
+    blogList: allFile(
       filter: {
         sourceInstanceName: { eq: "blog" }
         childMdx: { fields: { locale: { eq: $locale } } }
-      }, 
-      limit: 3, 
+      },
+      limit: 2,
       sort: {fields: childrenMdx___frontmatter___date, order: DESC}
     ) {
       totalCount
       nodes {
         childMdx {
-          fields {
-            slug
-          }
           frontmatter {
-            title
             date(formatString: "DD/MMM/YYYY")
+            slug
+            title            
           }
+          id
         }
       }
     }
+    
+    eventList: allItem(
+      filter: {layout: {eq: "event"}, fields: {locale: {eq: $locale}}}
+      limit: 3,
+      sort: {fields: date, order: DESC}
+    ) {
+      totalCount
+      nodes {
+        date(formatString: "DD MMMM, YYYY")
+        id
+        local
+        organizer
+        slug
+        title
+        type
+      }
+    }    
 
     postsEN: allFile(
       filter: {
@@ -133,7 +150,8 @@ export const query = graphql`
         childMdx: { fields: { locale: { eq: "pt" } } }
       } ) { 
       totalCount
-    }    
+    }
+
 
     eventsEN: allItem (filter: {
       layout: {eq: "event"}
@@ -154,30 +172,7 @@ export const query = graphql`
       fields: {locale: {eq: "pt"} }
     }) {
       totalCount
-    }
-
-    events: allItem(filter: {layout: {eq: "event"}, fields: {locale: {eq: $locale}}},
-    limit: 5, sort: {fields: date, order: DESC}
-    ) {
-      totalCount
-      nodes {
-        id
-        date(formatString: "DD/MMM/YYYY")
-        local
-        organizer
-        title
-        type
-        fields {
-          slug
-        }
-      }
-    }
-
-    site {
-      siteMetadata {
-        title
-        description
-      }
     }    
+
   }
 `

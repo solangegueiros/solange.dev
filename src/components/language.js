@@ -1,24 +1,28 @@
 import * as React from "react"
 import { LocalizedLink } from "gatsby-theme-i18n"
-import { useIntl } from "react-intl"
+import {
+  navLinks,
+  navLinkItem,
+  navLinkText,
+} from '../styles/layout.module.css'
+
+//Language selection bar
 
 const Language = ({ pageContext }) => {
-  const intl = useIntl()
+  //console.log(pageContext.originalPath)
 
   return (
-    <div>
-      <LocalizedLink to={pageContext.originalPath}  language="en">
-        English
-      </LocalizedLink>
-      {` | `}
-      <LocalizedLink to={pageContext.originalPath} language="es">
-        Espanõl        
-      </LocalizedLink>
-      {` | `}
-      <LocalizedLink to={pageContext.originalPath} language="pt">
-        Português
-      </LocalizedLink>
-    </div>
+    <nav>
+      <ul className={navLinks}>
+        {config.map(item => (
+          <li key={item.code} className={navLinkItem}>
+            <LocalizedLink to={pageContext.originalPath} language={item.code} className={navLinkText}>
+              {item.localName}
+            </LocalizedLink>
+          </li>
+        ))}          
+      </ul>
+    </nav>
   )
 }
 

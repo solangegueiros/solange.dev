@@ -1,33 +1,29 @@
-import * as React from "react"
+import * as React from 'react'
 import { graphql } from "gatsby"
-import { LocalizedLink } from "gatsby-theme-i18n"
-import { useIntl } from "react-intl"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import { useTranslation} from "react-i18next"
+import { LocalizedLink as Link } from "gatsby-theme-i18n"
+import Layout from '../components/layout'
+import Seo from "../components/seo"
 
-const Event = ({ data, pageContext }) => {
-  const intl = useIntl()
-  const locale = pageContext.locale
-  const events = data.eventList.nodes  
-  //console.log('\n events:\n',JSON.stringify(events, null, 4))
+const Events = ({ data, pageContext }) => {
+  const { t } = useTranslation()
+
+  const eventList = data.eventList;
+  //console.log("Event List \n", eventList);
 
   return (
-    <Layout pageContext={pageContext}>
-      <SEO title="Events" />
+    <Layout pageContext={pageContext} pageTitle={t("events")}>
+      <Seo title={t("events")} />
 
-      <h1>
-        {intl.formatMessage({ id: "events" })} {" "}
-        {intl.formatMessage({ id: "in" })} {" "} 
-        {intl.formatMessage({ id: locale })}
-      </h1>
-      <h4>{data.eventList.totalCount} {intl.formatMessage({ id: "events" })}</h4>
+      <p>Total: {eventList.totalCount}</p>
       <br/>
+
       <ul>
-        {events.map((item) => (
+        {eventList.nodes.map((item) => (
           <li key={item.id}>
-            <LocalizedLink to={item.fields.slug}>
+            <Link to={`/events${item.slug}`}>
               <h4>{item.title}</h4>
-            </LocalizedLink>
+            </Link>
             <small> {item.type}, {item.date} - {item.local}</small>
           </li>
         ))}
@@ -37,31 +33,22 @@ const Event = ({ data, pageContext }) => {
   )
 }
 
-export default Event
+export default Events
 
 export const pageQuery = graphql`
-  query($locale: String!) {
-    eventList: allItem (
-      filter: {
-        layout: {eq: "event"}
-        fields: {locale: {eq: $locale}}
-      },
+  query ($locale: String!) {
+    eventList: allItem(
+      filter: {layout: {eq: "event"}, fields: {locale: {eq: $locale}}}
       sort: {fields: date, order: DESC}
     ) {
       totalCount
       nodes {
-        id
-        category
         date(formatString: "DD MMMM, YYYY")
-        language
+        id
         local
-        organizer
-        tags
+        slug
         title
         type
-        fields {
-          slug
-        }
       }
     }
   }

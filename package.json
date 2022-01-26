@@ -7,13 +7,15 @@
   "license": "MIT",
   "keywords": [
     "blockchain",
+    "bitcoin",
     "smart contracts",
     "ethereum",
     "truffle",
     "truffle box",
     "geth",
     "solidity",
-    "rsk"
+    "rsk",
+    "chainlink"
   ],
   "homepage": "https://github.com/solangegueiros/solange.dev#readme",
   "repository": {
@@ -25,6 +27,7 @@
   },
   "scripts": {
     "develop": "gatsby develop",
+    "start": "gatsby develop",
     "build": "gatsby build",
     "clean": "gatsby clean",
     "serve": "gatsby serve"
@@ -32,28 +35,19 @@
   "dependencies": {
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
-    "@mdx-js/tag": "^0.20.3",
-    "gatsby": "^2.26.1",
-    "gatsby-plugin-google-analytics": "^2.9.0",
-    "gatsby-plugin-manifest": "^2.9.1",
-    "gatsby-plugin-mdx": "^1.7.1",
-    "gatsby-plugin-offline": "^3.7.1",
-    "gatsby-plugin-react-helmet": "^3.3.10",
-    "gatsby-plugin-react-svg": "^3.0.0",
-    "gatsby-plugin-sass": "^2.8.0",
-    "gatsby-plugin-sharp": "^2.12.0",
-    "gatsby-plugin-sitemap": "^2.9.0",
-    "gatsby-remark-images": "^3.9.0",
-    "gatsby-source-filesystem": "^2.8.1",
-    "gatsby-theme-i18n": "^1.0.4",
-    "gatsby-theme-i18n-react-intl": "^1.0.4",
-    "mdx-utils": "^0.2.0",
-    "node-sass": "^4.14.1",
-    "prism-react-renderer": "^1.1.1",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-dom-confetti": "^0.2.0",
-    "react-helmet": "^6.1.0",
-    "react-intl": "^5.10.11"
+    "gatsby": "^4.5.4",
+    "gatsby-plugin-image": "^2.5.2",
+    "gatsby-plugin-mdx": "^3.5.2",
+    "gatsby-plugin-react-helmet": "^5.3.0",
+    "gatsby-plugin-sharp": "^4.5.2",
+    "gatsby-remark-images": "^6.5.2",
+    "gatsby-remark-responsive-iframe": "^5.6.0",
+    "gatsby-source-filesystem": "^4.5.2",
+    "gatsby-theme-i18n": "^3.0.0",
+    "gatsby-theme-i18n-react-i18next": "^3.0.0",
+    "gatsby-transformer-sharp": "^4.5.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-helmet": "^6.1.0"
   }
 }

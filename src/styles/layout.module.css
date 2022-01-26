@@ -1,0 +1,46 @@
+.container {
+  margin: auto;
+  max-width: 800px;
+  font-family: sans-serif;
+}
+
+
+.heading {
+  color: rebeccapurple;
+}
+.nav-links {
+  display: flex;
+  list-style: none;
+  padding-left: 0;
+}
+.nav-link-item {
+  padding-right: 2rem;
+}
+.nav-link-text {
+  color: black;
+}
+
+.site-title {
+  color:darkmagenta; 
+  font-weight: 700;
+  font-size: 2rem;
+  /*
+  margin: 3rem 0;
+  */
+}
+
+
+.responsive-video {  
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+}
+
+.responsive-video iframe {
+  border: 5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+}

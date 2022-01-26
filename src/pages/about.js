@@ -1,24 +1,26 @@
-import * as React from "react"
-//import { LocalizedLink } from "gatsby-theme-i18n"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import { useIntl } from "react-intl"
+import * as React from 'react'
+import { useTranslation} from "react-i18next"
+import Layout from '../components/layout'
+import Seo from "../components/seo"
 
 const About = ({ pageContext }) => {
-  const intl = useIntl()
+  const { t } = useTranslation()
 
   return (
-    <Layout pageContext={pageContext}>
-      <SEO title="About" />
-       
-      <h1>{intl.formatMessage({ id: "about" })}</h1>
-      
+    <Layout pageContext={pageContext} pageTitle={t("about")} >
+      <Seo title={t("about")} />
+      <br/>
       <p>
-        {intl.formatMessage({ id: "about content" } )}
+        {t("aboutContent1")}
+        <br/>
+        {t("aboutContent2")}
+        <br/>
+        {t("aboutContent3")}
+        <br/>
+        {t("aboutContent4")}
         <br/><br/>
         Sol - Solange Gueiros
       </p>
-
     </Layout>
   )
 }

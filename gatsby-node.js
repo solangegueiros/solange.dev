@@ -1,9 +1,7 @@
-const path = require(`path`)
 const axios = require("axios")
 const _ = require("lodash")
-const { createFilePath } = require(`gatsby-source-filesystem`)
 
-
+//Load google spreadsheet
 exports.sourceNodes = async ({
   actions,
   createNodeId,
@@ -29,7 +27,7 @@ exports.sourceNodes = async ({
     //console.log (rowObject);
   }
 
-  let itemsArrayWithTagsArray = rows.map(function(item) {  
+  let itemsArrayWithTagsArray = rows.map(function(item) {
     item.layout = 'event'
     
     //date convert
@@ -87,8 +85,7 @@ exports.onCreateNode = async ({ node, getNode, actions }) => {
   if (node.internal.type === `item`) {
     if (node.layout == `event`) {
       //console.log('node: ', node)
-      //const slug = `/${_.kebabCase(node.title)}/`      
-      console.log('event slug: ', node.slug)
+      //console.log('event slug: ', node.slug)
 
       createNodeField({
         node,
@@ -102,6 +99,7 @@ exports.onCreateNode = async ({ node, getNode, actions }) => {
       })      
     }
   }
+  /*
   else if (node.internal.type.toLowerCase() === `mdx`) {
     if (node.frontmatter.layout == `blog`) {
       createNodeField({
@@ -112,9 +110,8 @@ exports.onCreateNode = async ({ node, getNode, actions }) => {
       console.log('blog slug: ', node.frontmatter.slug)
     }
   }
-
+  */
 }
-
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
@@ -127,19 +124,19 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       }) {
         nodes {
           childMdx {
-            fields {
+            frontmatter {
               slug
-            }            
+            }
           }
-          relativePath
         }
       }
 
       events: allItem (filter: {layout: {eq: "event"}}) {
         nodes {
           title
+          slug
           fields {
-            slug
+            locale
           }
         }
       }      
@@ -152,41 +149,45 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   }
 
   //GraphQl result:
-  console.log(JSON.stringify(result, null, 4))
+  //console.log(JSON.stringify(result, null, 4))
 
-  const blogPostTemplate = require.resolve(`./src/templates/blog-post.js`)
-  //const blogPostTemplate = path.resolve(`./src/templates/blog-post.js`)
+  //Blog
+  const blogTemplate = require.resolve(`./src/templates/blog-template.js`)
   const blogPosts = result.data.blog.nodes
+
   blogPosts.forEach(({ childMdx: node }, index) => {
     if (!node) {
       console.log ("ERROR childMdx is NULL", blogPosts[index].relativePath)
       return
     }
-    //var slug = node.frontmatter.slug
-    var slug = node.fields.slug
-    console.log('createPage slug: ', slug)
+
+    var slug = node.frontmatter.slug
 
     createPage({
-      path: slug,
-      component: blogPostTemplate,
+      path: '/blog'+slug,
+      component: blogTemplate,
       context: {
         slug: slug,
       },
     })
+    console.log('blog slug: ', slug)
   })
 
-  const eventPostTemplate = path.resolve(`./src/templates/event-post.js`)
-  const items = result.data.events.nodes
-  items.forEach(node => {
-    console.log('createPage slug: ', node.fields.slug)
+  //Events
+  const eventPostTemplate = require.resolve(`./src/templates/event-template.js`)
+  const eventList = result.data.events.nodes
+  eventList.forEach(node => {
+    var slug = node.slug
 
+    //console.log('createPage slug: ', slug)
     createPage({
-      path: node.fields.slug,
+      path: '/events'+slug,
       component: eventPostTemplate,
       context: {
-        slug: node.fields.slug,
+        slug: slug,
       },
     })
+    console.log('event slug: ', slug)
   })
 
 }

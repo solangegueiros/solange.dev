@@ -1,69 +1,62 @@
-import * as React from "react"
+import * as React from 'react'
 import { graphql } from "gatsby"
-import { LocalizedLink } from "gatsby-theme-i18n"
-import { useIntl } from "react-intl"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import { useTranslation} from "react-i18next"
+import { LocalizedLink as Link } from "gatsby-theme-i18n"
+import Layout from '../components/layout'
+import Seo from "../components/seo"
 
 const Blog = ({ data, pageContext }) => {
-  const intl = useIntl()
-  const locale = pageContext.locale
+  const { t } = useTranslation("blog")
+
+  const postList = data.blogList;
+  //console.log("Blog List \n", postList);
 
   return (
-    <Layout pageContext={pageContext}>
-      <SEO title="Blog" />
-
-      <h1>
-        {intl.formatMessage({ id: "blog" })} {" "}
-        {intl.formatMessage({ id: "in" })} {" "} 
-        {intl.formatMessage({ id: locale })}
-      </h1>
-
+    <Layout pageContext={pageContext} pageTitle={t("blog")}>      
+      <Seo title={t("blog")} />
+      <p>{t("blog introduction")}</p>
+      <p>Total: {postList.totalCount}</p>
       <br/>
-      <p> {intl.formatMessage({ id: "blog introduction" })} </p>
-      <ul>
-        {data.allFile.nodes.map(({ childMdx: node }) => (
-          <li key={node.fields.slug}>            
-            <LocalizedLink to={node.fields.slug}>
-              <h4>{node.frontmatter.title}</h4>
-            </LocalizedLink>            
-            <small>
-              {node.frontmatter.date}
-              <br/>
-              {node.frontmatter.description}
-            </small>
-          </li>
-        ))}
-      </ul>
-      </Layout>
+      {
+        postList.nodes.map(({ childMdx: node }) => (
+          <article key={node.frontmatter.slug}>
+            <h2>
+              <Link to={`/blog${node.frontmatter.slug}`}>
+                {node.frontmatter.title}
+              </Link>
+            </h2>            
+            <p>{t("posted")}: {node.frontmatter.date}</p>
+          </article>
+        ))
+      }
+    </Layout>
   )
 }
-
-export default Blog
-
+//<Link to={`/blog/${node.frontmatter.slug}`}>
+//<Link to={node.frontmatter.slug}>
+//<Link to={node.slug}>
 
 export const query = graphql`
   query($locale: String!) {
-    allFile(
+    blogList: allFile(
       filter: {
         sourceInstanceName: { eq: "blog" }
         childMdx: { fields: { locale: { eq: $locale } } }
-      },
-      sort: {fields: childrenMdx___frontmatter___date, order: DESC}
+      }
     ) {
       totalCount
-      nodes {        
+      nodes {
         childMdx {
-          fields {
-            slug
-          }           
           frontmatter {
-            title
-            description
-            date(formatString: "DD MMMM, YYYY")
+            date(formatString: "MMMM D, YYYY")
+            slug
+            title            
           }
+          id
         }
       }
     }
   }
 `
+
+export default Blog
