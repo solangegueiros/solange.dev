@@ -23,6 +23,7 @@ module.exports = {
               path: `${__dirname}/content/blog`,
             }
         },
+        /*
         {
             resolve: "gatsby-source-filesystem",
             options: {
@@ -30,6 +31,7 @@ module.exports = {
               path: `${__dirname}/content/event`,
             }
         },
+        */
         `gatsby-plugin-react-helmet`,
         {
             resolve: `gatsby-theme-i18n`,
