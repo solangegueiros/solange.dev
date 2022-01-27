@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-pages-blog-js",
+    "path": "/es/blog/",
+    "result": {"data":{"blogList":{"totalCount":1,"nodes":[{"childMdx":{"frontmatter":{"date":"January 1, 2020","slug":"/hello-world/","title":"Hola mundo!"},"id":"17856228-9bef-5114-ab58-fdbc0546a267"}}]}},"pageContext":{"locale":"es","hrefLang":"es-ES","originalPath":"/blog/","dateFormat":"DD/MM/YYYY"}},
+    "staticQueryHashes": ["1239077767","3159585216","3280999885","63159454"]}

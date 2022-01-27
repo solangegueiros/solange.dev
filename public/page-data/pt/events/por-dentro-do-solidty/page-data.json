@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-event-template-js",
+    "path": "/pt/events/por-dentro-do-solidty/",
+    "result": {"data":{"item":{"fields":{"locale":"pt","slug":"/event/por-dentro-do-solidty/"},"article":"","date":"08 April, 2020","category":"rsk","description":"","id":"095f58a2-7c78-5cb4-9aa9-aa62c0bdd76a","language":"pt","layout":"event","links":"","local":"Online","marketing":"","organizer":"RSK","photos":"","slides":"","slug":"/por-dentro-do-solidty/","tags":"rsk, smart contracts, solidity, remix ","title":"Por dentro do Solidty","type":"Webinar","video":"https://www.youtube.com/watch?v=68AMoiQfgEE"}},"pageContext":{"slug":"/por-dentro-do-solidty/","locale":"pt","hrefLang":"pt-BR","originalPath":"/events/por-dentro-do-solidty/","dateFormat":"DD/MM/YYYY"}},
+    "staticQueryHashes": ["1239077767","3159585216","3280999885","63159454"]}

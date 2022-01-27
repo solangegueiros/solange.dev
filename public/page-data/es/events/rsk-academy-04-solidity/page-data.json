@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-event-template-js",
+    "path": "/es/events/rsk-academy-04-solidity/",
+    "result": {"data":{"item":{"fields":{"locale":"es","slug":"/event/rsk-academy-04-solidity/"},"article":"","date":"19 May, 2021","category":"rsk","description":"","id":"c7aeb8d1-c32d-57c4-9d94-2d91e405b98e","language":"es","layout":"event","links":"","local":"Online","marketing":"","organizer":"RSK","photos":"","slides":"","slug":"/rsk-academy-04-solidity/","tags":"rsk, ethereum, bitcoin, blockchain","title":"RSK Academy 04 - Solidity","type":"Live class","video":"https://youtu.be/dYH60uu7gTk"}},"pageContext":{"slug":"/rsk-academy-04-solidity/","locale":"es","hrefLang":"es-ES","originalPath":"/events/rsk-academy-04-solidity/","dateFormat":"DD/MM/YYYY"}},
+    "staticQueryHashes": ["1239077767","3159585216","3280999885","63159454"]}

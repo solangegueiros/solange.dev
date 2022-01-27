@@ -9,30 +9,30 @@ import Video from "../components/video"
 
 const EventTemplate = ({ data, pageContext }) => {
   const { t } = useTranslation()
+  const event = data.item
+  //console.log("EVENT:", event)
 
-  var event
   var title = t("notTranslated")
-  if (data) {
-    title = data.item.title
-    console.log("TITLE:", title)
+  //const 
+  title = event && event.title ? event.title : t("notTranslated");
+  console.log("TITLE:", title)
+  
+  //const language = event.fields.locale 
+  //const language = event.language
+  const video = event && event.video ? event.video.split('\n') : null;
+  if (video)
+    console.log ("video:", video, "\n", video.length)
 
-    event = data.item
-    //console.log("EVENT:", event)
+  const slides = event && event.slides ? event.slides.split('\n') : null;
+  //console.log ("slides:", slides, "\n", slides.length)
   
-    //const language = event.fields.locale 
-    //const language = event.language
-    console.log("VIDEO:", event.video)
-    const video = event.video ? event.video.split('\n') : null;
-    //console.log ("video:", video, "\n", video.length)
-    const slides = event.slides ? event.slides.split('\n') : null;
-    //console.log ("slides:", slides, "\n", slides.length)
-    
-    console.log("ARTICLE:", event.article)
-    const article = event.article ? event.article.split('\n') : null;
-    const links = event.links ? event.links.split('\n') : null;
-  
-    console.log("\n")
-  }
+  const article = event && event.article ? event.article.split('\n') : null;
+  if (article)
+  console.log("ARTICLE:", event.article)
+
+  const links = event && event.links ? event.links.split('\n') : null;
+
+  console.log("\n")
 
 /*
           {slides ? (<>

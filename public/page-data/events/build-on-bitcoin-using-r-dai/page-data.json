@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-event-template-js",
+    "path": "/events/build-on-bitcoin-using-r-dai/",
+    "result": {"data":{"item":{"fields":{"locale":"en","slug":"/event/build-on-bitcoin-using-r-dai/"},"article":"","date":"13 May, 2021","category":"rsk","description":"RSK: Solange Gueiros\nDefiant: Bruno Calmels\nMaker DAO: Luis Lozada\n\nPeriscope: https://www.pscp.tv/RSKsmart/\nFacebook: https://www.facebook.com/RSKsmart/live/","id":"3c7e2a47-9a0f-51e7-b1e2-56fb8428eac3","language":"en","layout":"event","links":"","local":"Online","marketing":"","organizer":"RSK","photos":"","slides":"","slug":"/build-on-bitcoin-using-r-dai/","tags":"rsk, ethereum, bitcoin, blockchain, defi","title":"Build on Bitcoin using rDAI","type":"Panel","video":"https://youtu.be/2yApyI9Zvu8"}},"pageContext":{"slug":"/build-on-bitcoin-using-r-dai/","locale":"en","hrefLang":"en-US","originalPath":"/events/build-on-bitcoin-using-r-dai/","dateFormat":"MM/DD/YYYY"}},
+    "staticQueryHashes": ["1239077767","3159585216","3280999885","63159454"]}
