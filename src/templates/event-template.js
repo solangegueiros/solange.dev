@@ -12,23 +12,22 @@ const EventTemplate = ({ data, pageContext }) => {
   const event = data.item
   //console.log("EVENT:", event)
 
-  var title = t("notTranslated")
-  //const 
-  title = event && event.title ? event.title : t("notTranslated");
+  //var title = t("notTranslated")
+  const title = event && event.title ? event.title : t("notTranslated");
   console.log("TITLE:", title)
   
   //const language = event.fields.locale 
   //const language = event.language
   const video = event && event.video ? event.video.split('\n') : null;
-  if (video)
-    console.log ("video:", video, "\n", video.length)
+  // if (video)
+  //   console.log ("video:", video, "\n", video.length)
 
   const slides = event && event.slides ? event.slides.split('\n') : null;
   //console.log ("slides:", slides, "\n", slides.length)
   
   const article = event && event.article ? event.article.split('\n') : null;
-  if (article)
-  console.log("ARTICLE:", event.article)
+  // if (article)
+  //   console.log("ARTICLE:", event.article)
 
   const links = event && event.links ? event.links.split('\n') : null;
 

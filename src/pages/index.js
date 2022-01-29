@@ -53,7 +53,11 @@ const Index = ({ data, pageContext }) => {
         {t("allEvents")}
       </Link>
 
-
+      <br/>
+    </Layout>
+  )
+}
+/* Blog part - removed
       <br/>
       <h2>{t("blog")}</h2>
 
@@ -74,10 +78,7 @@ const Index = ({ data, pageContext }) => {
       <Link to="/blog/">
         {t("allPosts")}
       </Link>
-      <br/>
-    </Layout>
-  )
-}
+*/
 
 export default Index
 
@@ -113,7 +114,7 @@ export const query = graphql`
     
     eventList: allItem(
       filter: {layout: {eq: "event"}, fields: {locale: {eq: $locale}}}
-      limit: 3,
+      limit: 5,
       sort: {fields: date, order: DESC}
     ) {
       totalCount

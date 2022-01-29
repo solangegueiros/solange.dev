@@ -58,6 +58,16 @@ const Layout = ({ pageTitle, children, pageContext }) => {
             </Link>
           </li>
           <li className={navLinkItem}>
+            <a target="_blank" rel="noopener noreferrer" href="https://ethereum.solange.dev/" className={navLinkText}>
+              Ethereum
+            </a>
+          </li>
+          <li className={navLinkItem}>
+            <a target="_blank" rel="noopener noreferrer" href="https://rsk.solange.dev/" className={navLinkText}>
+              RSK
+            </a>
+          </li>
+          <li className={navLinkItem}>
             <Link to="/about" className={navLinkText}>
               About
             </Link>
