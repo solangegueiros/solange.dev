@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-event-template-js",
+    "path": "/events/eth-nyc-mentor-and-judge/",
+    "result": {"data":{"item":{"fields":{"locale":"en","slug":"/event/eth-nyc-mentor-and-judge/"},"article":"","date":"24 June, 2022","category":"chainlink","description":"","id":"acf8db24-bd54-5d70-a9cb-15f2d96471f9","language":"en","layout":"event","links":"","local":"New York","marketing":"","organizer":"EthGlobal","photos":"","slides":"","slug":"/eth-nyc-mentor-and-judge/","tags":"smart contract, chainlink, ethereum, blockchain","title":"EthNYC: mentor and judge","type":"Judge","video":""}},"pageContext":{"slug":"/eth-nyc-mentor-and-judge/","locale":"en","hrefLang":"en-US","originalPath":"/events/eth-nyc-mentor-and-judge/","dateFormat":"MM/DD/YYYY"}},
+    "staticQueryHashes": ["1239077767","3159585216","3280999885","63159454"]}
