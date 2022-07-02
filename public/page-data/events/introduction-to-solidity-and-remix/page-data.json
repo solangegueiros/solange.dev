@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-event-template-js",
+    "path": "/events/introduction-to-solidity-and-remix/",
+    "result": {"data":{"item":{"fields":{"locale":"en","slug":"/event/introduction-to-solidity-and-remix/"},"article":"","date":"23 April, 2022","category":"chainlink","description":"","id":"a57465f5-5ca1-54bc-bd1e-375a3f763b47","language":"en","layout":"event","links":"","local":"Online","marketing":"","organizer":"Chainlink","photos":"","slides":"","slug":"/introduction-to-solidity-and-remix/","tags":"smart contract, chainlink, ethereum, blockchain","title":"Introduction to Solidity and Remix","type":"Workshop","video":"https://www.youtube.com/watch?v=HuUcdoPkzeg"}},"pageContext":{"slug":"/introduction-to-solidity-and-remix/","locale":"en","hrefLang":"en-US","originalPath":"/events/introduction-to-solidity-and-remix/","dateFormat":"MM/DD/YYYY"}},
+    "staticQueryHashes": ["1239077767","3159585216","3280999885","63159454"]}
