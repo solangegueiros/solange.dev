@@ -63,6 +63,11 @@ const Layout = ({ pageTitle, children, pageContext }) => {
             </a>
           </li>
           <li className={navLinkItem}>
+            <a target="_blank" rel="noopener noreferrer" href="https://academy.rsk.dev.br/" className={navLinkText}>
+              RSK Academy
+            </a>
+          </li>
+          <li className={navLinkItem}>
             <a target="_blank" rel="noopener noreferrer" href="https://rsk.solange.dev/" className={navLinkText}>
               RSK
             </a>
