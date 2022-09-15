@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-event-template-js",
+    "path": "/events/eth-mexico-hackathon-mentor-and-judge/",
+    "result": {"data":{"item":{"fields":{"locale":"en","slug":"/event/eth-mexico-hackathon-mentor-and-judge/"},"article":"","date":"19 August, 2022","category":"chainlink","description":"","id":"f7baf363-74ad-5742-b651-cdbbf7d75e2c","language":"en","layout":"event","links":"","local":"Mexico City","marketing":"","organizer":"EthGlobal","photos":"","slides":"","slug":"/eth-mexico-hackathon-mentor-and-judge/","tags":"chainlink, ethereum, blockchain","title":"EthMexico Hackathon mentor and judge","type":"Hackathon","video":""}},"pageContext":{"slug":"/eth-mexico-hackathon-mentor-and-judge/","locale":"en","hrefLang":"en-US","originalPath":"/events/eth-mexico-hackathon-mentor-and-judge/","dateFormat":"MM/DD/YYYY"}},
+    "staticQueryHashes": ["1239077767","3159585216","3280999885","63159454"]}

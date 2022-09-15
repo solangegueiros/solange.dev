@@ -1,5 +1,0 @@
-{
-    "componentChunkName": "component---src-templates-event-template-js",
-    "path": "/pt/events/ethereum-sp-bootcamp/",
-    "result": {"data":{"item":{"fields":{"locale":"pt","slug":"/event/ethereum-sp-bootcamp/"},"article":"","date":"09 September, 2022","category":"chainlink","description":"","id":"4a34bb80-9a59-5d9b-b90a-6e394ec9d82b","language":"pt","layout":"event","links":"","local":"Sao paulo","marketing":"","organizer":"Ethereum Brasil","photos":"","slides":"","slug":"/ethereum-sp-bootcamp/","tags":"chainlink, ethereum, blockchain","title":"EthereumSP Bootcamp","type":"Workshop","video":""}},"pageContext":{"slug":"/ethereum-sp-bootcamp/","locale":"pt","hrefLang":"pt-BR","originalPath":"/events/ethereum-sp-bootcamp/","dateFormat":"DD/MM/YYYY"}},
-    "staticQueryHashes": ["1239077767","3159585216","3280999885","63159454"]}
