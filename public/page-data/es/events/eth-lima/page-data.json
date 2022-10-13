@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---src-templates-event-template-js",
     "path": "/es/events/eth-lima/",
-    "result": {"data":{"item":{"fields":{"locale":"es","slug":"/event/eth-lima/"},"article":"","date":"02 September, 2022","category":"chainlink","description":"","id":"28d65571-a1a5-59ce-b8bd-9e199817e7a8","language":"es","layout":"event","links":"","local":"Online","marketing":"","organizer":"EthLima","photos":"","slides":"","slug":"/eth-lima/","tags":"chainlink, ethereum, blockchain","title":"EthLima","type":"Talk","video":""}},"pageContext":{"slug":"/eth-lima/","locale":"es","hrefLang":"es-ES","originalPath":"/events/eth-lima/","dateFormat":"DD/MM/YYYY"}},
+    "result": {"data":{"item":{"fields":{"locale":"es","slug":"/event/eth-lima/"},"article":"","date":"02 September, 2022","category":"chainlink","description":"","id":"c440ff00-234d-575f-b13d-98194a50283b","language":"es","layout":"event","links":"","local":"Online","marketing":"","organizer":"EthLima","photos":"","slides":"","slug":"/eth-lima/","tags":"chainlink, ethereum, blockchain","title":"EthLima","type":"Talk","video":""}},"pageContext":{"slug":"/eth-lima/","locale":"es","hrefLang":"es-ES","originalPath":"/events/eth-lima/","dateFormat":"DD/MM/YYYY"}},
     "staticQueryHashes": ["1239077767","3159585216","3280999885","63159454"]}

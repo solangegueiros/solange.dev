@@ -1,5 +1,5 @@
 {
     "componentChunkName": "component---src-templates-event-template-js",
     "path": "/es/events/workshop-baf/",
-    "result": {"data":{"item":{"fields":{"locale":"es","slug":"/event/workshop-baf/"},"article":"","date":"18 August, 2022","category":"chainlink","description":"","id":"447133a5-e9a1-5267-a498-de9e2098b0f8","language":"es","layout":"event","links":"","local":"Mexico City","marketing":"","organizer":"BAF","photos":"","slides":"","slug":"/workshop-baf/","tags":"chainlink, ethereum, blockchain","title":"Workshop BAF","type":"Workshop","video":""}},"pageContext":{"slug":"/workshop-baf/","locale":"es","hrefLang":"es-ES","originalPath":"/events/workshop-baf/","dateFormat":"DD/MM/YYYY"}},
+    "result": {"data":{"item":{"fields":{"locale":"es","slug":"/event/workshop-baf/"},"article":"","date":"18 August, 2022","category":"chainlink","description":"","id":"79c6ab7a-a0df-5936-b2f4-0c80fc40769d","language":"es","layout":"event","links":"","local":"Mexico City","marketing":"","organizer":"BAF","photos":"","slides":"","slug":"/workshop-baf/","tags":"chainlink, ethereum, blockchain","title":"Workshop BAF","type":"Workshop","video":""}},"pageContext":{"slug":"/workshop-baf/","locale":"es","hrefLang":"es-ES","originalPath":"/events/workshop-baf/","dateFormat":"DD/MM/YYYY"}},
     "staticQueryHashes": ["1239077767","3159585216","3280999885","63159454"]}

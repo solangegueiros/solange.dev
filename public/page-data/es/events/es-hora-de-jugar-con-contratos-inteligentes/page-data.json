@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-event-template-js",
+    "path": "/es/events/es-hora-de-jugar-con-contratos-inteligentes/",
+    "result": {"data":{"item":{"fields":{"locale":"es","slug":"/event/es-hora-de-jugar-con-contratos-inteligentes/"},"article":"","date":"10 October, 2022","category":"ethereum","description":"","id":"ab5b5cbb-275b-57ab-a06b-79cf68deefe0","language":"es","layout":"event","links":"https://www.eventbrite.com/e/es-hora-de-jugar-con-contratos-inteligentes-tickets-431398854587","local":"Bogota","marketing":"","organizer":"Chainlink ESP y Platzi","photos":"","slides":"","slug":"/es-hora-de-jugar-con-contratos-inteligentes/","tags":"chainlink, ethereum, blockchain","title":"¡Es hora de jugar con contratos inteligentes!","type":"Workshop","video":""}},"pageContext":{"slug":"/es-hora-de-jugar-con-contratos-inteligentes/","locale":"es","hrefLang":"es-ES","originalPath":"/events/es-hora-de-jugar-con-contratos-inteligentes/","dateFormat":"DD/MM/YYYY"}},
+    "staticQueryHashes": ["1239077767","3159585216","3280999885","63159454"]}

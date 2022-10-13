@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-event-template-js",
+    "path": "/events/chainlink-developer-workshop-day/",
+    "result": {"data":{"item":{"fields":{"locale":"en","slug":"/event/chainlink-developer-workshop-day/"},"article":"","date":"27 September, 2022","category":"chainlink","description":"","id":"28d65571-a1a5-59ce-b8bd-9e199817e7a8","language":"en","layout":"event","links":"","local":"New York","marketing":"","organizer":"Chainlink Labs","photos":"","slides":"","slug":"/chainlink-developer-workshop-day/","tags":"chainlink, ethereum, blockchain","title":"Chainlink Developer Workshop Day","type":"Workshop","video":"https://www.youtube.com/watch?v=vXx4aXJfi3o"}},"pageContext":{"slug":"/chainlink-developer-workshop-day/","locale":"en","hrefLang":"en-US","originalPath":"/events/chainlink-developer-workshop-day/","dateFormat":"MM/DD/YYYY"}},
+    "staticQueryHashes": ["1239077767","3159585216","3280999885","63159454"]}
