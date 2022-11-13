@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-event-template-js",
+    "path": "/es/events/chainlink-en-hackathons/",
+    "result": {"data":{"item":{"fields":{"locale":"es","slug":"/event/chainlink-en-hackathons/"},"article":"","date":"28 October, 2022","category":"ethereum","description":"","id":"f1aeb770-e618-5fbb-8a64-46d333c1ca8b","language":"es","layout":"event","links":"","local":"Panama","marketing":"","organizer":"EthPanama","photos":"","slides":"","slug":"/chainlink-en-hackathons/","tags":"chainlink, ethereum, blockchain","title":"Chainlink en Hackathons","type":"Workshop","video":""}},"pageContext":{"slug":"/chainlink-en-hackathons/","locale":"es","hrefLang":"es-ES","originalPath":"/events/chainlink-en-hackathons/","dateFormat":"DD/MM/YYYY"}},
+    "staticQueryHashes": ["1239077767","3159585216","3280999885","63159454"]}

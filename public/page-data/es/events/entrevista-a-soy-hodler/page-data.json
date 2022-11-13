@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-event-template-js",
+    "path": "/es/events/entrevista-a-soy-hodler/",
+    "result": {"data":{"item":{"fields":{"locale":"es","slug":"/event/entrevista-a-soy-hodler/"},"article":"https://soyhodler.com/vamos-a-tener-blockchain-en-nuestras-vidas-de-la-misma-manera-que-tenemos-internet-hoy-solangue-gueiros-cofundadora-de-ethereum-brasil/","date":"28 October, 2022","category":"ethereum","description":"","id":"b4b36f15-2c5c-5b0f-8d35-e92fff37a98f","language":"es","layout":"event","links":"","local":"Online","marketing":"","organizer":"SoyHodler","photos":"","slides":"","slug":"/entrevista-a-soy-hodler/","tags":"chainlink, ethereum, blockchain","title":"Entrevista a Soy Hodler","type":"Interview","video":""}},"pageContext":{"slug":"/entrevista-a-soy-hodler/","locale":"es","hrefLang":"es-ES","originalPath":"/events/entrevista-a-soy-hodler/","dateFormat":"DD/MM/YYYY"}},
+    "staticQueryHashes": ["1239077767","3159585216","3280999885","63159454"]}

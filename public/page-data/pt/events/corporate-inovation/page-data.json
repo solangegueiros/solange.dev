@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-event-template-js",
+    "path": "/pt/events/corporate-inovation/",
+    "result": {"data":{"item":{"fields":{"locale":"pt","slug":"/event/corporate-inovation/"},"article":"","date":"04 November, 2022","category":"blockchain","description":"","id":"a9f140e8-6eb5-55aa-828d-2f5adf3cea5c","language":"pt","layout":"event","links":"https://www.screamfestival.com.br/","local":"Salvador, Bahia","marketing":"","organizer":"Scream Festival","photos":"","slides":"","slug":"/corporate-inovation/","tags":"blockchain","title":"Corporate Inovation","type":"Panel","video":"https://www.youtube.com/watch?v=4MriJyBgz5s&t=20478s"}},"pageContext":{"slug":"/corporate-inovation/","locale":"pt","hrefLang":"pt-BR","originalPath":"/events/corporate-inovation/","dateFormat":"DD/MM/YYYY"}},
+    "staticQueryHashes": ["1239077767","3159585216","3280999885","63159454"]}

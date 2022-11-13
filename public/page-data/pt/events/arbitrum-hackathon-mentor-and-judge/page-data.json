@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-event-template-js",
+    "path": "/pt/events/arbitrum-hackathon-mentor-and-judge/",
+    "result": {"data":{"item":{"fields":{"locale":"pt","slug":"/event/arbitrum-hackathon-mentor-and-judge/"},"article":"","date":"15 October, 2022","category":"ethereum","description":"","id":"95dfd015-dfe1-5886-9f20-1610dc860e35","language":"pt","layout":"event","links":"https://hackathon.arbitrum.io/","local":"Bogota","marketing":"","organizer":"OffChain Labs","photos":"","slides":"","slug":"/arbitrum-hackathon-mentor-and-judge/","tags":"chainlink, ethereum, arbitrum","title":"Arbitrum Hackathon mentor and judge","type":"Judge","video":""}},"pageContext":{"slug":"/arbitrum-hackathon-mentor-and-judge/","locale":"pt","hrefLang":"pt-BR","originalPath":"/events/arbitrum-hackathon-mentor-and-judge/","dateFormat":"DD/MM/YYYY"}},
+    "staticQueryHashes": ["1239077767","3159585216","3280999885","63159454"]}

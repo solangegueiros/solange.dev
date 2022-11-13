@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-event-template-js",
+    "path": "/pt/events/ethereum-bootcamp-by-chainlink/",
+    "result": {"data":{"item":{"fields":{"locale":"pt","slug":"/event/ethereum-bootcamp-by-chainlink/"},"article":"","date":"05 November, 2022","category":"ethereum","description":"","id":"4f79f67f-1f36-56b8-9ef1-5057000c9330","language":"pt","layout":"event","links":"","local":"Salvador, Bahia","marketing":"","organizer":"Chainlink Labs","photos":"","slides":"","slug":"/ethereum-bootcamp-by-chainlink/","tags":"chainlink, ethereum, blockchain","title":"Ethereum Bootcamp By Chainlink","type":"Workshop","video":""}},"pageContext":{"slug":"/ethereum-bootcamp-by-chainlink/","locale":"pt","hrefLang":"pt-BR","originalPath":"/events/ethereum-bootcamp-by-chainlink/","dateFormat":"DD/MM/YYYY"}},
+    "staticQueryHashes": ["1239077767","3159585216","3280999885","63159454"]}
