@@ -1,5 +1,1 @@
-{
-    "componentChunkName": "component---src-templates-event-template-js",
-    "path": "/es/events/jurada-no-blockathon-fecap/",
-    "result": {"data":{"item":null},"pageContext":{"slug":"/jurada-no-blockathon-fecap/","locale":"es","hrefLang":"es-ES","originalPath":"/events/jurada-no-blockathon-fecap/","dateFormat":"DD/MM/YYYY"}},
-    "staticQueryHashes": ["1239077767","3159585216","3280999885","63159454"]}
+{"componentChunkName":"component---src-templates-event-template-js","path":"/es/events/jurada-no-blockathon-fecap/","result":{"data":{"item":null},"pageContext":{"slug":"/jurada-no-blockathon-fecap/","locale":"es","hrefLang":"es-ES","originalPath":"/events/jurada-no-blockathon-fecap/","dateFormat":"DD/MM/YYYY"}},"staticQueryHashes":["1239077767","3159585216","3280999885","63159454"]}

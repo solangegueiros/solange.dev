@@ -1,5 +1,1 @@
-{
-    "componentChunkName": "component---src-templates-event-template-js",
-    "path": "/es/events/o-que-e-rsk/",
-    "result": {"data":{"item":null},"pageContext":{"slug":"/o-que-e-rsk/","locale":"es","hrefLang":"es-ES","originalPath":"/events/o-que-e-rsk/","dateFormat":"DD/MM/YYYY"}},
-    "staticQueryHashes": ["1239077767","3159585216","3280999885","63159454"]}
+{"componentChunkName":"component---src-templates-event-template-js","path":"/es/events/o-que-e-rsk/","result":{"data":{"item":null},"pageContext":{"slug":"/o-que-e-rsk/","locale":"es","hrefLang":"es-ES","originalPath":"/events/o-que-e-rsk/","dateFormat":"DD/MM/YYYY"}},"staticQueryHashes":["1239077767","3159585216","3280999885","63159454"]}

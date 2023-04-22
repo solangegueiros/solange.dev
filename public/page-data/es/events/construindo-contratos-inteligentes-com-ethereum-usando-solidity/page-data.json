@@ -1,5 +1,1 @@
-{
-    "componentChunkName": "component---src-templates-event-template-js",
-    "path": "/es/events/construindo-contratos-inteligentes-com-ethereum-usando-solidity/",
-    "result": {"data":{"item":null},"pageContext":{"slug":"/construindo-contratos-inteligentes-com-ethereum-usando-solidity/","locale":"es","hrefLang":"es-ES","originalPath":"/events/construindo-contratos-inteligentes-com-ethereum-usando-solidity/","dateFormat":"DD/MM/YYYY"}},
-    "staticQueryHashes": ["1239077767","3159585216","3280999885","63159454"]}
+{"componentChunkName":"component---src-templates-event-template-js","path":"/es/events/construindo-contratos-inteligentes-com-ethereum-usando-solidity/","result":{"data":{"item":null},"pageContext":{"slug":"/construindo-contratos-inteligentes-com-ethereum-usando-solidity/","locale":"es","hrefLang":"es-ES","originalPath":"/events/construindo-contratos-inteligentes-com-ethereum-usando-solidity/","dateFormat":"DD/MM/YYYY"}},"staticQueryHashes":["1239077767","3159585216","3280999885","63159454"]}

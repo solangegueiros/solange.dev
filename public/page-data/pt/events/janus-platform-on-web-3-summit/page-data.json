@@ -1,5 +1,1 @@
-{
-    "componentChunkName": "component---src-templates-event-template-js",
-    "path": "/pt/events/janus-platform-on-web-3-summit/",
-    "result": {"data":{"item":null},"pageContext":{"slug":"/janus-platform-on-web-3-summit/","locale":"pt","hrefLang":"pt-BR","originalPath":"/events/janus-platform-on-web-3-summit/","dateFormat":"DD/MM/YYYY"}},
-    "staticQueryHashes": ["1239077767","3159585216","3280999885","63159454"]}
+{"componentChunkName":"component---src-templates-event-template-js","path":"/pt/events/janus-platform-on-web-3-summit/","result":{"data":{"item":null},"pageContext":{"slug":"/janus-platform-on-web-3-summit/","locale":"pt","hrefLang":"pt-BR","originalPath":"/events/janus-platform-on-web-3-summit/","dateFormat":"DD/MM/YYYY"}},"staticQueryHashes":["1239077767","3159585216","3280999885","63159454"]}

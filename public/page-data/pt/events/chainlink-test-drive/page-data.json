@@ -1,5 +1,1 @@
-{
-    "componentChunkName": "component---src-templates-event-template-js",
-    "path": "/pt/events/chainlink-test-drive/",
-    "result": {"data":{"item":null},"pageContext":{"slug":"/chainlink-test-drive/","locale":"pt","hrefLang":"pt-BR","originalPath":"/events/chainlink-test-drive/","dateFormat":"DD/MM/YYYY"}},
-    "staticQueryHashes": ["1239077767","3159585216","3280999885","63159454"]}
+{"componentChunkName":"component---src-templates-event-template-js","path":"/pt/events/chainlink-test-drive/","result":{"data":{"item":null},"pageContext":{"slug":"/chainlink-test-drive/","locale":"pt","hrefLang":"pt-BR","originalPath":"/events/chainlink-test-drive/","dateFormat":"DD/MM/YYYY"}},"staticQueryHashes":["1239077767","3159585216","3280999885","63159454"]}

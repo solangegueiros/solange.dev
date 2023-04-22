@@ -1,5 +1,1 @@
-{
-    "componentChunkName": "component---src-templates-event-template-js",
-    "path": "/es/events/conheca-a-rif-rsk-infrastructure-framework/",
-    "result": {"data":{"item":null},"pageContext":{"slug":"/conheca-a-rif-rsk-infrastructure-framework/","locale":"es","hrefLang":"es-ES","originalPath":"/events/conheca-a-rif-rsk-infrastructure-framework/","dateFormat":"DD/MM/YYYY"}},
-    "staticQueryHashes": ["1239077767","3159585216","3280999885","63159454"]}
+{"componentChunkName":"component---src-templates-event-template-js","path":"/es/events/conheca-a-rif-rsk-infrastructure-framework/","result":{"data":{"item":null},"pageContext":{"slug":"/conheca-a-rif-rsk-infrastructure-framework/","locale":"es","hrefLang":"es-ES","originalPath":"/events/conheca-a-rif-rsk-infrastructure-framework/","dateFormat":"DD/MM/YYYY"}},"staticQueryHashes":["1239077767","3159585216","3280999885","63159454"]}

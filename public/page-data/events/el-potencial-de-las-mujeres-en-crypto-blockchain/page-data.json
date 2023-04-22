@@ -1,5 +1,1 @@
-{
-    "componentChunkName": "component---src-templates-event-template-js",
-    "path": "/events/el-potencial-de-las-mujeres-en-crypto-blockchain/",
-    "result": {"data":{"item":null},"pageContext":{"slug":"/el-potencial-de-las-mujeres-en-crypto-blockchain/","locale":"en","hrefLang":"en-US","originalPath":"/events/el-potencial-de-las-mujeres-en-crypto-blockchain/","dateFormat":"MM/DD/YYYY"}},
-    "staticQueryHashes": ["1239077767","3159585216","3280999885","63159454"]}
+{"componentChunkName":"component---src-templates-event-template-js","path":"/events/el-potencial-de-las-mujeres-en-crypto-blockchain/","result":{"data":{"item":null},"pageContext":{"slug":"/el-potencial-de-las-mujeres-en-crypto-blockchain/","locale":"en","hrefLang":"en-US","originalPath":"/events/el-potencial-de-las-mujeres-en-crypto-blockchain/","dateFormat":"MM/DD/YYYY"}},"staticQueryHashes":["1239077767","3159585216","3280999885","63159454"]}

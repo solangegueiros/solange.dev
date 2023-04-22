@@ -1,5 +1,1 @@
-{
-    "componentChunkName": "component---src-templates-event-template-js",
-    "path": "/es/events/ethereum-rio-main-conference/",
-    "result": {"data":{"item":null},"pageContext":{"slug":"/ethereum-rio-main-conference/","locale":"es","hrefLang":"es-ES","originalPath":"/events/ethereum-rio-main-conference/","dateFormat":"DD/MM/YYYY"}},
-    "staticQueryHashes": ["1239077767","3159585216","3280999885","63159454"]}
+{"componentChunkName":"component---src-templates-event-template-js","path":"/es/events/ethereum-rio-main-conference/","result":{"data":{"item":null},"pageContext":{"slug":"/ethereum-rio-main-conference/","locale":"es","hrefLang":"es-ES","originalPath":"/events/ethereum-rio-main-conference/","dateFormat":"DD/MM/YYYY"}},"staticQueryHashes":["1239077767","3159585216","3280999885","63159454"]}

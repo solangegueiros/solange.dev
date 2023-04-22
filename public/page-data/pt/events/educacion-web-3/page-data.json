@@ -1,5 +1,1 @@
-{
-    "componentChunkName": "component---src-templates-event-template-js",
-    "path": "/pt/events/educacion-web-3/",
-    "result": {"data":{"item":null},"pageContext":{"slug":"/educacion-web-3/","locale":"pt","hrefLang":"pt-BR","originalPath":"/events/educacion-web-3/","dateFormat":"DD/MM/YYYY"}},
-    "staticQueryHashes": ["1239077767","3159585216","3280999885","63159454"]}
+{"componentChunkName":"component---src-templates-event-template-js","path":"/pt/events/educacion-web-3/","result":{"data":{"item":null},"pageContext":{"slug":"/educacion-web-3/","locale":"pt","hrefLang":"pt-BR","originalPath":"/events/educacion-web-3/","dateFormat":"DD/MM/YYYY"}},"staticQueryHashes":["1239077767","3159585216","3280999885","63159454"]}

@@ -1,5 +1,1 @@
-{
-    "componentChunkName": "component---src-templates-event-template-js",
-    "path": "/pt/events/second-and-third-layers-on-bitcoin/",
-    "result": {"data":{"item":null},"pageContext":{"slug":"/second-and-third-layers-on-bitcoin/","locale":"pt","hrefLang":"pt-BR","originalPath":"/events/second-and-third-layers-on-bitcoin/","dateFormat":"DD/MM/YYYY"}},
-    "staticQueryHashes": ["1239077767","3159585216","3280999885","63159454"]}
+{"componentChunkName":"component---src-templates-event-template-js","path":"/pt/events/second-and-third-layers-on-bitcoin/","result":{"data":{"item":null},"pageContext":{"slug":"/second-and-third-layers-on-bitcoin/","locale":"pt","hrefLang":"pt-BR","originalPath":"/events/second-and-third-layers-on-bitcoin/","dateFormat":"DD/MM/YYYY"}},"staticQueryHashes":["1239077767","3159585216","3280999885","63159454"]}

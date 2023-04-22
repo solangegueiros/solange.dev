@@ -1,5 +1,1 @@
-{
-    "componentChunkName": "component---src-templates-event-template-js",
-    "path": "/events/lo-ultimo-en-smart-contracts-nf-ts-dinamicos/",
-    "result": {"data":{"item":null},"pageContext":{"slug":"/lo-ultimo-en-smart-contracts-nf-ts-dinamicos/","locale":"en","hrefLang":"en-US","originalPath":"/events/lo-ultimo-en-smart-contracts-nf-ts-dinamicos/","dateFormat":"MM/DD/YYYY"}},
-    "staticQueryHashes": ["1239077767","3159585216","3280999885","63159454"]}
+{"componentChunkName":"component---src-templates-event-template-js","path":"/events/lo-ultimo-en-smart-contracts-nf-ts-dinamicos/","result":{"data":{"item":null},"pageContext":{"slug":"/lo-ultimo-en-smart-contracts-nf-ts-dinamicos/","locale":"en","hrefLang":"en-US","originalPath":"/events/lo-ultimo-en-smart-contracts-nf-ts-dinamicos/","dateFormat":"MM/DD/YYYY"}},"staticQueryHashes":["1239077767","3159585216","3280999885","63159454"]}

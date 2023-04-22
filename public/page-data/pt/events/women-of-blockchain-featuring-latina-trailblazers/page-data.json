@@ -1,5 +1,1 @@
-{
-    "componentChunkName": "component---src-templates-event-template-js",
-    "path": "/pt/events/women-of-blockchain-featuring-latina-trailblazers/",
-    "result": {"data":{"item":null},"pageContext":{"slug":"/women-of-blockchain-featuring-latina-trailblazers/","locale":"pt","hrefLang":"pt-BR","originalPath":"/events/women-of-blockchain-featuring-latina-trailblazers/","dateFormat":"DD/MM/YYYY"}},
-    "staticQueryHashes": ["1239077767","3159585216","3280999885","63159454"]}
+{"componentChunkName":"component---src-templates-event-template-js","path":"/pt/events/women-of-blockchain-featuring-latina-trailblazers/","result":{"data":{"item":null},"pageContext":{"slug":"/women-of-blockchain-featuring-latina-trailblazers/","locale":"pt","hrefLang":"pt-BR","originalPath":"/events/women-of-blockchain-featuring-latina-trailblazers/","dateFormat":"DD/MM/YYYY"}},"staticQueryHashes":["1239077767","3159585216","3280999885","63159454"]}

@@ -1,5 +1,1 @@
-{
-    "componentChunkName": "component---src-templates-event-template-js",
-    "path": "/events/gazeta-brazilian-news-milk-shake-solange-gueiros-em-miami/",
-    "result": {"data":{"item":null},"pageContext":{"slug":"/gazeta-brazilian-news-milk-shake-solange-gueiros-em-miami/","locale":"en","hrefLang":"en-US","originalPath":"/events/gazeta-brazilian-news-milk-shake-solange-gueiros-em-miami/","dateFormat":"MM/DD/YYYY"}},
-    "staticQueryHashes": ["1239077767","3159585216","3280999885","63159454"]}
+{"componentChunkName":"component---src-templates-event-template-js","path":"/events/gazeta-brazilian-news-milk-shake-solange-gueiros-em-miami/","result":{"data":{"item":null},"pageContext":{"slug":"/gazeta-brazilian-news-milk-shake-solange-gueiros-em-miami/","locale":"en","hrefLang":"en-US","originalPath":"/events/gazeta-brazilian-news-milk-shake-solange-gueiros-em-miami/","dateFormat":"MM/DD/YYYY"}},"staticQueryHashes":["1239077767","3159585216","3280999885","63159454"]}

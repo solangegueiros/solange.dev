@@ -1,5 +1,1 @@
-{
-    "componentChunkName": "component---src-templates-event-template-js",
-    "path": "/events/arbitrum-hackathon-mentor-and-judge/",
-    "result": {"data":{"item":null},"pageContext":{"slug":"/arbitrum-hackathon-mentor-and-judge/","locale":"en","hrefLang":"en-US","originalPath":"/events/arbitrum-hackathon-mentor-and-judge/","dateFormat":"MM/DD/YYYY"}},
-    "staticQueryHashes": ["1239077767","3159585216","3280999885","63159454"]}
+{"componentChunkName":"component---src-templates-event-template-js","path":"/events/arbitrum-hackathon-mentor-and-judge/","result":{"data":{"item":{"fields":{"locale":"en","slug":"/event/arbitrum-hackathon-mentor-and-judge/"},"article":"","date":"15 October, 2022","category":"ethereum","description":"","id":"551843cb-7251-5eb2-a945-73d048cfc34e","language":"en","layout":"event","links":"https://hackathon.arbitrum.io/","local":"Bogota","marketing":"","organizer":"OffChain Labs","photos":"","slides":"","slug":"/arbitrum-hackathon-mentor-and-judge/","tags":"chainlink, ethereum, arbitrum","title":"Arbitrum Hackathon mentor and judge","type":"Judge","video":""}},"pageContext":{"slug":"/arbitrum-hackathon-mentor-and-judge/","locale":"en","hrefLang":"en-US","originalPath":"/events/arbitrum-hackathon-mentor-and-judge/","dateFormat":"MM/DD/YYYY"}},"staticQueryHashes":["1239077767","3159585216","3280999885","63159454"]}

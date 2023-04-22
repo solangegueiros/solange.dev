@@ -1,5 +1,1 @@
-{
-    "componentChunkName": "component---src-templates-event-template-js",
-    "path": "/events/cubo-for-devs-papo-de-desenvolvedores-nao-nasci-so-para-resolver-bugs/",
-    "result": {"data":{"item":null},"pageContext":{"slug":"/cubo-for-devs-papo-de-desenvolvedores-nao-nasci-so-para-resolver-bugs/","locale":"en","hrefLang":"en-US","originalPath":"/events/cubo-for-devs-papo-de-desenvolvedores-nao-nasci-so-para-resolver-bugs/","dateFormat":"MM/DD/YYYY"}},
-    "staticQueryHashes": ["1239077767","3159585216","3280999885","63159454"]}
+{"componentChunkName":"component---src-templates-event-template-js","path":"/events/cubo-for-devs-papo-de-desenvolvedores-nao-nasci-so-para-resolver-bugs/","result":{"data":{"item":null},"pageContext":{"slug":"/cubo-for-devs-papo-de-desenvolvedores-nao-nasci-so-para-resolver-bugs/","locale":"en","hrefLang":"en-US","originalPath":"/events/cubo-for-devs-papo-de-desenvolvedores-nao-nasci-so-para-resolver-bugs/","dateFormat":"MM/DD/YYYY"}},"staticQueryHashes":["1239077767","3159585216","3280999885","63159454"]}
