@@ -41,6 +41,23 @@ exports.sourceNodes = async ({
       item.date = dateObj.toISOString()
       //console.log("date", dateObj)  
     }
+
+    //check youtube link
+    if (item.video && typeof item.video === 'string') {
+      // Basic check for a YouTube link
+      const youtubeRegex = /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/watch\?v=|youtu\.be\/)([^\s&]+)/;
+      const match = item.video.match(youtubeRegex)
+      if (match) {
+        item.hasYouTube = true
+        item.youtubeId = match[1] // This is the video ID
+      } else {
+        item.hasYouTube = false
+      }
+    } else {
+      item.hasYouTube = false
+    }
+    //console.log ("\n hasYouTube:", item.hasYouTube);
+
     item = { ...item }
     return item
   })
@@ -64,6 +81,8 @@ exports.sourceNodes = async ({
       organizer: item.organizer ? item.organizer : '' ,
       language: item.lang ? item.lang : '' ,
       video: item.video ? item.video : '' ,
+      hasYouTube: item.hasYouTube,
+      youtubeId: item.youtubeId ? item.youtubeId : '' ,
       article: item.article ? item.article : '' ,
       slides: item.slides ? item.slides : '' ,
       links: item.links ? item.links : '' ,
