@@ -10,6 +10,20 @@ module.exports = {
         "gatsby-plugin-sharp",
         `gatsby-remark-images`,
         {
+          resolve: "gatsby-plugin-react-svg",
+          options: {
+            rule: {
+              include: /images\/flags/
+            }
+          }
+        },
+        {
+          resolve: "gatsby-plugin-svgr",
+          options: {
+            svgo: true,
+          },
+        }, 
+        {
             resolve: `gatsby-source-filesystem`,
             options: {
               path: `${__dirname}/src/pages`,
@@ -68,14 +82,7 @@ module.exports = {
                 ],
             },
         },
-        {
-            resolve: "gatsby-plugin-react-svg",
-            options: {
-              rule: {
-                include: /flags/
-              }
-            }
-          },        
+        
         "gatsby-transformer-sharp",        
     ]
 }

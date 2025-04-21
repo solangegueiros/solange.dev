@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { MdxLink, LocalizedLink as Link, useLocalization } from "gatsby-theme-i18n"
 import Menu from "../components/Menu"
-import Language from "../components/language"
+import Language from "../components/Language"
 import { useStaticQuery, graphql } from 'gatsby'
 import {
   container,

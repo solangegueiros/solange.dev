@@ -7,15 +7,14 @@ import {
   navLinkText,
   countryFlag,
 } from '../styles/layout.module.css'
-
-import BR from "../images/flags/BR.svg"
-import ES from "../images/flags/ES.svg"
-import EN from "../images/flags/US.svg"
+import { ReactComponent as BR } from "../images/flags/BR.svg"
+import { ReactComponent as ES } from "../images/flags/ES.svg"
+import { ReactComponent as EN } from "../images/flags/US.svg"
 
 const FLAGS = {
-  en: <EN className="CountryFlag"/>,
-  es: <ES className="CountryFlag"/>,
-  pt: <BR className="CountryFlag"/>,
+  en: <EN className={countryFlag} />,
+  es: <ES className={countryFlag} />,
+  pt: <BR className={countryFlag} />,
 };
 
 
@@ -26,21 +25,24 @@ const Language = ({ pageContext }) => {
   const { config } = useLocalization()
   //console.log(pageContext.originalPath)
 
+  //{item.localName}
   return (
-    <p>
-      {t("language")}: 
+    <div>
+      {t("language")}:      
       <nav>
         <ul className={navLinks}>
           {config.map(item => (
             <li key={item.code} className={navLinkItem}>
-              <LocalizedLink to={pageContext.originalPath} language={item.code} className={navLinkText}>
-                {item.localName}
-              </LocalizedLink>
+              <LocalizedLink to={pageContext.originalPath} 
+                language={item.code}                 
+              >
+                {FLAGS[item.code]}
+              </LocalizedLink>    
             </li>
           ))}          
         </ul>
       </nav>
-    </p>
+    </div>    
   )
 }
 //
