@@ -2,7 +2,7 @@ import * as React from "react"
 import { graphql } from "gatsby"
 import { useTranslation} from "react-i18next"
 import { MDXRenderer } from "gatsby-plugin-mdx"
-import Layout from "../components/layout"
+import Layout from "../components/Layout"
 import Seo from "../components/seo"
 
 const BlogTemplate = ({ data, pageContext }) => {

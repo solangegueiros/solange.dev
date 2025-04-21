@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { useTranslation} from "react-i18next"
 import { StaticImage } from 'gatsby-plugin-image'
-import Layout from '../components/layout'
+import Layout from '../components/Layout'
 import Seo from "../components/seo"
 import {
   navLinkText,

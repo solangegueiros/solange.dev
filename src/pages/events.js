@@ -3,7 +3,7 @@ import { FaYoutube } from 'react-icons/fa' // YouTube icon
 import { graphql } from "gatsby"
 import { useTranslation} from "react-i18next"
 import { LocalizedLink as Link } from "gatsby-theme-i18n"
-import Layout from '../components/layout'
+import Layout from '../components/Layout'
 import Seo from "../components/seo"
 
 const Events = ({ data, pageContext }) => {

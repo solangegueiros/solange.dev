@@ -1,6 +1,6 @@
 import * as React from "react"
 import { LocaleContext, LocalesList, LocalizedLink as Link, useLocalization } from "gatsby-theme-i18n"
-import Layout from "../components/layout"
+import Layout from "../components/Layout"
 
 const Locales = ({ pageContext }) => {
   const { config, locale } = useLocalization()
