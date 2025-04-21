@@ -9,7 +9,7 @@ const Video = ({ videoURL, videoTitle }) => {
   if ( videoURL.includes("www.youtube.com/watch?v=", 0) ) {
     videoURL = videoURL.replace ("watch?v=", "embed/")
   }
-  console.log ("videoURL:", videoURL, "\n")
+  //console.log ("videoURL:", videoURL, "\n")
 
   return (
     <div className="responsive-video">
