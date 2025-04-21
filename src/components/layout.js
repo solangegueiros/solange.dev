@@ -1,17 +1,15 @@
 import * as React from 'react'
 import { MdxLink, LocalizedLink as Link, useLocalization } from "gatsby-theme-i18n"
-import Menu from "../components/Menu"
 import Language from "../components/language"
 import { useStaticQuery, graphql } from 'gatsby'
 import {
   container,
   heading,
-  navWrapper,
+  navLinks,
+  navLinkItem,
+  navLinkText,
   siteTitle,  
-  logoLink,
-  logoIcon,
 } from '../styles/layout.module.css'
-import icon from '../images/icon.png'
 
 const components = {
   a: MdxLink,
@@ -48,16 +46,40 @@ const Layout = ({ pageTitle, children, pageContext }) => {
     <div >
       <title>{pageTitle} | {data.site.siteMetadata.title}</title>
       <header className={siteTitle}>
-        <Link to="/" className={logoLink}>
-          <img src={icon} alt="Site icon" className={logoIcon} />
+        <Link to="/">
           {data.site.siteMetadata.title}
         </Link>        
       </header>
-
-      <div className={navWrapper}>
-        <Menu pageContext={pageContext}/>
-        <Language pageContext={pageContext}/>
-      </div>  
+      <nav>
+        <ul className={navLinks}>
+        <li className={navLinkItem}>
+            <Link to="/events" className={navLinkText}>
+              Events
+            </Link>
+          </li>
+          <li className={navLinkItem}>
+            <a target="_blank" rel="noopener noreferrer" href="https://ethereum.solange.dev/" className={navLinkText}>
+              Ethereum
+            </a>
+          </li>
+          <li className={navLinkItem}>
+            <a target="_blank" rel="noopener noreferrer" href="https://academy.rsk.dev.br/" className={navLinkText}>
+              RSK Academy
+            </a>
+          </li>
+          <li className={navLinkItem}>
+            <a target="_blank" rel="noopener noreferrer" href="https://rsk.solange.dev/" className={navLinkText}>
+              RSK
+            </a>
+          </li>
+          <li className={navLinkItem}>
+            <Link to="/about" className={navLinkText}>
+              About
+            </Link>
+          </li>
+        </ul>
+      </nav>
+      <Language pageContext={pageContext}/>
 
       <main>
         <div className={container}>

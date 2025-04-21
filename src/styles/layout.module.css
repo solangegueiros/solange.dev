@@ -8,88 +8,40 @@
 .heading {
   color: rebeccapurple;
 }
-
-.navWrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.5rem;
-  margin: 0.5rem auto;
-  height: 30px;
-  font-family: sans-serif;
-  background-color: #0d00ff;    
-}
 .nav-links {
   display: flex;
   list-style: none;
   padding-left: 0;
-  margin: 0;
 }
 .nav-link-item {
   padding-right: 2rem;
 }
 .nav-link-text {
-  color: blue;
-  text-decoration: none;
-  padding: 5px 10px;
-  border-radius: 5px;
-}
-.nav-link-text:hover {
-  color: blue;
-  font-weight: bolder;
+  color: black;
 }
 
 .site-title {
-  font-family: sans-serif;
+  color:darkmagenta; 
   font-weight: 700;
   font-size: 2rem;
-}
-
-.logoLink {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  text-decoration: none;
-}
-
-.logoIcon {
-  height: 32px;
-  width: auto;
+  /*
+  margin: 3rem 0;
+  */
 }
 
 .headerMenu {
-  display: flex;
   list-style: none;
-  padding-left: 0;
   margin: 0;
-}
-.headerMenu li {
-  padding-right: 2rem;
+  padding-left: 10px;
+  display: flex;
+  align-items: center;
 }
 
 .headerMenu li a {
-  font-size: 0.5rem;
   display: block;
   text-decoration: none;
-  padding-right: 2rem; 
-  color: white;
-  text-decoration: none;
-  padding: 5px 10px;
-  transition: background-color 0.2s ease, color 0.2s ease;
-  border-radius: 5px;   
 }
-.headerMenu li a:hover {
-  display: block;
-  text-decoration: none;
-  background-color: rgba(255, 255, 255, 0.414);
-}
-
-/*
-$maxWidth: 768px;
-$smallerDevicesMaxWidth: 480px;
-$minWidth: 1024px;
-*/
-@media (max-width: 1024px) {
+@media (max-width: $maxWidth) {
   .headerMenu li a {
     padding: 3px 10px 5px 0;
     font-size: 16px;
@@ -101,7 +53,7 @@ $minWidth: 1024px;
     font-size: 13px;
   }
 }
-@media (min-width: 1024px) {
+@media (min-width: $minWidth) {
   .headerMenu li a {
     padding: 15px 15px;
     font-size: 22px;
@@ -111,21 +63,8 @@ $minWidth: 1024px;
 .countryFlag {
   width: 45px;
   height: 30px;
-  margin: 0 0.2rem;  
+  margin: 0 0.2rem;
   box-shadow: 0 0 0 1px black;
-}
-.countryFlag:hover {
-  box-shadow: 0 0 0 3px black;
-}
-
-table {
-  table-layout: fixed;
-  width: 100%;
-}
-
-th, td {
-  padding: 0.5rem;
-  text-align: center;
 }
 
 .responsive-video {  

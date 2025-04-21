@@ -1,7 +1,7 @@
 module.exports = {
     siteMetadata: {
         siteUrl: `https://solange.dev`,
-        title: `Sol around Blockchain`,
+        title: `Blockchain Blog Sol`,
         description: `Blockchain developers blog`,
         author: `Solange Gueiros`,        
     },
@@ -9,21 +9,6 @@ module.exports = {
         "gatsby-plugin-image",
         "gatsby-plugin-sharp",
         `gatsby-remark-images`,
-        "gatsby-transformer-sharp",
-        {
-          resolve: "gatsby-plugin-react-svg",
-          options: {
-            rule: {
-              include: /images\/flags/
-            }
-          }
-        },
-        {
-          resolve: "gatsby-plugin-svgr",
-          options: {
-            svgo: true,
-          },
-        },         
         {
             resolve: `gatsby-source-filesystem`,
             options: {
@@ -42,7 +27,7 @@ module.exports = {
         {
             resolve: "gatsby-source-filesystem",
             options: {
-              name: `event`,
+              name: `blog`,
               path: `${__dirname}/content/event`,
             }
         },
@@ -83,6 +68,14 @@ module.exports = {
                 ],
             },
         },
-                
+        {
+            resolve: "gatsby-plugin-react-svg",
+            options: {
+              rule: {
+                include: /flags/
+              }
+            }
+          },        
+        "gatsby-transformer-sharp",        
     ]
 }
