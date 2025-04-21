@@ -4,7 +4,7 @@ import { graphql } from "gatsby"
 import { useTranslation} from "react-i18next"
 import { LocalizedLink as Link } from "gatsby-theme-i18n"
 import Layout from '../components/Layout'
-import Seo from "../components/seo"
+import Seo from "../components/Seo"
 
 const Events = ({ data, pageContext }) => {
   const { t } = useTranslation()

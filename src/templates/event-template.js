@@ -3,7 +3,7 @@ import { graphql, Link } from "gatsby"
 import { useTranslation} from "react-i18next"
 
 import Layout from "../components/Layout"
-import Seo from "../components/seo"
+import Seo from "../components/Seo"
 import Video from "../components/video"
 
 

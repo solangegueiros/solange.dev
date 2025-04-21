@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 import { useTranslation} from "react-i18next"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import Layout from "../components/Layout"
-import Seo from "../components/seo"
+import Seo from "../components/Seo"
 
 const BlogTemplate = ({ data, pageContext }) => {
   const { t } = useTranslation("blog")
