@@ -8,14 +8,10 @@ import {
   countryFlag,
 } from '../styles/layout.module.css'
 
-import BR from "../images/flags/BR.svg"
-import ES from "../images/flags/ES.svg"
-import EN from "../images/flags/US.svg"
-
 const FLAGS = {
-  en: <EN className="CountryFlag"/>,
-  es: <ES className="CountryFlag"/>,
-  pt: <BR className="CountryFlag"/>,
+  en: "/images/flags/EN.png",
+  es: "/images/flags/ES.png",
+  pt: "/images/flags/BR.png",
 };
 
 
@@ -27,22 +23,29 @@ const Language = ({ pageContext }) => {
   //console.log(pageContext.originalPath)
 
   return (
-    <p>
-      {t("language")}: 
+    //{t("language")}: 
+
+    <div>      
       <nav>
         <ul className={navLinks}>
           {config.map(item => (
             <li key={item.code} className={navLinkItem}>
-              <LocalizedLink to={pageContext.originalPath} language={item.code} className={navLinkText}>
-                {item.localName}
-              </LocalizedLink>
+              <LocalizedLink to={pageContext.originalPath} 
+                language={item.code}                 
+              >
+                <img
+                  src={FLAGS[item.code]}
+                  alt={item.localName || item.code.toUpperCase()}
+                  className={countryFlag}
+                />
+              </LocalizedLink>    
             </li>
           ))}          
         </ul>
       </nav>
-    </p>
+    </div>
   )
 }
-//
+
 
 export default Language
