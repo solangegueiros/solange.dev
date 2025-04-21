@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { MdxLink, LocalizedLink as Link, useLocalization } from "gatsby-theme-i18n"
+import { useTranslation} from "react-i18next"
 import { useStaticQuery, graphql } from 'gatsby'
 import {
   heading,
@@ -13,13 +14,14 @@ const components = {
 
 
 const Menu = ({ pageTitle, children, pageContext }) => {
+  const { t } = useTranslation()
 
   return (
     <nav>
       <ul className={headerMenu}>
       <li className={headerMenu}>
         <Link to="/events" className={headerMenu}>
-          Events
+          {t("events")}
         </Link>
       </li>
       <li className={headerMenu}>
@@ -39,7 +41,7 @@ const Menu = ({ pageTitle, children, pageContext }) => {
       </li>
       <li className={headerMenu}>
         <Link to="/about" className={headerMenu}>
-          About
+          {t("about")}
         </Link>
       </li>
     </ul>
