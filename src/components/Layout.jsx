@@ -1,17 +1,16 @@
 import * as React from 'react'
 import { MdxLink, LocalizedLink as Link, useLocalization } from "gatsby-theme-i18n"
-import Menu from "../components/Menu"
-import Language from "../components/language"
+import Menu from "./Menu"
+import Language from "./language"
 import { useStaticQuery, graphql } from 'gatsby'
+import icon from '../images/icon.png'
 import {
   container,
   heading,
-  navLinks,
-  navLinkItem,
-  navLinkText,
+  navWrapper,   
   siteTitle,
-  navWrapper,
-  headerMenu,   
+  logoLink,
+  logoIcon,  
 } from '../styles/layout.module.css'
 
 const components = {
@@ -49,10 +48,11 @@ const Layout = ({ pageTitle, children, pageContext }) => {
     <div >
       <title>{pageTitle} | {data.site.siteMetadata.title}</title>
       <header className={siteTitle}>
-        <Link to="/">
+        <Link to="/" className={logoLink}>
+          <img src={icon} alt="Solange.Dev" className={logoIcon} />
           {data.site.siteMetadata.title}
         </Link>        
-      </header>
+      </header> 
 
       <div className={navWrapper}>
         <Menu pageContext={pageContext}/>
