@@ -8,7 +8,9 @@ import {
   navLinks,
   navLinkItem,
   navLinkText,
-  siteTitle,  
+  siteTitle,
+  navWrapper,
+  headerMenu,   
 } from '../styles/layout.module.css'
 
 const components = {
@@ -19,13 +21,13 @@ const Layout = ({ pageTitle, children, pageContext }) => {
 /*
   const { locale } = useLocalization()
 
-          <li className={navLinkItem}>
-            <Link to="/blog" className={navLinkText}>
+          <li className={headerMenu}>
+            <Link to="/blog">
               Blog
             </Link>
           </li>
-          <li className={navLinkItem}>
-            <Link to="/locales" className={navLinkText}>
+          <li className={headerMenu}>
+            <Link to="/locales">
               Locales info {locale}
             </Link>
           </li>
@@ -50,36 +52,39 @@ const Layout = ({ pageTitle, children, pageContext }) => {
           {data.site.siteMetadata.title}
         </Link>        
       </header>
-      <nav>
-        <ul className={navLinks}>
-        <li className={navLinkItem}>
-            <Link to="/events" className={navLinkText}>
-              Events
-            </Link>
-          </li>
-          <li className={navLinkItem}>
-            <a target="_blank" rel="noopener noreferrer" href="https://ethereum.solange.dev/" className={navLinkText}>
-              Ethereum
-            </a>
-          </li>
-          <li className={navLinkItem}>
-            <a target="_blank" rel="noopener noreferrer" href="https://academy.rsk.dev.br/" className={navLinkText}>
-              RSK Academy
-            </a>
-          </li>
-          <li className={navLinkItem}>
-            <a target="_blank" rel="noopener noreferrer" href="https://rsk.solange.dev/" className={navLinkText}>
-              RSK
-            </a>
-          </li>
-          <li className={navLinkItem}>
-            <Link to="/about" className={navLinkText}>
-              About
-            </Link>
-          </li>
-        </ul>
-      </nav>
-      <Language pageContext={pageContext}/>
+
+      <div className={navWrapper}>
+        <nav>
+          <ul className={headerMenu}>
+          <li className={headerMenu}>
+              <Link to="/events" className={headerMenu}>
+                Events
+              </Link>
+            </li>
+            <li className={headerMenu}>
+              <a target="_blank" rel="noopener noreferrer" href="https://ethereum.solange.dev/" className={headerMenu}>
+                Ethereum
+              </a>
+            </li>
+            <li className={headerMenu}>
+              <a target="_blank" rel="noopener noreferrer" href="https://academy.rsk.dev.br/" className={headerMenu}>
+                RSK Academy
+              </a>
+            </li>
+            <li className={headerMenu}>
+              <a target="_blank" rel="noopener noreferrer" href="https://rsk.solange.dev/" className={headerMenu}>
+                RSK
+              </a>
+            </li>
+            <li className={headerMenu}>
+              <Link to="/about" className={headerMenu}>
+                About
+              </Link>
+            </li>
+          </ul>
+        </nav>
+        <Language pageContext={pageContext}/>
+      </div>
 
       <main>
         <div className={container}>
