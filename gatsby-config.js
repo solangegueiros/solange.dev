@@ -1,9 +1,9 @@
 module.exports = {
     siteMetadata: {
-        siteUrl: `https://solange.dev`,
-        title: `Blockchain Blog Sol`,
-        description: `Blockchain developers blog`,
-        author: `Solange Gueiros`,        
+      siteUrl: `https://solange.dev`,
+      title: `Sol around Blockchain`,
+      description: `Blockchain developers blog`,
+      author: `Solange Gueiros`,          
     },
     plugins: [
         "gatsby-plugin-image",
