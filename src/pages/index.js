@@ -6,13 +6,50 @@ import { LocalizedLink as Link } from "gatsby-theme-i18n"
 //import { StaticImage } from 'gatsby-plugin-image'
 import Layout from '../components/Layout'
 import Seo from "../components/Seo"
+import YearStackedBarChart from "../components/YearStackedBarChart";
+import YearPieCharts from "../components/YearPieCharts";
+import YearLanguageCharts from "../components/YearLanguageCharts";
 
 const Index = ({ data, pageContext }) => {
   const { t } = useTranslation()
   const { title, description } = data.site.siteMetadata
   const posts = data.blogList
   const events = data.eventList
- 
+
+  const statsYear = data.statsYear.nodes;
+  const languages = [ "en", "pt", "es"];
+  const languageTotals = { pt: 0, en: 0, es: 0 };
+
+  // Build grouped structure: { [year]: { [lang]: count } }
+  const yearLanguageGroup = {};
+  statsYear.forEach(({ year, fields }) => {
+    const auxLanguage = fields.locale;
+
+    if (!yearLanguageGroup[year]) yearLanguageGroup[year] = {};
+    if (!yearLanguageGroup[year][auxLanguage]) yearLanguageGroup[year][auxLanguage] = 0;
+    yearLanguageGroup[year][auxLanguage]++;
+
+    if (languageTotals[auxLanguage] !== undefined) {
+      languageTotals[auxLanguage]++;
+    }
+
+  });
+
+  // Sort years descending
+  const sortedYears = Object.keys(yearLanguageGroup).sort((a, b) => b - a);
+  const totalAll = Object.values(languageTotals).reduce((sum, v) => sum + v, 0);
+
+  /*
+      <YearLanguageCharts />
+      <br/>
+
+      <YearStackedBarChart />
+      <br/>
+
+      <YearPieCharts />
+      <br/>  
+  */
+
   return (
     <Layout pageContext={pageContext}>
       <Seo title={title} />
@@ -20,6 +57,51 @@ const Index = ({ data, pageContext }) => {
       <p>Sol (Solange Gueiros) {description}</p>
 
       <h2>{t("events")}</h2>
+
+      <YearStackedBarChart />
+      <br/>
+
+      <YearPieCharts />
+      <br/>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Ano</th>
+            {languages.map(lang => (
+              <th key={lang}>{lang.toUpperCase()}</th>
+            ))}
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          {sortedYears.map(year => {
+            const yearData = yearLanguageGroup[year];
+            const total = languages.reduce((sum, lang) => sum + (yearData[lang] || 0), 0);
+
+            return (
+              <tr key={year}>
+                <td>{year}</td>
+                {languages.map(lang => (
+                  <td key={lang}>{yearData[lang] || 0}</td>
+                ))}
+                <td>{total}</td>
+              </tr>
+            );
+          })}
+          {/* Final Totals Row */}
+          <tr>
+            <td><strong>Total</strong></td>
+            {languages.map(lang => (
+              <td key={lang}><strong>{languageTotals[lang]}</strong></td>
+            ))}
+            <td><strong>{totalAll}</strong></td>
+          </tr>          
+        </tbody>
+      </table>
+
+      <br/>
+
       <table>
         <thead>
           <tr>
@@ -195,5 +277,25 @@ export const query = graphql`
       totalCount
     }    
 
+    statsYear: allItem {
+      nodes {
+        year
+        fields {
+          locale
+        }
+      }
+    }
+
   }
 `
+
+/*
+query MyQuery {
+  allItem(filter: { fields: { locale: { eq: "pt" } } }) {
+    group(field: year) {
+      fieldValue
+      totalCount
+    }
+  }
+}
+*/

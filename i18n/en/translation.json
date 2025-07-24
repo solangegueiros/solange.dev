@@ -25,6 +25,7 @@
   "events": "Events",
   "lastEvents": "Last events",
   "allEvents": "go to all events",
+  "noEventsFound": "No events found",
   "article": "Article",
   "organizer": "Made by",
   "links": "Links",

@@ -1,3 +1,4 @@
+// Language.jsx
 import * as React from "react"
 import { useTranslation} from "react-i18next"
 import { LocalizedLink, useLocalization } from "gatsby-theme-i18n"
@@ -6,6 +7,7 @@ import {
   navLinkItem,
   navLinkText,
   countryFlag,
+  activeLanguage,
 } from '../styles/layout.module.css'
 
 const FLAGS = {
@@ -20,27 +22,41 @@ const FLAGS = {
 const Language = ({ pageContext }) => {
   const { t } = useTranslation()
   const { config } = useLocalization()
-  //console.log(pageContext.originalPath)
+  console.log("Page Context: ", JSON.stringify(pageContext));
+  console.log("config: ", JSON.stringify(config));
+
+  const locale = pageContext.locale;
+  const currentLangObj = config.find(lang => lang.code === locale);
+  const CurrentLanguage = currentLangObj?.localName || locale.toUpperCase();
+
 
   return (
-    //{t("language")}: 
+    //{t("language")}: {CurrentLanguage}
 
+    //<li key={item.code} className={navLinkItem} >
     <div>      
       <nav>
         <ul className={navLinks}>
-          {config.map(item => (
-            <li key={item.code} className={navLinkItem}>
-              <LocalizedLink to={pageContext.originalPath} 
-                language={item.code}                 
+          {config.map(item => {
+            const isActive = locale === item.code;
+
+            return (
+              <li 
+                key={item.code} 
+                className={navLinkItem}
               >
-                <img
+                <LocalizedLink to={pageContext.originalPath} 
+                  language={item.code}                 
+                >
+                  <img
                   src={FLAGS[item.code]}
                   alt={item.localName || item.code.toUpperCase()}
-                  className={countryFlag}
+                  className={`${countryFlag} ${isActive ? activeLanguage : ""}`}
                 />
-              </LocalizedLink>    
-            </li>
-          ))}          
+                </LocalizedLink>    
+              </li>
+            )
+          })} 
         </ul>
       </nav>
     </div>

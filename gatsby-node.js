@@ -39,7 +39,8 @@ exports.sourceNodes = async ({
       dateObj = new Date(dateString)
       //console.log("dateObj", dateObj)
       item.date = dateObj.toISOString()
-      //console.log("date", dateObj)  
+      //console.log("date", dateObj)
+      item.year = dateObj.getUTCFullYear()
     }
 
     //check youtube link
@@ -74,6 +75,7 @@ exports.sourceNodes = async ({
       children: [],
       title: item.title,
       date: item.date,
+      year: item.year ? item.year : '' ,
       category: item.category ? item.category : '' ,
       tags: item.tags ? item.tags : '' ,
       local: item.local ? item.local : '' ,
