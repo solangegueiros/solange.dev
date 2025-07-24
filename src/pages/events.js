@@ -8,46 +8,61 @@ import Seo from "../components/Seo"
 
 const Events = ({ data, pageContext }) => {
   const { t } = useTranslation()
+  const locale = pageContext.locale;
+  //console.log("Page Context: ", JSON.stringify(pageContext));
+  //console.log("Locale: ", locale);
+  // pageTitle={`${t("events")} - ${locale.toUpperCase()}`}
 
   const eventList = data.eventList;
   //console.log("Event List \n", eventList);
 
-  return (
-    <Layout pageContext={pageContext} pageTitle={t("events")}>
-      <Seo title={t("events")} />
+  // No events found
+  if (!eventList || !eventList.nodes || eventList.nodes.length === 0) {
+    return (
+      <Layout pageContext={pageContext} pageTitle={`${t("events")}`}>
+        <Seo title={t("events")} />
+        <p>🌍 Language: {locale.toUpperCase()}</p>
+        <p>{t("noEventsFound")}</p>
+      </Layout>
+    )
+  }
+  else {   
+    return (
+      <Layout pageContext={pageContext} pageTitle={t("events")}>
+        <Seo title={t("events")} />
+        <p>🌍 Language: {locale.toUpperCase()} - Total: {eventList.totalCount}</p>
+        <br/>
 
-      <p>Total: {eventList.totalCount}</p>
-      <br/>
+        <ul>
+          {eventList.nodes.map((item) => (
+            <li key={item.id}>
+              <Link to={`/events${item.slug}`}>
+                <h4>{item.title}</h4>
+              </Link>
+              <small>
+                {item.hasYouTube && item.video && (
+                  <a
+                    href={item.video}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ marginLeft: '0.5rem' }}
+                    title="Watch on YouTube"
+                    >
+                    <FaYoutube
+                      size="2em"                    
+                      style={{ marginRight: '0.5rem', color: 'red', verticalAlign: 'middle' }}
+                    />
+                  </a>
+                )}                
+                {item.type}, {item.date} - {item.local}              
+              </small>
+            </li>
+          ))}
+        </ul>
 
-      <ul>
-        {eventList.nodes.map((item) => (
-          <li key={item.id}>
-            <Link to={`/events${item.slug}`}>
-              <h4>{item.title}</h4>
-            </Link>
-            <small>
-              {item.hasYouTube && item.video && (
-                <a
-                  href={item.video}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ marginLeft: '0.5rem' }}
-                  title="Watch on YouTube"
-                  >
-                  <FaYoutube
-                    size="2em"                    
-                    style={{ marginRight: '0.5rem', color: 'red', verticalAlign: 'middle' }}
-                  />
-                </a>
-              )}                
-              {item.type}, {item.date} - {item.local}              
-            </small>
-          </li>
-        ))}
-      </ul>
-
-    </Layout>
-  )
+      </Layout>
+    )
+  }
 }
 
 export default Events
