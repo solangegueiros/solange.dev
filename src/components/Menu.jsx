@@ -37,16 +37,6 @@ const Menu = () => {
                 </Link>
               </li>
               <li className="menu-link-item">
-                <Link to="/blog" className="nav-link-text">
-                    {t('menu.blog')}
-                </Link>
-              </li>
-              <li className="menu-link-item">
-                <Link to="/docs" className="nav-link-text">
-                    {t('menu.docs')}
-                </Link>
-              </li>
-              <li className="menu-link-item">
                 <Link to="/projects" className="nav-link-text">
                     {t('menu.projects')}
                 </Link>
@@ -68,5 +58,15 @@ const Menu = () => {
   export default Menu
 
   /*
+              <li className="menu-link-item">
+                <Link to="/blog" className="nav-link-text">
+                    {t('menu.blog')}
+                </Link>
+              </li>
+              <li className="menu-link-item">
+                <Link to="/docs" className="nav-link-text">
+                    {t('menu.docs')}
+                </Link>
+              </li>
 
   */
