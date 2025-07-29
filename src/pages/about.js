@@ -1,21 +1,24 @@
 import * as React from 'react'
-import { useTranslation} from "react-i18next"
+import { graphql } from 'gatsby'
 import { StaticImage } from 'gatsby-plugin-image'
-import Layout from '../components/Layout'
-import Seo from "../components/Seo"
-import {
-  navLinkText,
-} from '../styles/layout.module.css'
+import { useTranslation } from 'gatsby-plugin-react-i18next'
 
-const About = ({ pageContext }) => {
+import Layout from '../components/Layout'
+import { SEO }  from "../components/Seo"
+
+const PageTitle = "About Me"
+
+const AboutPage = ({ location }) => {
   const { t } = useTranslation()
+  const PageLocalized = t('aboutPage.title')
 
   return (
-    <Layout pageContext={pageContext} pageTitle={t("about")} >
-      <Seo title={t("about")} />
-      <p>
+    <Layout pageTitle={PageLocalized} location={location}>
+      <p>{t('aboutPage.description')}</p>
+
+      <h2>
         <b>Sol - Solange Gueiros</b>        
-      </p>
+      </h2>
       <br/>      
       <StaticImage width={200}
         alt="Solange Gueiros"
@@ -23,32 +26,55 @@ const About = ({ pageContext }) => {
       />
       <h3>Mini bio</h3>
       <p>
-        <b>{t("miniBioTitle")}</b>
+        <b>{t("aboutPage.miniBioTitle")}</b>
         <br/>
       </p>
       <p>
-        {t("miniBioContent")}
+        {t("aboutPage.miniBioContent")}
         <br/>
       </p>
       <p>
-        <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/solangegueiros" className={navLinkText}>
+        <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/solangegueiros" className={"menu-link-text"}>
           Twitter
         </a>        
         <br/>
       </p>
       <p>
-        <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/solangegueiros/" className={navLinkText}>
+        <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/solangegueiros/" className={"menu-link-text"}>
           Linkedin
         </a>        
         <br/>
       </p>      
       <h3>
-        <a target="_blank" rel="noopener noreferrer" href="https://photos.app.goo.gl/S64866GpCHbvhJk86" className={navLinkText}>
-          {t("profilePictures")}
+        <a target="_blank" rel="noopener noreferrer" href="https://photos.app.goo.gl/S64866GpCHbvhJk86" className={"menu-link-text"}>
+          {t("aboutPage.profilePictures")}
         </a>
       </h3>
     </Layout>
   )
 }
 
-export default About
+export default AboutPage
+
+
+export const Head = () => (
+  <>
+    <SEO pageTitle={PageTitle} pageDescription="About me" />
+  </>
+)
+
+
+// This is mandatory for every page using useTranslation() or anything from gatsby-plugin-react-i18next.
+export const query = graphql`
+  query($language: String!) {
+    locales: allLocale(filter: { language: { eq: $language } }) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+  }
+`;

@@ -1,52 +1,73 @@
-import * as React from "react"
-import { graphql } from "gatsby"
-import { useTranslation} from "react-i18next"
-import { MDXRenderer } from "gatsby-plugin-mdx"
-import Layout from "../components/Layout"
-import Seo from "../components/Seo"
+import * as React from 'react'
+import { graphql } from 'gatsby'
+import { useTranslation } from 'gatsby-plugin-react-i18next'
+import ReactMarkdown from "react-markdown";
 
-const BlogTemplate = ({ data, pageContext }) => {
-  const { t } = useTranslation("blog")
-  const post = data.mdx
+import Layout from '../components/Layout'
+import { SEO }  from "../components/Seo"
 
-  var title = t("notTranslated")
-  if (post) {
-    //var image = getImage(data.mdx.frontmatter.hero_image)
-    title = post.frontmatter.title
-  }
-
-  return (
-    <Layout pageContext={pageContext} pageTitle={title}>     
-      <Seo title={title} />
-
-      <div>        
-        {post ? (
-          <>            
-            <small>{post.frontmatter.date}</small>
-            <MDXRenderer>{post.body}</MDXRenderer>
-        </>
-        ) : (
-          <div>{t("notTranslatedPost")}</div>
-        )}
-      </div>
-    </Layout>
-  )
-}
-
-export default BlogTemplate
 
 export const query = graphql`
-  query($locale: String!, $slug: String!) {
+  query Post($language: String!, $slug: String!) {
+    locales: allLocale(filter: { language: { eq: $language } }) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
     mdx(
-      fields: { locale: { eq: $locale } }
       frontmatter: { slug: { eq: $slug } }
+      fields: { locale: { eq: $language } }
     ) {
+      body
       frontmatter {
-        date(formatString: "MMMM D, YYYY")
-        slug
+        date(formatString: "MMMM DD, YYYY")
         title
       }
-      body
     }
   }
-`
+`;
+
+const BlogPost = ({ data, children, pageContext: { language }, location }) => {
+  const { t } = useTranslation();
+
+  const post = data.mdx
+  if (!post) {
+    return (
+      <Layout pageTitle={t('notTranslated.title')} location={location}>
+        <p>{t('notTranslated.message')}</p>
+      </Layout>
+    )
+  }
+  else {
+    //console.log("body ", `${post.body}`);
+
+    return (
+      <Layout pageTitle={post.frontmatter.title} location={location}>
+        <hr />        
+        <p>
+          {t('blogPage.posted')}
+          {Intl.DateTimeFormat(language,
+            { year: 'numeric', month: 'long', day: '2-digit' } //, timeZone: 'UTC'             
+          ).format(new Date(post.frontmatter.date).getTime())}
+        </p>
+        
+        <ReactMarkdown>
+          {post.body}
+        </ReactMarkdown>            
+      </Layout>
+      
+    )    
+  }
+}
+
+export default BlogPost
+
+export const Head = ({ data }) => (  
+  <SEO pageTitle={data?.mdx?.frontmatter?.title ?? "Not Translated"} />
+)
+
+

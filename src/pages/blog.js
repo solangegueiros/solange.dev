@@ -1,62 +1,60 @@
 import * as React from 'react'
-import { graphql } from "gatsby"
-import { useTranslation} from "react-i18next"
-import { LocalizedLink as Link } from "gatsby-theme-i18n"
+import { graphql } from 'gatsby'
+import { Link, useTranslation } from 'gatsby-plugin-react-i18next'
+import ReactMarkdown from "react-markdown";
+
 import Layout from '../components/Layout'
-import Seo from "../components/Seo"
+import { SEO }  from "../components/Seo"
 
-const Blog = ({ data, pageContext }) => {
-  const { t } = useTranslation("blog")
+const PageTitle = "Blog"
 
-  const postList = data.blogList;
-  //console.log("Blog List \n", postList);
-
-  return (
-    <Layout pageContext={pageContext} pageTitle={t("blog")}>      
-      <Seo title={t("blog")} />
-      <p>{t("blog introduction")}</p>
-      <p>Total: {postList.totalCount}</p>
-      <br/>
-      {
-        postList.nodes.map(({ childMdx: node }) => (
-          <article key={node.frontmatter.slug}>
-            <h2>
-              <Link to={`/blog${node.frontmatter.slug}`}>
-                {node.frontmatter.title}
-              </Link>
-            </h2>            
-            <p>{t("posted")}: {node.frontmatter.date}</p>
-          </article>
-        ))
-      }
-    </Layout>
-  )
-}
-//<Link to={`/blog/${node.frontmatter.slug}`}>
-//<Link to={node.frontmatter.slug}>
-//<Link to={node.slug}>
-
+//allFile(filter: {sourceInstanceName: {eq: "blog"}}) {
 export const query = graphql`
-  query($locale: String!) {
-    blogList: allFile(
-      filter: {
-        sourceInstanceName: { eq: "blog" }
-        childMdx: { fields: { locale: { eq: $locale } } }
-      }
-    ) {
-      totalCount
-      nodes {
-        childMdx {
-          frontmatter {
-            date(formatString: "MMMM D, YYYY")
-            slug
-            title            
-          }
-          id
+  query($language: String!) {
+    locales: allLocale(filter: { language: { eq: $language } }) {
+      edges {
+        node {
+          ns
+          data
+          language
         }
       }
     }
-  }
-`
+    blogs: allMdx(
+      sort: { frontmatter: { date: DESC } }
+      filter: { 
+        fields: {locale: {eq: $language} } 
+        internal: {contentFilePath: {regex: "/blog/"}}
+      }
+    ) {
+        nodes {
+          frontmatter {
+            date(formatString: "MMMM DD, YYYY")
+            title
+            slug
+          }
+          id
+          excerpt
+        }
+      }
+    }
+  `
 
-export default Blog
+const BlogPage = ({ data, pageContext: { language }, location }) => {
+  const { t } = useTranslation();
+
+
+  return (
+    <Layout pageTitle={PageTitle} location={location}>
+      <p> Use the sidebar navigation</p>
+    </Layout>
+  )
+}
+
+export default BlogPage
+
+export const Head = () => (
+  <SEO pageTitle={PageTitle} />
+)
+
+

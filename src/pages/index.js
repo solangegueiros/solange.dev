@@ -1,43 +1,50 @@
 import * as React from 'react'
 import { FaYoutube } from 'react-icons/fa' // YouTube icon
-import { graphql } from "gatsby"
-import { useTranslation} from "react-i18next"
-import { LocalizedLink as Link } from "gatsby-theme-i18n"
-//import { StaticImage } from 'gatsby-plugin-image'
+import { graphql } from 'gatsby'
+import { Link, useTranslation } from 'gatsby-plugin-react-i18next'
+
 import Layout from '../components/Layout'
-import Seo from "../components/Seo"
+import { SEO }  from "../components/Seo"
 
-const Index = ({ data, pageContext }) => {
+const PageTitle = "Home"
+// console.log("PageTitle: ", PageTitle);
+
+const IndexPage = ({ data, location }) => {
+  //console.log("IndexPage location\n", JSON.stringify(location, null, 2));
+
   const { t } = useTranslation()
-  const { title, description } = data.site.siteMetadata
-  const posts = data.blogList
+  const PageLocalized = t('homePage.title')
   const events = data.eventList
- 
+
   return (
-    <Layout pageContext={pageContext}>
-      <Seo title={title} />
+    <Layout pageTitle="" location={location}>
+      <p>{t('homePage.welcomeMessage')}</p>
 
-      <p>Sol (Solange Gueiros) {description}</p>
-
-      <h2>{t("events")}</h2>
+      <h2>{t("menu.events")}</h2>
+      <p>{t("homePage.eventsTable")}</p>
       <table>
         <thead>
           <tr>
-            <th className="TableTextCenter" >{t("in")} {t("en")}</th>
-            <th className="TableTextCenter" >{t("in")} {t("es")}</th>
-            <th className="TableTextCenter" >{t("in")} {t("pt")}</th>
+            <th>{t("in")} {t("en")}</th>
+            <th>{t("in")} {t("es")}</th>
+            <th>{t("in")} {t("pt")}</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td className="TableTextCenter" >{data.eventsEN.totalCount}</td>
-            <td className="TableTextCenter" >{data.eventsES.totalCount}</td>
-            <td className="TableTextCenter" >{data.eventsPT.totalCount}</td>
+            <td>{data.eventsEN.totalCount}</td>
+            <td>{data.eventsES.totalCount}</td>
+            <td>{data.eventsPT.totalCount}</td>
           </tr>
         </tbody>
-      </table>
+      </table>        
 
-      <h4>{t("lastEvents")}</h4>
+      <Link to="/events/">
+        <p> {t("homePage.allEvents")} - Total: {events.totalCount}</p>
+      </Link>
+
+      <h4>{t("homePage.lastEvents")}</h4>
+            
       <ul>
         {events.nodes.map((item) => (
           <article key={item.id}>
@@ -64,75 +71,37 @@ const Index = ({ data, pageContext }) => {
           </article>
         ))}
       </ul>
-
       <br/>
-      <Link to="/events/">
-        <p> {t("allEvents")} - Total: {events.totalCount}</p>
-      </Link>
+
 
       <br/>
     </Layout>
   )
 }
-/* Blog part - removed
-      <br/>
-      <h2>{t("blog")}</h2>
 
-      <h4>{t("lastPosts")}</h4>
-      <ul>
-        {
-          posts.nodes.map(({ childMdx: node }) => (
-            <article key={node.frontmatter.slug}>
-              <Link to={`/blog${node.frontmatter.slug}`}>
-                <h4>{node.frontmatter.title}</h4>
-              </Link>
-              <small>Posted: {node.frontmatter.date}</small>
-            </article>
-          ))
-        }
-      </ul>
-      <p>Total: {posts.totalCount}</p>
-      <Link to="/blog/">
-        {t("allPosts")}
-      </Link>
-*/
+export default IndexPage
 
-export default Index
+export const Head = () => (
+  <SEO pageTitle={PageTitle} />
+)
 
+// This is mandatory for every page using useTranslation() or anything from gatsby-plugin-react-i18next.
 export const query = graphql`
-  query($locale: String!) {
-    site {
-      siteMetadata {
-        title
-        description
-      }
-    }
-
-    blogList: allFile(
-      filter: {
-        sourceInstanceName: { eq: "blog" }
-        childMdx: { fields: { locale: { eq: $locale } } }
-      },
-      limit: 2,
-      sort: {fields: childrenMdx___frontmatter___date, order: DESC}
-    ) {
-      totalCount
-      nodes {
-        childMdx {
-          frontmatter {
-            date(formatString: "DD/MMM/YYYY")
-            slug
-            title            
-          }
-          id
+  query($language: String!) {
+    locales: allLocale(filter: { language: { eq: $language } }) {
+      edges {
+        node {
+          ns
+          data
+          language
         }
       }
     }
     
     eventList: allItem(
-      filter: {layout: {eq: "event"}, fields: {locale: {eq: $locale}}}
-      limit: 5,
-      sort: {fields: date, order: DESC}
+      filter: {layout: {eq: "event"}, fields: {locale: {eq: $language}}}
+      limit: 5
+      sort: {date: DESC}
     ) {
       totalCount
       nodes {
@@ -147,32 +116,7 @@ export const query = graphql`
         hasYouTube
         youtubeId
       }
-    }    
-
-    postsEN: allFile(
-      filter: {
-        sourceInstanceName: { eq: "blog" }
-        childMdx: { fields: { locale: { eq: "en" } } }
-      } ) { 
-      totalCount
     }
-
-    postsES: allFile(
-      filter: {
-        sourceInstanceName: { eq: "blog" }
-        childMdx: { fields: { locale: { eq: "es" } } }
-      } ) { 
-      totalCount
-    }
-
-    postsPT: allFile(
-      filter: {
-        sourceInstanceName: { eq: "blog" }
-        childMdx: { fields: { locale: { eq: "pt" } } }
-      } ) { 
-      totalCount
-    }
-
 
     eventsEN: allItem (filter: {
       layout: {eq: "event"}
@@ -193,7 +137,6 @@ export const query = graphql`
       fields: {locale: {eq: "pt"} }
     }) {
       totalCount
-    }    
-
-  }
-`
+    }       
+  }    
+`;

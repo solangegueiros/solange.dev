@@ -1,81 +1,66 @@
+/**
+ * @type {import('gatsby').GatsbyConfig}
+ */
+const i18nConfig = require('./i18n-config');
+const siteUrl = process.env.URL || `http://localhost:8000`;
+
 module.exports = {
     siteMetadata: {
       siteUrl: `https://solange.dev`,
       title: `Sol around Blockchain`,
       description: `Blockchain developers blog`,
-      author: `Solange Gueiros`,          
+      author: `Solange Gueiros`,
+      twitterUsername: `@solangegueiros`,
+      image: `/favicon.png`,       
     },
     plugins: [
-        "gatsby-plugin-image",
-        "gatsby-plugin-sharp",
-        `gatsby-remark-images`,
-        {
-            resolve: `gatsby-source-filesystem`,
-            options: {
-              path: `${__dirname}/src/pages`,
-              name: `pages`,
-            },
-        },        
-        {
-            resolve: "gatsby-source-filesystem",
-            options: {
-              name: `blog`,
-              path: `${__dirname}/content/blog`,
-            }
+      {
+          resolve: `gatsby-source-filesystem`,
+          options: {
+            path: `${__dirname}/src/pages`,
+            name: `pages`,
+          },
+      },
+      {
+        resolve: `gatsby-source-filesystem`,
+        options: {
+          path: `${__dirname}/locales`,
+          name: `locale`,
         },
-        /*
-        {
-            resolve: "gatsby-source-filesystem",
-            options: {
-              name: `blog`,
-              path: `${__dirname}/content/event`,
-            }
-        },
-        */
-        `gatsby-plugin-react-helmet`,
-        {
-            resolve: `gatsby-theme-i18n`,
-            options: {
-                defaultLang: `en`,
-                locales: `en es pt`,
-                configPath: require.resolve(`./i18n/config.json`),
+      },
+      {
+          resolve: "gatsby-source-filesystem",
+          options: {
+            name: `blog`,
+            path: `${__dirname}/content/blog`,
+          }
+      },
+      {
+          resolve: "gatsby-source-filesystem",
+          options: {
+            name: `docs`,
+            path: `${__dirname}/content/docs`,
+          }
+      },        
+      {
+        resolve: `gatsby-plugin-react-i18next`,
+        options: {
+          ...i18nConfig,
+          siteUrl: siteUrl, // Already in siteMetadata, just repeat here
+          i18nextOptions: {
+            fallbackLng: i18nConfig.defaultLanguage,
+            supportedLngs: i18nConfig.languages,
+            defaultNS: i18nConfig.defaultNS,          
+            interpolation: {
+              escapeValue: false, // React already does escaping
             },
-        },        
-        {
-            resolve: `gatsby-theme-i18n-react-i18next`,
-            options: {
-                locales: `./i18n`,
-                i18nextOptions: {
-                    ns: ["translation", "blog", "404"],
-                },
-            },
-        },
-        {
-            resolve: `gatsby-plugin-mdx`,
-            options: {
-                defaultLayouts: {
-                    default: require.resolve(`./src/components/Layout.jsx`),
-                },
-                gatsbyRemarkPlugins: [
-                    {
-                      resolve: `gatsby-remark-images`,
-                      options: {
-                        maxWidth: 1024,
-                        sizeByPixelDensity: true,
-                      },                      
-                    },
-                    `gatsby-remark-responsive-iframe`,
-                ],
-            },
-        },
-        {
-            resolve: "gatsby-plugin-react-svg",
-            options: {
-              rule: {
-                include: /flags/
-              }
-            }
-          },        
-        "gatsby-transformer-sharp",        
+          },
+        },    
+      },    
+      `gatsby-plugin-mdx`,    
+      `gatsby-plugin-image`,
+      `gatsby-plugin-sharp`,
+      `gatsby-transformer-sharp`,
+      `gatsby-plugin-sass`,
     ]
 }

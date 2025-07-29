@@ -1,52 +1,72 @@
 import * as React from 'react'
-import { MdxLink, LocalizedLink as Link, useLocalization } from "gatsby-theme-i18n"
-import { useStaticQuery, graphql } from 'gatsby'
-import {
-  heading,
-  siteTitle,
-  headerMenu,  
-} from '../styles/layout.module.css'
+import { Link, useStaticQuery, graphql } from 'gatsby'
+import { useTranslation } from 'gatsby-plugin-react-i18next'
+import LanguageSwitcher from './LanguageSwitcher'
+import icon from '../images/icon.png'
 
-const components = {
-  a: MdxLink,
-}
+const Menu = () => {
+  const { t } = useTranslation()
 
-
-const Menu = ({ pageTitle, children, pageContext }) => {
-
+  const data = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          title
+        }
+      }
+    }
+  `)
+  //console.log("Layout data \n", JSON.stringify(data, null, 2));    
+  
   return (
-    <nav>
-      <ul className={headerMenu}>
-      <li className={headerMenu}>
-        <Link to="/events" className={headerMenu}>
-          Events
-        </Link>
-      </li>
-      <li className={headerMenu}>
-        <a target="_blank" rel="noopener noreferrer" href="https://ethereum.solange.dev/" className={headerMenu}>
-          Ethereum
-        </a>
-      </li>
-      <li className={headerMenu}>
-        <a target="_blank" rel="noopener noreferrer" href="https://academy.rsk.dev.br/" className={headerMenu}>
-          RSK Academy
-        </a>
-      </li>
-      <li className={headerMenu}>
-        <a target="_blank" rel="noopener noreferrer" href="https://rsk.solange.dev/" className={headerMenu}>
-          RSK
-        </a>
-      </li>
-      <li className={headerMenu}>
-        <Link to="/about" className={headerMenu}>
-          About
-        </Link>
-      </li>
-    </ul>
-  </nav>
+      <div className="menu">
+        <Link to="/" className="menu-title">
+          <img src={icon} alt="Solange.Dev" className="logoIcon" />
+          {data.site.siteMetadata.title }
+        </Link>         
+        <nav>
+          <ul className="menu-links">
+              <li className="menu-link-item">
+                <Link to="/" className="nav-link-text">
+                    {t('menu.home')}
+                </Link>
+              </li>
+              <li className="menu-link-item">
+                <Link to="/events" className="nav-link-text">
+                    {t('menu.events')}
+                </Link>
+              </li>
+              <li className="menu-link-item">
+                <Link to="/blog" className="nav-link-text">
+                    {t('menu.blog')}
+                </Link>
+              </li>
+              <li className="menu-link-item">
+                <Link to="/docs" className="nav-link-text">
+                    {t('menu.docs')}
+                </Link>
+              </li>
+              <li className="menu-link-item">
+                <Link to="/projects" className="nav-link-text">
+                    {t('menu.projects')}
+                </Link>
+              </li>
+              <li className="menu-link-item">
+                <Link to="/about" className="nav-link-text">
+                    {t('menu.about')}
+                </Link>
+              </li>
+          </ul>
+        </nav>
+        <div>
+          <LanguageSwitcher />
+        </div>        
+      </div>
+    )
+  }
+  
+  export default Menu
 
+  /*
 
-  )
-}
-
-export default Menu
+  */

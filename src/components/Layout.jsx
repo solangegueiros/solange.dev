@@ -1,73 +1,33 @@
-import * as React from 'react'
-import { MdxLink, LocalizedLink as Link, useLocalization } from "gatsby-theme-i18n"
-import Menu from "./Menu"
-import Language from "./Language"
-import { useStaticQuery, graphql } from 'gatsby'
-import icon from '../images/icon.png'
-import {
-  container,
-  heading,
-  navWrapper,   
-  siteTitle,
-  logoLink,
-  logoIcon,  
-} from '../styles/layout.module.css'
+//src/components/Layout.jsx
+import React, { useState } from 'react'
 
-const components = {
-  a: MdxLink,
-}
+import Menu from './Menu'
+import Sidebar from './Sidebar'
 
-const Layout = ({ pageTitle, children, pageContext }) => {
-/*
-  const { locale } = useLocalization()
 
-          <li className={headerMenu}>
-            <Link to="/blog">
-              Blog
-            </Link>
-          </li>
-          <li className={headerMenu}>
-            <Link to="/locales">
-              Locales info {locale}
-            </Link>
-          </li>
-*/  
+const Layout = ({ children, pageTitle, location, data }) => {
+  //console.log("Layout location\n", JSON.stringify(location, null, 2));
+  
+  const [isSidebarOpen, setSidebarOpen] = useState(false)
+  const toggleSidebar = () => setSidebarOpen(!isSidebarOpen)
 
-  const data = useStaticQuery(graphql`
-    query {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-  //console.log("Layout \n", data);
-
+  //<h1 >{t(pageTitle)}</h1>
   return (
-    <div >
-      <title>{pageTitle} | {data.site.siteMetadata.title}</title>
-      <header className={siteTitle}>
-        <Link to="/" className={logoLink}>
-          <img src={icon} alt="Solange.Dev" className={logoIcon} />
-          {data.site.siteMetadata.title}
-        </Link>        
-      </header> 
+    <div className="layout">
+      <Menu />
+      <div className="layout-body">
+        <button className="sidebar-toggle" onClick={toggleSidebar}>
+          ☰
+        </button>
+        <Sidebar className={isSidebarOpen ? 'open' : ''} location={location} />
 
-      <div className={navWrapper}>
-        <Menu pageContext={pageContext}/>
-        <Language pageContext={pageContext}/>
-      </div>  
-
-      <main>
-        <div className={container}>
-          <h1 className={heading}>{pageTitle}</h1>
+        <main className="main-content">          
+          <h1>{pageTitle}</h1>
           {children}
-        </div>
-      </main>
+        </main>
+      </div>
     </div>
   )
 }
 
 export default Layout
-

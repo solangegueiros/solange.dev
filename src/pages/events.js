@@ -1,36 +1,38 @@
 import * as React from 'react'
 import { FaYoutube } from 'react-icons/fa' // YouTube icon
-import { graphql } from "gatsby"
-import { useTranslation} from "react-i18next"
-import { LocalizedLink as Link } from "gatsby-theme-i18n"
-import Layout from '../components/Layout'
-import Seo from "../components/Seo"
+import { graphql } from 'gatsby'
+import { Link, useI18next, useTranslation } from 'gatsby-plugin-react-i18next'
 
-const Events = ({ data, pageContext }) => {
+import Layout from '../components/Layout'
+import { SEO }  from "../components/Seo"
+
+const PageTitle = "Events"
+// console.log("PageTitle: ", PageTitle);
+
+const EventsPage = ({ data, location }) => {
+  // console.log("EventsPage location\n", JSON.stringify(location, null, 2));
+
   const { t } = useTranslation()
-  const locale = pageContext.locale;
-  //console.log("Page Context: ", JSON.stringify(pageContext));
-  //console.log("Locale: ", locale);
-  // pageTitle={`${t("events")} - ${locale.toUpperCase()}`}
+  const PageLocalized = t('eventsPage.title')
+  const { language } = useI18next()
 
   const eventList = data.eventList;
-  //console.log("Event List \n", eventList);
+  console.log("Event List \n", eventList.length);  
 
   // No events found
   if (!eventList || !eventList.nodes || eventList.nodes.length === 0) {
     return (
-      <Layout pageContext={pageContext} pageTitle={`${t("events")}`}>
-        <Seo title={t("events")} />
-        <p>🌍 Language: {locale.toUpperCase()}</p>
+      <Layout pageTitle={PageLocalized} location={location}>        
+        <p>🌍 Language: {language.toUpperCase()}</p>
+        <p>{t('eventsPage.description')}</p>
         <p>{t("noEventsFound")}</p>
       </Layout>
     )
   }
   else {   
     return (
-      <Layout pageContext={pageContext} pageTitle={t("events")}>
-        <Seo title={t("events")} />
-        <p>🌍 Language: {locale.toUpperCase()} - Total: {eventList.totalCount}</p>
+      <Layout pageTitle={PageLocalized} location={location}>        
+        <p>🌍 Language: {language.toUpperCase()} - Total: {eventList.totalCount}</p>
         <br/>
 
         <ul>
@@ -39,7 +41,7 @@ const Events = ({ data, pageContext }) => {
               <Link to={`/events${item.slug}`}>
                 <h4>{item.title}</h4>
               </Link>
-              <small>
+              <small>                
                 {item.hasYouTube && item.video && (
                   <a
                     href={item.video}
@@ -58,20 +60,34 @@ const Events = ({ data, pageContext }) => {
               </small>
             </li>
           ))}
-        </ul>
-
+        </ul>        
       </Layout>
     )
   }
+
 }
 
-export default Events
+export default EventsPage
 
-export const pageQuery = graphql`
-  query ($locale: String!) {
+export const Head = () => (
+  <SEO pageTitle={PageTitle} />
+)
+
+// This is mandatory for every page using useTranslation() or anything from gatsby-plugin-react-i18next.
+export const query = graphql`
+  query($language: String!) {
+    locales: allLocale(filter: {language: {eq: $language}}) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
     eventList: allItem(
-      filter: {layout: {eq: "event"}, fields: {locale: {eq: $locale}}}
-      sort: {fields: date, order: DESC}
+      filter: {layout: {eq: "event"}, fields: {locale: {eq: $language}}}
+      sort: {date: DESC}
     ) {
       totalCount
       nodes {
@@ -85,6 +101,7 @@ export const pageQuery = graphql`
         hasYouTube
         youtubeId
       }
-    }
+    }      
   }
-`
+`;
+

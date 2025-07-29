@@ -1,70 +1,73 @@
-import * as React from "react"
-import { graphql, Link } from "gatsby"
-import { useTranslation} from "react-i18next"
+import * as React from 'react'
+import { graphql } from "gatsby"
+import { useI18next, useTranslation } from 'gatsby-plugin-react-i18next'
+import { FaYoutube } from 'react-icons/fa' // YouTube icon
 
-import Layout from "../components/Layout"
-import Seo from "../components/Seo"
+import Layout from '../components/Layout'
+import { SEO }  from "../components/Seo"
 import Video from "../components/video"
 
 
-const EventTemplate = ({ data, pageContext }) => {
-  const { t } = useTranslation()
+const EventPage = ({ data, children, pageContext: { language }, location }) => {
+  const { t } = useTranslation();
   const event = data.item
-  //console.log("EVENT:", event)
 
-  //var title = t("notTranslated")
+  console.log("language:", language)
+  const languageName = t(language)
+  
   const title = event && event.title ? event.title : t("notTranslated");
   console.log("TITLE:", title)
-  
-  //const language = event.fields.locale 
-  //const language = event.language
-  const video = event && event.video ? event.video.split('\n') : null;
-  // if (video)
-  //   console.log ("video:", video, "\n", video.length)
 
-  const slides = event && event.slides ? event.slides.split('\n') : null;
-  //console.log ("slides:", slides, "\n", slides.length)
-  
+  const video = event && event.video ? event.video.split('\n') : null;
+  if (video)
+    console.log ("video:", video, "\n", video.length)
+
   const article = event && event.article ? event.article.split('\n') : null;
   // if (article)
-  //   console.log("ARTICLE:", event.article)
+  //   console.log("ARTICLE:", article, "\n", article.length)
+
+  const slides = event && event.slides ? event.slides.split('\n') : null;
 
   const links = event && event.links ? event.links.split('\n') : null;
 
-  console.log("\n")
+  /*
+    <Video videoURL={url} videoTitle={event.title} />
+  */
 
-/*
-          {slides ? (<>
-            <h3>
-              {intl.formatMessage({ id: "slides" })}
-            </h3>
-            <ul>
-              {slides.map((urlSlide, index) => (
-                <Slides slideURL={urlSlide} slideTitle={event.title} />
-              ))}
-            </ul>           
-          </>) : ("")}  
-*/
   return (
-    <Layout pageContext={pageContext} pageTitle={title}>
-      <Seo title={title} />     
+    <Layout pageTitle={title} location={location}>
 
       <div>
         {event ? (
           <>
-            <p>{event.type}, {event.date}, {event.local}, {t("language")}</p>
-            {event.organizer ? (<> <p>{t("organizer")} {event.organizer}</p> </>) : null}
+            <hr />        
+            <p>{event.type}, {event.date}, {event.local}, {languageName}</p>
+            {event.organizer ? (<> <p>{t("eventsPage.organizer")} {event.organizer}</p> </>) : null}
             {event.description ? (<> <p>{event.description}</p> </>) : null}
-
+            
             {event.video ? (<>
               <h3>
                 {t("video")}                
                 {(video.length > 1) ? "s" : ""}
-              </h3> 
-              {video.map((url, index) => (
-                <Video videoURL={url} videoTitle={event.title} />
+              </h3>
+              {video.map((url, index) => (<>
+                  <a
+                    href={url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ marginLeft: '0.5rem' }}
+                    title={t("youTube")}
+                    >
+                    <FaYoutube
+                      size="2em"                    
+                      style={{ marginRight: '0.5rem', color: 'red', verticalAlign: 'middle' }}
+                    />
+                    {t("eventsPage.youtube")}
+                  </a>
+                </>
               ))}            
             </>) : ("")}
+
 
             {article ? (<>          
               <h3>
@@ -74,7 +77,7 @@ const EventTemplate = ({ data, pageContext }) => {
               <ul>
                 {article.map((url, index) => (
                   <li key={index}>
-                    <Link href={url} target="_blank" rel="noopener noreferrer">{url}</Link>
+                    <a href={url} target="_blank" rel="noopener noreferrer">{url}</a>
                   </li>
                 ))}
               </ul>           
@@ -87,7 +90,7 @@ const EventTemplate = ({ data, pageContext }) => {
               <ul>
                 {links.map((url, index) => (
                   <li key={index}>
-                    <Link href={url} target="_blank" rel="noopener noreferrer">{url}</Link>
+                    <a href={url} target="_blank" rel="noopener noreferrer">{url}</a>
                   </li>
                 ))}
               </ul>           
@@ -98,16 +101,29 @@ const EventTemplate = ({ data, pageContext }) => {
           <div>{t("notTranslated")}</div>
         )}
       </div>
-    </Layout>
-  )
+    </Layout>      
+  )    
 }
 
-export default EventTemplate
+export default EventPage
 
-export const ItemPageQuery = graphql`
-  query ($locale: String!, $slug: String!) {
+export const Head = ({ data }) => (  
+  <SEO pageTitle={data?.item?.title ?? "Not Translated"} />
+)
+
+export const query = graphql`
+  query ($language: String!, $slug: String!) {
+    locales: allLocale(filter: { language: { eq: $language } }) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
     item(      
-      fields: {locale: {eq: $locale} }, slug: {eq: $slug}
+      fields: {locale: {eq: $language} }, slug: {eq: $slug}
     ) {
       fields {
         locale
@@ -133,5 +149,4 @@ export const ItemPageQuery = graphql`
       video
     }
   }
-
-`
+`;

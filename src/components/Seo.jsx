@@ -1,38 +1,32 @@
-import * as React from "react"
-import { Helmet } from "react-helmet"
-import { useStaticQuery, graphql } from "gatsby"
+import React from "react"
+import { useSiteMetadata } from "../hooks/use-site-metadata"
 
-const Seo = ({ description, title, children }) => {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-            author
-          }
-        }
-      }
-    `
-  )
+//Named export
+export const SEO = ({ pageTitle, pageDescription, pathname, children }) => {
+  const { title: defaultTitle, description: defaultDescription, image, siteUrl, twitterUsername } = useSiteMetadata()
 
-  const metaDescription = description || site.siteMetadata.description
+  const seo = {
+    title: pageTitle ? `${pageTitle} | ${defaultTitle}` : defaultTitle,
+    description: pageDescription || defaultDescription,
+    image: `${siteUrl}${image}`,
+    url: `${siteUrl}${pathname || ``}`,
+    twitterUsername,
+  }
+  console.log("SEO data:", JSON.stringify(seo, null, 2))
 
   return (
-    <Helmet title={title} titleTemplate={`%s | ${site.siteMetadata.title}`}>
-      <meta name="description" content={metaDescription} />
-      <meta name="og:title" content={title} />
-      <meta name="og:description" content={metaDescription} />
-      <meta name="og:type" content="website" />
-      <meta name="twitter:card" content="summary" />
-      <meta name="twitter:creator" content={site.siteMetadata.author} />
-      <meta name="twitter:title" content={title} />
-      <meta name="twitter:description" content={metaDescription} />
-      <link rel="icon" type="image/png" href="/favicon.png" />
+    <>
+      <title>{seo.title}</title>
+      <meta name="description" content={seo.description} />
+      <meta name="image" content={seo.image} />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={seo.title} />
+      <meta name="twitter:url" content={seo.url} />
+      <meta name="twitter:description" content={seo.description} />
+      <meta name="twitter:image" content={seo.image} />
+      <meta name="twitter:creator" content={seo.twitterUsername} />
+      <link rel="icon" type="image/png" href={seo.image} />
       {children}
-    </Helmet>
+    </>
   )
 }
-
-export default Seo
