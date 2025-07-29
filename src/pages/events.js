@@ -10,7 +10,7 @@ const PageTitle = "Events"
 // console.log("PageTitle: ", PageTitle);
 
 const EventsPage = ({ data, location }) => {
-  // console.log("EventsPage location\n", JSON.stringify(location, null, 2));
+  console.log("EventsPage location\n", JSON.stringify(location, null, 2));
 
   const { t } = useTranslation()
   const PageLocalized = t('eventsPage.title')

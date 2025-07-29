@@ -12,7 +12,7 @@ export const SEO = ({ pageTitle, pageDescription, pathname, children }) => {
     url: `${siteUrl}${pathname || ``}`,
     twitterUsername,
   }
-  console.log("SEO data:", JSON.stringify(seo, null, 2))
+  //console.log("SEO data:", JSON.stringify(seo, null, 2))
 
   return (
     <>
