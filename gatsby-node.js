@@ -49,6 +49,7 @@ exports.sourceNodes = async ({
     
     //date convert
     if (item.date) {
+      //console.log("item.date", item.date)
       var dateString = item.date
       var dateParser = /(\d{2})\/(\d{2})\/(\d{4})/
       var dateMatch = dateString.match(dateParser)
